@@ -13,37 +13,37 @@
                 "content" : {
                     "fraises" : {
                         "id" : "1",
-                        "img_path" : "fraise.jpg",
+                        "img" : "fraise.jpg",
                         "packaging" : "barquette de 250g",
                         "price" : 3.20
                     },
                     "kiwi" : {
                         "id" : "2",
-                        "img_path" : "kiwi.jpg",
+                        "img" : "kiwi.jpg",
                         "packaging" : "la pièce",
                         "price" : 0.27
                     },
                     "melon" : {
                         "id" : "3",
-                        "img_path" : "melon.jpg",
+                        "img" : "melon.jpg",
                         "packaging" : "la pièce",
                         "price" : 1.49
                     },
                     "orange" : {
                         "id" : "4",
-                        "img_path" : "oranges.jpg",
+                        "img" : "oranges.jpg",
                         "packaging" : "le kg",
                         "price" : 1.09
                     },
                     "pastèque" : {
                         "id" : "5",
-                        "img_path" : "pasteque.jpg",
+                        "img" : "pasteque.jpg",
                         "packaging" : "la pièce",
                         "price" : 1.99
                     },
                     "raisin" : {
                         "id" : "6",
-                        "img_path" : "raisin.jpg",
+                        "img" : "raisin.jpg",
                         "packaging" : "le kg",
                         "price" : 1.90
                     }
@@ -58,37 +58,37 @@
                 "content" : {
                     "carottes" : {
                         "id" : "7",
-                        "img_path" : "carottes.jpg",
+                        "img" : "carottes.jpg",
                         "packaging" : "le kg",
                         "price" : 1.50
                     },
                     "salade" : {
                         "id" : "8",
-                        "img_path" : "salade.jpg",
+                        "img" : "salade.jpg",
                         "packaging" : "la pièce",
                         "price" : 0.80
                     },
                     "concombre" : {
                         "id" : "9",
-                        "img_path" : "concombre.jpg",
+                        "img" : "concombre.jpg",
                         "packaging" : "la pièce",
                         "price" : 0.99
                     },
                     "artichaut" : {
                         "id" : "10",
-                        "img_path" : "artichaut.jpg",
+                        "img" : "artichaut.jpg",
                         "packaging" : "la pièce",
                         "price" : 1.79
                     },
                     "tomates" : {
                         "id" : "11",
-                        "img_path" : "tomates.jpg",
+                        "img" : "tomates.jpg",
                         "packaging" : "le kg",
                         "price" : 1.19
                     },
                     "aubergine" : {
                         "id" : "12",
-                        "img_path" : "aubergine.jpg",
+                        "img" : "aubergine.jpg",
                         "packaging" : "la pièce",
                         "price" : 1.14
                     }
@@ -112,37 +112,37 @@
                 "content" : {
                     "baguette" : {
                         "id" : "13",
-                        "img_path" : "baguette.jpg",
+                        "img" : "baguette.jpg",
                         "packaging" : "lot de 4",
                         "price" : 2.85
                     },
                     "baguette rustique" : {
                         "id" : "14",
-                        "img_path" : "baguette_rustique.jpg",
+                        "img" : "baguette_rustique.jpg",
                         "packaging" : "lot de 4",
                         "price" : 2.90
                     },
                     "pain de campagne" : {
                         "id" : "15",
-                        "img_path" : "pain_de_campagne.jpg",
+                        "img" : "pain_de_campagne.jpg",
                         "packaging" : "le pain de 400gr",
                         "price" : 1.10
                     },
                     "pain aux céréales" : {
                         "id" : "16",
-                        "img_path" : "pain_cereales.jpg",
+                        "img" : "pain_cereales.jpg",
                         "packaging" : "le pain de 300gr",
                         "price" : 1.60
                     },
                     "baguette sans gluten" : {
                         "id" : "17",
-                        "img_path" : "baguette_sans_gluten.jpg",
+                        "img" : "baguette_sans_gluten.jpg",
                         "packaging" : "le sachet de 2 - 200gr",
                         "price" : 3.50
                     },
                     "pain nordique" : {
                         "id" : "18",
-                        "img_path" : "pain_nordique.jpg",
+                        "img" : "pain_nordique.jpg",
                         "packaging" : "le pain de 400gr",
                         "price" : 12.30
                     }
@@ -157,37 +157,37 @@
                 "content" : {
                     "forêt noire" : {
                         "id" : "19",
-                        "img_path" : "foret_noire.jpg",
+                        "img" : "foret_noire.jpg",
                         "packaging" : "le gateau de 750gr",
                         "price" : 10.90
                     },
                     "donuts" : {
                         "id" : "20",
-                        "img_path" : "donuts.jpg",
+                        "img" : "donuts.jpg",
                         "packaging" : "la boîte de 8",
                         "price" : 3.95
                     },
                     "éclair au chocolat" : {
                         "id" : "21",
-                        "img_path" : "eclairs_chocolat.jpg",
+                        "img" : "eclairs_chocolat.jpg",
                         "packaging" : "les 4",
                         "price" : 2.50
                     },
                     "gâteau entremet 6/8 parts" : {
                         "id" : "22",
-                        "img_path" : "gateau_entremet.jpg",
+                        "img" : "gateau_entremet.jpg",
                         "packaging" : "le gâteau",
                         "price" : 10.90
                     },
                     "fraisier" : {
                         "id" : "23",
-                        "img_path" : "fraisier.jpg",
+                        "img" : "fraisier.jpg",
                         "packaging" : "le gâteau",
                         "price" : 11.90
                     },
                     "tropezienne" : {
                         "id" : "24",
-                        "img_path" : "tropezienne.jpg",
+                        "img" : "tropezienne.jpg",
                         "packaging" : "la gâteau",
                         "price" : 4.50
                     }
@@ -211,37 +211,37 @@
                 "content" : {
                     "viande à brochette" : {
                         "id" : "25",
-                        "img_path" : "viande_brochette.jpg",
+                        "img" : "viande_brochette.jpg",
                         "packaging" : "le kg",
                         "price" : 8.89
                     },
                     "filet mignon" : {
                         "id" : "26",
-                        "img_path" : "filet_mignon.jpg",
+                        "img" : "filet_mignon.jpg",
                         "packaging" : "la barquette de 1kg",
                         "price" : 8.00
                     },
                     "rumsteack" : {
                         "id" : "27",
-                        "img_path" : "rumsteack.jpg",
+                        "img" : "rumsteack.jpg",
                         "packaging" : "la barquette de 600gr",
                         "price" : 11.80
                     },
                     "paleron" : {
                         "id" : "28",
-                        "img_path" : "paleron.jpg",
+                        "img" : "paleron.jpg",
                         "packaging" : "le kg",
                         "price" : 9.90
                     },
                     "bourguignon" : {
                         "id" : "29",
-                        "img_path" : "bourguignon.jpg",
+                        "img" : "bourguignon.jpg",
                         "packaging" : "le kg",
                         "price" : 5.50
                     },
                     "steack" : {
                         "id" : "30",
-                        "img_path" : "steack.jpg",
+                        "img" : "steack.jpg",
                         "packaging" : "la barquette de 750gr",
                         "price" : 8.12
                     }
@@ -256,37 +256,37 @@
                 "content" : {
                     "escalopes de dinde LE GAULOIS" : {
                         "id" : "31",
-                        "img_path" : "escalope_dinde_le_gaulois.jpg",
+                        "img" : "escalope_dinde_le_gaulois.jpg",
                         "packaging" : "la barquette de 6",
                         "price" : 5.53
                     },
                     "cuisses de poulet LE GAULOIS" : {
                         "id" : "32",
-                        "img_path" : "cuisses_poulet_le_gaulois.jpg",
+                        "img" : "cuisses_poulet_le_gaulois.jpg",
                         "packaging" : "la barquette de 1500gr",
                         "price" : 3.37
                     },
                     "ailes de poulet MAITRE COQ" : {
                         "id" : "33",
-                        "img_path" : "ailes_poulet_maitre_coq.jpg",
+                        "img" : "ailes_poulet_maitre_coq.jpg",
                         "packaging" : "lot de 2x250gr",
                         "price" : 4.15
                     },
                     "poulet jaune bio NATURE DE FRANCE" : {
                         "id" : "34",
-                        "img_path" : "poulet_jaune_bio_nature_de_france.jpg",
+                        "img" : "poulet_jaune_bio_nature_de_france.jpg",
                         "packaging" : "le poulet de 1,650kg",
                         "price" : 17.79
                     },
                     "poulet noir label rouge" : {
                         "id" : "35",
-                        "img_path" : "poulet_noir_label_rouge.jpg",
+                        "img" : "poulet_noir_label_rouge.jpg",
                         "packaging" : "le poulet de 1,4kg",
                         "price" : 7.21
                     },
                     "magret de canard DELPEYRAT" : {
                         "id" : "36",
-                        "img_path" : "canard.jpg",
+                        "img" : "canard.jpg",
                         "packaging" : "la barquette de 350gr",
                         "price" : 6.84
                     }
@@ -301,37 +301,37 @@
                 "content" : {
                     "dos de cabillaud" : {
                         "id" : "37",
-                        "img_path" : "dos_de_cabillaud.jpg",
+                        "img" : "dos_de_cabillaud.jpg",
                         "packaging" : "la portion de 300gr",
                         "price" : 4.17
                     },
                     "noix de saint jacques" : {
                         "id" : "38",
-                        "img_path" : "noix_de_saint_jacques.jpg",
+                        "img" : "noix_de_saint_jacques.jpg",
                         "packaging" : "la portion de 200gr",
                         "price" : 4.58
                     },
                     "crevettes cuites 30/50" : {
                         "id" : "39",
-                        "img_path" : "crevette.jpg",
+                        "img" : "crevette.jpg",
                         "packaging" : "la portion de 300gr",
                         "price" : 2.34
                     },
                     "langouste cuite" : {
                         "id" : "40",
-                        "img_path" : "langouste.jpg",
+                        "img" : "langouste.jpg",
                         "packaging" : "la pièce de 150gr",
                         "price" : 3.90
                     },
                     "filet de saumon" : {
                         "id" : "41",
-                        "img_path" : "saumon.jpg",
+                        "img" : "saumon.jpg",
                         "packaging" : "le filet de 1,2kg",
                         "price" : 17.88
                     },
                     "tranch de longe d'espadon" : {
                         "id" : "42",
-                        "img_path" : "canard.jpg",
+                        "img" : "canard.jpg",
                         "packaging" : "la portion de 250gr",
                         "price" : 4.47
                     }
@@ -355,37 +355,37 @@
                 "content" : {
                     "lait CANDIA" : {
                         "id" : "43",
-                        "img_path" : "lait_candia.jpg",
+                        "img" : "lait_candia.jpg",
                         "packaging" : "le pack de 8x1L",
                         "price" : 6.80
                     },
                     "oeufs bio LA NOUVELLE AGRICULTURE" : {
                         "id" : "44",
-                        "img_path" : "oeufs_bio_la_nouvelle_agriculture.jpg",
+                        "img" : "oeufs_bio_la_nouvelle_agriculture.jpg",
                         "packaging" : "la boîte de 10",
                         "price" : 3.99
                     },
                     "beurre doux tendre PRESIDENT" : {
                         "id" : "45",
-                        "img_path" : "beurre_doux_president.jpg",
+                        "img" : "beurre_doux_president.jpg",
                         "packaging" : "les 2 barquettes de 250gr",
                         "price" : 4.30
                     },
                     "crème semi épaisse 25% MG" : {
                         "id" : "46",
-                        "img_path" : "creme_semi_epaisse_25_prc_mg.jpg",
+                        "img" : "creme_semi_epaisse_25_prc_mg.jpg",
                         "packaging" : "les 3 briques de 20cl",
                         "price" : 3.21
                     },
                     "margarine doux bio" : {
                         "id" : "47",
-                        "img_path" : "margarine_doux_bio.jpg",
+                        "img" : "margarine_doux_bio.jpg",
                         "packaging" : "la plaquette de 375gr",
                         "price" : 2.19
                     },
                     "crème fraiche d'Isigny REFLETS DE FRANCE" : {
                         "id" : "48",
-                        "img_path" : "creme_fraiche.jpg",
+                        "img" : "creme_fraiche.jpg",
                         "packaging" : "le pot de 396gr",
                         "price" : 2.38
                     }
@@ -400,37 +400,37 @@
                 "content" : {
                     "mousse chocolat au lait LA LAITIÈRE" : {
                         "id" : "49",
-                        "img_path" : "mousse_chocolat_la_laitiere.jpg",
+                        "img" : "mousse_chocolat_la_laitiere.jpg",
                         "packaging" : "les 4 pots de 59gr",
                         "price" : 1.49
                     },
                     "yaourt fromage blanc nature FJORD" : {
                         "id" : "50",
-                        "img_path" : "fromage_blanc_fjord.jpg",
+                        "img" : "fromage_blanc_fjord.jpg",
                         "packaging" : "les 8 pots de 125gr",
                         "price" : 2.88
                     },
                     "fromage blanc CALIN" : {
                         "id" : "51",
-                        "img_path" : "fromage_blanc_calin.jpg",
+                        "img" : "fromage_blanc_calin.jpg",
                         "packaging" : "le pot de 850gr",
                         "price" : 1.99
                     },
                     "yaourt myrtille skyr SIGGI'S" : {
                         "id" : "52",
-                        "img_path" : "yaourt_myrtille_siggis.jpg",
+                        "img" : "yaourt_myrtille_siggis.jpg",
                         "packaging" : "les 2 pots de 140gr",
                         "price" : 1.95
                     },
                     "yaourt citron protéiné 0% MG HIPRO" : {
                         "id" : "53",
-                        "img_path" : "yaourt_citron_proteine_hipro.jpg",
+                        "img" : "yaourt_citron_proteine_hipro.jpg",
                         "packaging" : "les 2 pots de 160gr",
                         "price" : 1.99
                     },
                     "dessert végétal soja nature noix de coco ALPRO" : {
                         "id" : "54",
-                        "img_path" : "dessert_vegetal_soja_nature_noix_de_coco_alpro.jpg",
+                        "img" : "dessert_vegetal_soja_nature_noix_de_coco_alpro.jpg",
                         "packaging" : "le pot de 500gr",
                         "price" : 1.84
                     }
@@ -445,37 +445,37 @@
                 "content" : {
                     "fromage Roquefort AOP SOCIÉTÉ" : {
                         "id" : "55",
-                        "img_path" : "fromage_roquefort.jpg",
+                        "img" : "fromage_roquefort.jpg",
                         "packaging" : "la part de 200gr",
                         "price" : 3.58
                     },
                     "fromage P'tit Basque brebis ISTARA" : {
                         "id" : "56",
-                        "img_path" : "fromage_ptit_basque_brebis_istara.jpg",
+                        "img" : "fromage_ptit_basque_brebis_istara.jpg",
                         "packaging" : "la part de 320gr",
                         "price" : 5.40
                     },
                     "fromage Emmental Grand Cru Label Rouge IGP" : {
                         "id" : "57",
-                        "img_path" : "fromage_emmental.jpg",
+                        "img" : "fromage_emmental.jpg",
                         "packaging" : "la part de 230gr",
                         "price" : 2.04
                     },
                     "camembert LEPETIT" : {
                         "id" : "58",
-                        "img_path" : "camembert.jpg",
+                        "img" : "camembert.jpg",
                         "packaging" : "la boîte de 250gr",
                         "price" : 3.35
                     },
                     "fromage de chèvre CHAVROUX" : {
                         "id" : "59",
-                        "img_path" : "fromage_chevre.jpg",
+                        "img" : "fromage_chevre.jpg",
                         "packaging" : "la boîte de 150gr",
                         "price" : 1.99
                     },
                     "fromage CAPRICE DES DIEUX" : {
                         "id" : "60",
-                        "img_path" : "fromage_caprice_des_dieux.jpg",
+                        "img" : "fromage_caprice_des_dieux.jpg",
                         "packaging" : "la boîte de 250gr",
                         "price" : 1.70
                     }
@@ -490,37 +490,37 @@
                 "content" : {
                     "jambon blanc MADRANGE" : {
                         "id" : "61",
-                        "img_path" : "jambon_blanc_madrange.jpg",
+                        "img" : "jambon_blanc_madrange.jpg",
                         "packaging" : "le lot de 3 480gr",
                         "price" : 2.80
                     },
                     "Jambon espagnol ESTEBAN ESPUNA" : {
                         "id" : "62",
-                        "img_path" : "jambon_espagnol.jpg",
+                        "img" : "jambon_espagnol.jpg",
                         "packaging" : "le jambon d'1kg",
                         "price" : 13.13
                     },
                     "jambon serrano ESPUNA" : {
                         "id" : "63",
-                        "img_path" : "jambon_serrano_espuna.jpg",
+                        "img" : "jambon_serrano_espuna.jpg",
                         "packaging" : "la barquette de 10 tranches 120gr",
                         "price" : 3.05
                     },
                     "jambon cru AOSTE" : {
                         "id" : "64",
-                        "img_path" : "jambon_cru_aoste.jpg",
+                        "img" : "jambon_cru_aoste.jpg",
                         "packaging" : "la barquette de 10 tranches 220gr",
                         "price" : 5.55
                     },
                     "Saucisse de l'Ardèche REFLETS DE FRANCE" : {
                         "id" : "6",
-                        "img_path" : "saucisse_ardeche.jpg",
+                        "img" : "saucisse_ardeche.jpg",
                         "packaging" : "le sachet de 300gr",
                         "price" : 5.28
                     },
                     "bloc de foie gras de canard du sud ouest MAISON MONTFORT" : {
                         "id" : "66",
-                        "img_path" : "bloc_foie_gras.jpg",
+                        "img" : "bloc_foie_gras.jpg",
                         "packaging" : "le bloc de 200gr",
                         "price" : 9.87
                     }
