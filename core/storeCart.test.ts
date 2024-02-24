@@ -12,10 +12,33 @@ import cartReducer, {
 } from "./features/cart/cartSlice";
 import cartInitialState from "./features/cart/initialState";
 
+const mockState: cartTypes = [
+    {
+        id: "1",
+        product: {
+            id: "1",
+            img: "img name 1",
+            packaging: "packaging 1",
+            price: 10,
+        },
+        quantity: 1,
+    },
+    {
+        id: "2",
+        product: {
+            id: "2",
+            img: "img name 2",
+            packaging: "packaging 2",
+            price: 20,
+        },
+        quantity: 2,
+    },
+];
+
 describe("test of the cart in the store", () => {
     it("should render the default state", () => {
         const state = cartReducer(undefined, { type: "" });
-        expect(state).toBe(cartInitialState);
+        expect(state).toStrictEqual(cartInitialState);
     });
 
     it("should add a product into the cart", () => {
@@ -42,32 +65,9 @@ describe("test of the cart in the store", () => {
     });
 
     it("should remove a product from the cart", () => {
-        const previousState: cartTypes = [
-            {
-                id: "1",
-                product: {
-                    id: "1",
-                    img: "img name 1",
-                    packaging: "packaging 1",
-                    price: 10,
-                },
-                quantity: 1,
-            },
-            {
-                id: "2",
-                product: {
-                    id: "2",
-                    img: "img name 2",
-                    packaging: "packaging 2",
-                    price: 20,
-                },
-                quantity: 2,
-            },
-        ];
-
         const idToRemove = "1";
 
-        let stateExpected: cartTypes = [
+        const stateExpected: cartTypes = [
             {
                 id: "2",
                 product: {
@@ -80,35 +80,19 @@ describe("test of the cart in the store", () => {
             },
         ];
 
-        const state = cartReducer(previousState, deleteProduct(idToRemove));
+        const state = cartReducer(mockState, deleteProduct(idToRemove));
 
         expect(state).toEqual(stateExpected);
     });
 
-    it("should modify the quantity of the product", () => {
-        const previousState: cartTypes = [
-            {
-                id: "1",
-                product: {
-                    id: "1",
-                    img: "img name 1",
-                    packaging: "packaging 1",
-                    price: 10,
-                },
-                quantity: 1,
-            },
-            {
-                id: "2",
-                product: {
-                    id: "2",
-                    img: "img name 2",
-                    packaging: "packaging 2",
-                    price: 20,
-                },
-                quantity: 2,
-            },
-        ];
+    it("should return the state if we want to remove a product with bad id", () => {
+        const idToRemove = "4";
+        const state = cartReducer(mockState, deleteProduct(idToRemove));
 
+        expect(state).toEqual(mockState);
+    });
+
+    it("should modify the quantity of the product", () => {
         const productModification: productModification = {
             id: "2",
             quantity: 10,
@@ -138,40 +122,30 @@ describe("test of the cart in the store", () => {
         ];
 
         const state = cartReducer(
-            previousState,
+            mockState,
             changeProductQuantity(productModification)
         );
 
         expect(state).toEqual(expectedState);
     });
 
-    it("should empty the cart", () => {
-        const previousState: cartTypes = [
-            {
-                id: "1",
-                product: {
-                    id: "1",
-                    img: "img name 1",
-                    packaging: "packaging 1",
-                    price: 10,
-                },
-                quantity: 1,
-            },
-            {
-                id: "2",
-                product: {
-                    id: "2",
-                    img: "img name 2",
-                    packaging: "packaging 2",
-                    price: 20,
-                },
-                quantity: 2,
-            },
-        ];
+    it("should modify the quantity of the product", () => {
+        const productModification: productModification = {
+            id: "5",
+            quantity: 10,
+        };
 
-        const state = cartReducer(previousState, empty());
+        const state = cartReducer(
+            mockState,
+            changeProductQuantity(productModification)
+        );
+
+        expect(state).toEqual(mockState);
+    });
+
+    it("should empty the cart", () => {
+        const state = cartReducer(mockState, empty());
 
         expect(state).toEqual([]);
     });
 });
-// les tests pour le cart passe. continuer en ajoutant le reste au store

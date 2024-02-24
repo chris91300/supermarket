@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import cartInitialState from "./initialState";
-import reducer from "./reducer";
+import initialState from "./initialState";
+import reducers from "./reducer";
 
 const cartSlice = createSlice({
     name: "cart",
-    initialState: cartInitialState,
-    reducers: reducer,
+    initialState,
+    reducers,
 });
 
 export const { addProduct, deleteProduct, changeProductQuantity, empty } =
