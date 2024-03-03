@@ -9,9 +9,24 @@ const config: Config = {
     theme: {
         extend: {
             backgroundImage: {
-                "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-                "gradient-conic":
-                    "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+                "categories-title":
+                    "url('./public/img/banner/categories_bande3.jpg')",
+
+                "fruits-and-vegetables-title":
+                    "url('/img/banner/fruit_and_vegetable_title.jpg')",
+                "fruits-and-vegetables":
+                    "url('/img/banner/fruit_and_vegetable.jpg')",
+
+                "bread-and-pastry-title":
+                    "url('/img/banner/bread_and_pastry_title.jpg')",
+                "bread-and-pastry": "url('/img/banner/bread_and_pastry.jpg')",
+
+                "meat-and-fish-title":
+                    "url('/img/banner/meat_and_fish_title.jpg')",
+                "meat-and-fish": "url('/img/banner/meat_and_fish.jpg')",
+
+                "frais-title": "url('/img/banner/frais.jpg')",
+                frais: "url('/img/banner/frais.jpg')",
             },
         },
     },
