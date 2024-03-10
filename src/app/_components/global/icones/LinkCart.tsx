@@ -12,7 +12,7 @@ export default function LinkCart({ size }: {size: number}){
     const totalFavorites = favorites.length;    
 
     return(
-        <div className="relative group transition-all duration-500 text-white hover:text-violet-500">
+        <div className="relative group transition-all duration-500 text-white hover:text-violet">
             <Link href="/cart">
                 <BubbleCount count={totalFavorites} />
                 <FaShoppingCart size={size} />

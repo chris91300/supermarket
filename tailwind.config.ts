@@ -8,6 +8,9 @@ const config: Config = {
     ],
     theme: {
         extend: {
+            colors: {
+                violet: "rgb(160,85,247)",
+            },
             backgroundImage: {
                 "categories-title":
                     "url('./public/img/banner/categories_bande3.jpg')",

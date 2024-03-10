@@ -11,7 +11,7 @@ export default function ButtonHeart({ size }: {size: number}){
     const totalFavorites = favorites.length;    
 
     return(
-        <div className="relative group transition-all duration-500 text-white hover:text-violet-500">
+        <div className="relative group transition-all duration-500 text-white hover:text-violet">
             <BubbleCount count={totalFavorites} />
              <FaHeart size={size} />
         </div>
