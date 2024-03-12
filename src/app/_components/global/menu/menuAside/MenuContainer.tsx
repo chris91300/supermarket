@@ -6,7 +6,6 @@ import MenuItem from './MenuItem';
 export default function MenuContainer({ primaryMenu, children }: menuContainerType) {
     const [ openSubMenu, setOpenSubMenu ] = useState(false);
     const toggleHandleSubMenu = ()=>{
-      console.log("click cat")
         setOpenSubMenu(state => !state)
     }
 
