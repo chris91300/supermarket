@@ -19,7 +19,7 @@ export default function MenuItem({ primaryMenu, onClick }: menuItemType) {
     <button
       title={title}
       onClick={handleclick}
-      className='flex gap-2 items-center justify-between w-full p-2 hover:text-white hover:bg-violet'
+      className='flex gap-2 items-center justify-between text-start w-full p-2 hover:text-white hover:bg-violet'
     >
       { primaryMenu }
       {(arrowDirection === "left") && <IoMdArrowDropright /> }

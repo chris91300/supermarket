@@ -9,10 +9,7 @@ export default function TemplateWithMenuAside({ children }: Props) {
   return (
     <div className='flex py-10'>
         <MenuAside />
-        <div className='px-20'>
-            {children}
-        </div>
-
+        {children}
     </div>
   )
 }

@@ -81,3 +81,10 @@ export type categoryForBuildMenu = {
     menu: string;
     subMenu: string[];
 };
+
+export interface categoryInformations extends id {
+    category: string;
+    img: string;
+}
+
+export type categoriesInformations = categoryInformations[];

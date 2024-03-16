@@ -1,5 +1,5 @@
+import Categories from "./_components/categories/Categories";
 import BannerTitle from "./_components/global/bannerTitle/BannerTitle";
-import MenuAside from "./_components/global/menu/menuAside/MenuAside";
 import TemplateWithMenuAside from "./_components/global/templateWithMenuAside/TemplateWithMenuAside";
 
 
@@ -12,7 +12,7 @@ export default function Home() {
           alt="une image représentant une allée de supermarché avec un caddie au centre"
       />
       <TemplateWithMenuAside>
-        <p>Bonjour</p>
+        <Categories />
       </TemplateWithMenuAside>
     </main>
   );
