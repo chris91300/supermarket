@@ -1,3 +1,4 @@
+import encodeForUrl from '@/app/_utils/encodeForUrl';
 import Image from 'next/image'
 import Link from 'next/link';
 import React from 'react'
@@ -11,12 +12,15 @@ type Props = {
 
 export default function CardCategory({ title, img, category, subCategory }: Props) {
 
-    const href = `/${category}${subCategory? '/'+subCategory: ''}`;
-    const titleAttribute = subCategory?
-        `voir les articles de la catégorie ${subCategory}` :
-        `voir les sous catégories de la catégorie ${category}`;
-    const imgPath = `/img/presentation/${img}`;
-    const imageAlt = `une image représentant la catégorie ${subCategory? subCategory : category}`;
+  const hrefPath = `/categories/${category}${subCategory? '/'+title: ''}`;
+  console.log("path href avant encode ==> ", hrefPath)
+  const href = encodeForUrl(hrefPath);
+  console.log("path href après encode ==> ", href)
+  const titleAttribute = subCategory?
+      `voir les articles de la catégorie ${subCategory}` :
+      `voir les sous catégories de la catégorie ${category}`;
+  const imgPath = `/img/presentation/${img}`;
+  const imageAlt = `une image représentant la catégorie ${subCategory? subCategory : category}`;
 
 
   return (

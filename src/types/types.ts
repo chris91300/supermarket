@@ -59,19 +59,27 @@ export interface article {
 
 export interface subCategory {
     id: string;
+    name: string;
+    urlName: string;
     title_fr: string;
-    img_presentation: string;
-    img_title: string;
+    imgPresentation: string;
+    imgBanner: string;
     content: article[];
 }
 
 export interface mainCategory {
     id: string;
     title_fr: string;
-    img_presentation: string;
-    img_title: string;
+    imgPresentation: string;
+    imgBanner: string;
     content: subCategory[];
 }
+
+export type dataIndex =
+    | "fruits et legumes"
+    | "pains et viennoiseries"
+    | "viandes et poissons"
+    | "frais";
 
 export interface dataType {
     [index: string]: mainCategory;
@@ -88,3 +96,9 @@ export interface categoryInformations extends id {
 }
 
 export type categoriesInformations = categoryInformations[];
+
+export type bannerInformations = {
+    bannerTitle: string;
+    bannerImg: string;
+    bannerAlt: string;
+};

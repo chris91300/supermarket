@@ -9,7 +9,7 @@ export default function ButtonHeart({ size }: {size: number}){
 
     const favorites = useFavorites()
     const totalFavorites = favorites.length;    
-
+    // voir pour créer un composant d'ordre supérieur pour ajouter le hover
     return(
         <div className="relative group transition-all duration-500 text-white hover:text-violet">
             <BubbleCount count={totalFavorites} />

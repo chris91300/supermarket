@@ -1,16 +1,17 @@
 {
-    "fruits and vegetables" : {
+    "fruits et legumes" : {
         "id" : "6262888368729082",
         "title_fr" : "fruits et légumes",
-        "img_presentation" : "fruit_and_vegetable.jpg",
-        "img_title" : "fruit_and_vegetable_title.jpg",
+        "imgPresentation" : "fruit_and_vegetable.jpg",
+        "imgBanner" : "fruits_and_vegetables_banner.jpg",
         "content" : [
             {
                 "name": "fruits",
+                "urlName": "fruits",
                 "id" : "2764002830",
                 "title_fr": "fruits",
-                "img_presentation" : "fruit.jpg",
-                "img_title" : "fruit_title.jpg",
+                "imgPresentation" : "fruit.jpg",
+                "imgBanner" : "fruits_banner.jpg",
                 "content" : [
                         {
                             "name" :"fraises",
@@ -59,10 +60,11 @@
             },
             {
                 "name": "vegetables",
+                "urlName": "legumes",
                 "id" : "40030922830",
                 "title_fr" : "légumes",
-                "img_presentation" : "vegetable.jpg",
-                "img_title" : "vegetable_title.jpg",
+                "imgPresentation" : "vegetable.jpg",
+                "imgBanner" : "vegetable_banner.jpg",
                 "content" : [
                         {
                             "name": "carottes",
@@ -113,18 +115,19 @@
         
     },
 
-    "bread and pastry" : {
+    "pains et viennoiseries" : {
         "id" : "27640089675732830",
         "title_fr" : "pains et viennoiseries",
-        "img_presentation" : "bread_and_pastry.jpg",
-        "img_title" : "bread_and_pastry_title.jpg",
+        "imgPresentation" : "bread_and_pastry.jpg",
+        "imgBanner" : "bread_and_pastry_banner.jpg",
         "content" : [
             {
                 "name": "bread",
+                "urlName": "pains",
                 "id" : "987202830",
-                "title_fr": "pain",
-                "img_presentation" : "bread.jpg",
-                "img_title" : "bread_title.jpg",
+                "title_fr": "pains",
+                "imgPresentation" : "bread.jpg",
+                "imgBanner" : "bread_banner.jpg",
                 "content" : [
                     {
                         "name": "baguette",
@@ -173,10 +176,11 @@
             },
             {
                 "name": "pastry",
+                "urlName": "patisseries",
                 "id" : "9987654531",
-                "title_fr" : "pâtisserie",
-                "img_presentation" : "pastry.jpg",
-                "img_title" : "pastry_title.jpg",
+                "title_fr" : "pâtisseries",
+                "imgPresentation" : "pastry.jpg",
+                "imgBanner" : "pastry_banner.jpg",
                 "content" : [
                     {
                         "name": "forêt noire",
@@ -226,18 +230,19 @@
         ]
     },
 
-    "meat and fish" : {
+    "viandes et poissons" : {
         "id" : "220098178230",
         "title_fr" : "viandes et poissons",
-        "img_presentation" : "meat_and_fish.jpg",
-        "img_title" : "meat_and_fish_title.jpg",
+        "imgPresentation" : "meat_and_fish.jpg",
+        "imgBanner" : "meat_and_fish_banner.jpg",
         "content" : [
             {
                 "name": "butcher",
+                "urlName": "boucherie",
                 "id" : "2764002975420",
                 "title_fr": "boucherie",
-                "img_presentation" : "butcher.jpg",
-                "img_title" : "butcher_title.jpg",
+                "imgPresentation" : "butcher.jpg",
+                "imgBanner" : "butcher_banner.jpg",
                 "content" : [
                     {
                         "name": "viande à brochette",
@@ -286,10 +291,11 @@
             },
             {
                 "name": "poultry",
+                "urlName": "volaille",
                 "id" : "27698989882830",
                 "title_fr" : "volaille",
-                "img_presentation" : "poultry.jpg",
-                "img_title" : "poultry_title.jpg",
+                "imgPresentation" : "poultry.jpg",
+                "imgBanner" : "poultry_banner.jpg",
                 "content" : [
                     {
                         "name": "escalopes de dinde LE GAULOIS",
@@ -338,10 +344,11 @@
             },
             {
                 "name": "fish",
+                "urlName": "poisson",
                 "id" : "9981271002830",
                 "title_fr" : "poisson",
-                "img_presentation" : "fish.jpg",
-                "img_title" : "fish_title.jpg",
+                "imgPresentation" : "fish.jpg",
+                "imgBanner" : "fish_banner.jpg",
                 "content" : [
                     {
                         "name": "dos de cabillaud",
@@ -394,15 +401,16 @@
     "frais" : {
         "id" : "27298822212",
         "title_fr" : "frais",
-        "img_presentation" : "frais.jpg",
-        "img_title" : "frais_title.jpg",
+        "imgPresentation" : "frais.jpg",
+        "imgBanner" : "frais_banner.jpg",
         "content" : [
             {
                 "name": "creamery",
+                "urlName": "cremerie",
                 "id" : "579092830",
                 "title_fr": "crèmerie",
-                "img_presentation" : "cremery.jpg",
-                "img_title" : "cremery_title.jpg",
+                "imgPresentation" : "cremery.jpg",
+                "imgBanner" : "cremery_banner.jpg",
                 "content" : [
                     {
                         "name": "lait CANDIA",
@@ -451,10 +459,11 @@
             },
             {
                 "name": "yogurt",
+                "urlName": "yaourt",
                 "id" : "7656280830",
                 "title_fr" : "yaourt",
-                "img_presentation" : "yogurt.jpg",
-                "img_title" : "yogurt_title.jpg",
+                "imgPresentation" : "yogurt.jpg",
+                "imgBanner" : "yogurt_banner.jpg",
                 "content" : [
                     {
                         "name": "mousse chocolat au lait LA LAITIÈRE",
@@ -503,10 +512,11 @@
             },
             {
                 "name": "cheese",
+                "urlName": "fromage",
                 "id" : "293982765640",
                 "title_fr" : "fromage",
-                "img_presentation" : "cheese.jpg",
-                "img_title" : "cheese_title.jpg",
+                "imgPresentation" : "cheese.jpg",
+                "imgBanner" : "cheese_banner.jpg",
                 "content" : [
                     {
                         "name": "fromage Roquefort AOP SOCIÉTÉ",
@@ -555,10 +565,11 @@
             },
             {
                 "name": "deli",
+                "urlName": "charcuterie",
                 "id" : "729108732830",
                 "title_fr" : "charcuterie",
-                "img_presentation" : "deli.jpg",
-                "img_title" : "deli_title.jpg",
+                "imgPresentation" : "deli.jpg",
+                "imgBanner" : "deli_banner.jpg",
                 "content" : [
                     {
                         "name": "jambon blanc MADRANGE",

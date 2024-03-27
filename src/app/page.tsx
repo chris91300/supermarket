@@ -3,6 +3,7 @@ import BannerTitle from "./_components/global/bannerTitle/BannerTitle";
 import TemplateWithMenuAside from "./_components/global/templateWithMenuAside/TemplateWithMenuAside";
 
 
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col py-10">
