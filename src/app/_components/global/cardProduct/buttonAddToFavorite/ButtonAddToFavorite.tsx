@@ -8,9 +8,10 @@ type Props = {
 
 export default function ButtonAddToFavorite({ isFull, click }: Props) {
   const size = 20;
+  const title = isFull? 'retirer de vos favories' : "ajouter à vos favories";
 
   return (
-    <button title="ajouter à vos favories" onClick={click}>
+    <button title={ title } onClick={click}>
         { isFull ?
             <FaHeart size={size} /> :
             <FaRegHeart size={size} />

@@ -6,6 +6,7 @@ export interface id {
     id: string;
 }
 export interface product extends id {
+    name: string;
     img: string;
     packaging: string;
     price: number;

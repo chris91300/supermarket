@@ -13,9 +13,7 @@ type Props = {
 export default function CardCategory({ title, img, category, subCategory }: Props) {
 
   const hrefPath = `/categories/${category}${subCategory? '/'+title: ''}`;
-  console.log("path href avant encode ==> ", hrefPath)
   const href = encodeForUrl(hrefPath);
-  console.log("path href après encode ==> ", href)
   const titleAttribute = subCategory?
       `voir les articles de la catégorie ${subCategory}` :
       `voir les sous catégories de la catégorie ${category}`;

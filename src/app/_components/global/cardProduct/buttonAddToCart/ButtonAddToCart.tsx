@@ -8,7 +8,7 @@ type Props = {
 
 export default function ButtonAddToCart({ click }: Props) {
   return (
-    <button title="ajouter à vos favories" onClick={click}>
+    <button title="ajouter à votre panier" onClick={click}>
         <FaShoppingCart size={ 20 } />
     </button>
   )

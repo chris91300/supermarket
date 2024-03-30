@@ -8,6 +8,9 @@ import CardProductTitle from './cardProductTitle/CardProductTitle';
 import CardProductPackaging from './cardProductPackaging/CardProductPackaging';
 import CardProductPrice from './cardProductPrice/CardProductPrice';
 import ButtonAddToCart from './buttonAddToCart/ButtonAddToCart';
+import useIsInFavorites from './hooks/useIsInFavorites';
+import useAddOrRemoveFromFavorites from './hooks/useAddOrRemoveFromFavorites';
+import useToogleAddToCartForm from './hooks/useToogleAddToCartForm';
 /**
  * "name" :"fraises",
     "id" : "1",
@@ -19,27 +22,25 @@ import ButtonAddToCart from './buttonAddToCart/ButtonAddToCart';
 type Props = {
   product: article
 }
-
+// maintenant voir si ça fonctionne
 export default function CardProduct({ product }: Props) {
+  
+  const isInFavorites = useIsInFavorites(product);
+  const addOrRemoveFromFavorites = useAddOrRemoveFromFavorites();
+  const showAddToCartForm = useToogleAddToCartForm();
   const { name, img, packaging, price } = product;
-  const toogleAddToFavorite = ()=>{
-    console.log(`add ${name} add to favorite`)
-  };
 
-  const toogleAddToCart = ()=>{
-    console.log(`add ${name} add to cart`)
+  const toogleAddToFavorite = () => {
+    addOrRemoveFromFavorites(product);
+  }
+  const displayAddToCartForm = ()=>{
+    showAddToCartForm();
   };
-   /**"name" :"fraises",
-      "id" : "1",
-      "img" : "fraise.jpg",
-      "packaging" : "barquette de 250g",
-      "price" : 3.20     
-  */
   
   return (
     <div className='flex flex-col border border-black rounded-lg w-40 h-60 p-1 bg-white'>
       <div className='flex items-center justify-end'>        
-        <ButtonAddToFavorite click={ toogleAddToFavorite } isFull={ false }/>
+        <ButtonAddToFavorite click={ toogleAddToFavorite } isFull={ isInFavorites }/>
       </div>
       <div>
         <CardProductTitle title={name} />
@@ -50,7 +51,7 @@ export default function CardProduct({ product }: Props) {
       </div>
       <div className='flex items-center justify-between'>
         <CardProductPrice price={price} />
-        <ButtonAddToCart click={ toogleAddToCart }/>
+        <ButtonAddToCart click={ displayAddToCartForm }/>
       </div>
     </div>
   )
