@@ -34,7 +34,7 @@ export default function Category({ params }: categoryProps) {
         />
         
         <TemplateWithMenuAside>
-          <section className='flex justify-center flex-wrap gap-10 m-auto'>
+          <section className='flex justify-center flex-wrap gap-4 m-auto px-2'>
           { cardsComponent }
           </section>          
         </TemplateWithMenuAside>

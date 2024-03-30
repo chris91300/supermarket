@@ -11,6 +11,7 @@ import ButtonAddToCart from './buttonAddToCart/ButtonAddToCart';
 import useIsInFavorites from './hooks/useIsInFavorites';
 import useAddOrRemoveFromFavorites from './hooks/useAddOrRemoveFromFavorites';
 import useToogleAddToCartForm from './hooks/useToogleAddToCartForm';
+import { toast } from 'sonner';
 /**
  * "name" :"fraises",
     "id" : "1",
@@ -31,7 +32,8 @@ export default function CardProduct({ product }: Props) {
   const { name, img, packaging, price } = product;
 
   const toogleAddToFavorite = () => {
-    addOrRemoveFromFavorites(product);
+    const toastText = addOrRemoveFromFavorites(product);
+    toast.success(toastText);
   }
   const displayAddToCartForm = ()=>{
     showAddToCartForm();

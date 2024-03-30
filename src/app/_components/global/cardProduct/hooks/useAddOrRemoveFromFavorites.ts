@@ -14,8 +14,10 @@ export default function useAddOrRemoveFromFavorites() {
         const isInFavorites = includes(product, favorites);
         if (isInFavorites) {
             dispatch(deleteProduct(product.id));
+            return `${product.name} a bien été retirer de vos favories.`;
         } else {
             dispatch(addProduct(product));
+            return `${product.name} a bien été ajouter à vos favories.`;
         }
     };
 }

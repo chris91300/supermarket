@@ -5,6 +5,7 @@ import "./globals.css";
 import Providers from "./Provider";
 import store from "../lib/store";
 import Header from './_components/global/header/Header'
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,14 @@ export default function RootLayout({
         <Providers>
           <Header />
         {children}
+        <Toaster closeButton toastOptions={{
+            classNames: {
+              error: 'bg-red-400',
+              success: 'text-green-400',
+              warning: 'text-yellow-400',
+              info: 'bg-blue-400',
+            }}}
+        />
         </Providers>
       </body>
     </html>
