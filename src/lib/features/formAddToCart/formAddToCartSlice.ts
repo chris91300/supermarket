@@ -8,6 +8,6 @@ const formAddToCartSlice = createSlice({
     reducers,
 });
 
-export const { toogleIsVisible } = formAddToCartSlice.actions;
+export const { addProduct, toogleIsVisible } = formAddToCartSlice.actions;
 
 export default formAddToCartSlice.reducer;

@@ -25,6 +25,11 @@ export type cartTypes = productChoosen[];
 
 export type favoritesTypes = product[];
 
+export type formAddToCartType = {
+    product: product;
+    visible: boolean;
+};
+
 export interface actionType {
     type: string;
 }

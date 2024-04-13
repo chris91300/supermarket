@@ -36,7 +36,7 @@ export default function CardProduct({ product }: Props) {
     toast.success(toastText);
   }
   const displayAddToCartForm = ()=>{
-    showAddToCartForm();
+    showAddToCartForm(product);
   };
   
   return (

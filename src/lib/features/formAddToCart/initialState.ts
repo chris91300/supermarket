@@ -1,3 +1,8 @@
-const formAddToCartIsVisibleInitialState = false;
+import { product } from "@/types/types";
 
-export default formAddToCartIsVisibleInitialState;
+const formAddToCartInitialState = {
+    product: {} as product,
+    visible: false,
+};
+
+export default formAddToCartInitialState;

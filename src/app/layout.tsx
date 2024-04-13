@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Providers from "./Provider";
-import store from "../lib/store";
 import Header from './_components/global/header/Header'
 import { Toaster } from "sonner";
+import ModalHandler from "./_components/global/modal/ModalHandler";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +25,7 @@ export default function RootLayout({
         <Providers>
           <Header />
         {children}
+        <ModalHandler />
         <Toaster closeButton toastOptions={{
             classNames: {
               error: 'bg-red-400',
