@@ -2,14 +2,19 @@
 
 import React from 'react'
 
-export default function BubbleCount({ count, }:{count: number}) {
+type props = {
+  count: number,
+  className: string
+}
+
+export default function BubbleCount({ count, className }:props) {
+
+  
+  const defaultClassName = `absolute top-[-5px] right-[-5px] flex justify-center items-center rounded-full `;
+  const finalClassName = defaultClassName + className;
+   
   return (
-    <div className='absolute w-5 h-5 top-[-5px] right-[-5px]
-                    flex justify-center items-center rounded-full
-                    transition-all duration-500
-                    text-white bg-violet
-                    group-hover:text-violet group-hover:bg-white'
-    >
+    <div className={ finalClassName } >
         <p>
             { count }
         </p>

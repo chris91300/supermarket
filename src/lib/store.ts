@@ -3,13 +3,17 @@ import cartReducer from "./features/cart/cartSlice";
 import favoritesReducer from "./features/favorites/favoritesSlice";
 import formAddToCartReducer from "./features/formAddToCart/formAddToCartSlice";
 
-const store = configureStore({
-    reducer: {
-        cart: cartReducer,
-        favorites: favoritesReducer,
-        formAddToCart: formAddToCartReducer,
-    },
-});
+export const createStore = () => {
+    return configureStore({
+        reducer: {
+            cart: cartReducer,
+            favorites: favoritesReducer,
+            formAddToCart: formAddToCartReducer,
+        },
+    });
+};
+
+const store = createStore();
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;

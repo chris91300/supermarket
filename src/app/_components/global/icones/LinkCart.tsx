@@ -14,7 +14,12 @@ export default function LinkCart({ size }: {size: number}){
     return(
         <div className="relative group transition-all duration-500 text-white hover:text-violet">
             <Link href="/cart">
-                <BubbleCount count={totalFavorites} />
+                <BubbleCount
+                    className="w-5 h-5 transition-all duration-500
+                            text-white bg-violet
+                            group-hover:text-violet group-hover:bg-white"
+                    count={totalFavorites}
+                />
                 <FaShoppingCart size={size} />
              </Link>
         </div>

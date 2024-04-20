@@ -12,21 +12,16 @@ import useIsInFavorites from './hooks/useIsInFavorites';
 import useAddOrRemoveFromFavorites from './hooks/useAddOrRemoveFromFavorites';
 import useToogleAddToCartForm from './hooks/useToogleAddToCartForm';
 import { toast } from 'sonner';
-/**
- * "name" :"fraises",
-    "id" : "1",
-    "img" : "fraise.jpg",
-    "packaging" : "barquette de 250g",
-    "price" : 3.20  
-`
- */
+
 type Props = {
   product: article
 }
-// maintenant voir si ça fonctionne
+
+
 export default function CardProduct({ product }: Props) {
   
   const isInFavorites = useIsInFavorites(product);
+  
   const addOrRemoveFromFavorites = useAddOrRemoveFromFavorites();
   const showAddToCartForm = useToogleAddToCartForm();
   const { name, img, packaging, price } = product;
@@ -53,7 +48,7 @@ export default function CardProduct({ product }: Props) {
       </div>
       <div className='flex items-center justify-between'>
         <CardProductPrice price={price} />
-        <ButtonAddToCart click={ displayAddToCartForm }/>
+        <ButtonAddToCart product={product} click={ displayAddToCartForm }/>
       </div>
     </div>
   )

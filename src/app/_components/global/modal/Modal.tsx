@@ -13,15 +13,6 @@ type Props = {
 export default function Modal({product, visible}: Props) {
     const { alreadyInCart, defaultQuantity, submitFunction } = useDataForForm(product);
     
-
-    /**
-     * a voir par la suite => si le product est dans le panier alors récup la quantity et 
-     *  A : la submit function sera changeProductQuantity payload => id et quantity
-     *      sinon faire comme là
-     *  B : afficher la bonner quantité dans le input
-     *  C : dans CardProduct ajouter une bulle au niveau du cartIcon qui affiche la quantité de cette article mis dans le panier
-     */
-
   return (    
     visible && 
     <>
