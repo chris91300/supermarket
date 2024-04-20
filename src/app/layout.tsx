@@ -5,7 +5,7 @@ import "./globals.css";
 import Providers from "./Provider";
 import Header from './_components/global/header/Header'
 import { Toaster } from "sonner";
-import ModalHandler from "./_components/global/modal/ModalHandler";
+import ModalHandler from "./_components/global/modalAddToCart/ModalHandler";
 
 const inter = Inter({ subsets: ["latin"] });
 

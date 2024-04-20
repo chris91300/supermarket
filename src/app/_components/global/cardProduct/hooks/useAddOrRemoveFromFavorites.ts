@@ -9,9 +9,10 @@ import {
 export default function useAddOrRemoveFromFavorites() {
     const dispatch = useAppDispatch();
     const favorites = useFavorites();
+    const { products } = favorites;
 
     return (product: product) => {
-        const isInFavorites = includes(product, favorites);
+        const isInFavorites = includes(product, products);
         if (isInFavorites) {
             dispatch(deleteProduct(product.id));
             return `${product.name} a bien été retirer de vos favories.`;

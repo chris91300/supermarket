@@ -2,7 +2,7 @@
 
 import { product } from '@/types/types';
 import React from 'react'
-import useSearchForTheProductInTheCart from '../../modal/hooks/useSearchForTheProductInTheCart';
+import useSearchForTheProductInTheCart from '../../modalAddToCart/hooks/useSearchForTheProductInTheCart';
 import { productChoosen } from '@/types/types';
 import BubbleCount from '../../bubbleCount/BubbleCount';
 import { FaShoppingCart } from "react-icons/fa";

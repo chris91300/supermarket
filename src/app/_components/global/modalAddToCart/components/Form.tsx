@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { product } from '@/types/types';
 import useCloseModal from '../hooks/useCloseModal';
 import ButtonClose from '../../buttons/ButtonClose';
-import Title from './Title';
-import LabelAndInput from './LabelAndInput';
-import Price from './Price';
+import Title from '../../title/Title';
+import LabelAndInput from '../../labelAndInput/LabelAndInput';
+import Price from '../../price/Price';
 import Buttons from './Buttons';
 
 type Props = {

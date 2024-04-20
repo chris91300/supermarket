@@ -23,7 +23,10 @@ export interface productModification extends id {
 
 export type cartTypes = productChoosen[];
 
-export type favoritesTypes = product[];
+export type favoritesTypes = {
+    products: product[];
+    visible: boolean;
+};
 
 export type formAddToCartType = {
     product: product;

@@ -8,6 +8,7 @@ const favoritesSlice = createSlice({
     reducers,
 });
 
-export const { addProduct, deleteProduct, empty } = favoritesSlice.actions;
+export const { addProduct, deleteProduct, toogleIsVisible, empty } =
+    favoritesSlice.actions;
 
 export default favoritesSlice.reducer;

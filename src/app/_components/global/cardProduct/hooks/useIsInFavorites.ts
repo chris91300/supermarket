@@ -4,7 +4,8 @@ import { includes } from "ramda";
 
 export default function useIsInFavorites(product: product) {
     const favorites = useFavorites();
-    const isInFavorites = includes(product, favorites);
+    const { products } = favorites;
+    const isInFavorites = includes(product, products);
 
     return isInFavorites;
 }
