@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { product } from '@/types/types';
-import useCloseModal from '../hooks/useCloseModal';
+import useCloseModal from '../hooks/useCloseModalAddToForm';
 import ButtonClose from '../../buttons/ButtonClose';
 import Title from '../../title/Title';
 import LabelAndInput from '../../labelAndInput/LabelAndInput';
@@ -36,13 +36,14 @@ export default function Form({ product, defaultQuantity, alreadyInCart, submitFu
 
 
   return (
-    <form className='relative flex flex-col w-4/5 max-w-80 bg-white opacity-1 p-5 gap-2' onSubmit={submit}>
+    <form className='flex flex-col gap-4' onSubmit={submit}>
         <ButtonClose close={closeModal} />
         <Title>AJOUTER AU PANIER</Title>
         <LabelAndInput
             name={name}
             packaging={packaging}
             quantity={quantity}
+            price={price}
             handleChange={handleChange}
         />
         <Price totalPrice={totalPrice} />

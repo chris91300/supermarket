@@ -3,33 +3,29 @@
 import { product } from '@/types/types';
 import React from 'react'
 import useSearchForTheProductInTheCart from '../../modalAddToCart/hooks/useSearchForTheProductInTheCart';
-import { productChoosen } from '@/types/types';
 import BubbleCount from '../../bubbleCount/BubbleCount';
 import { FaShoppingCart } from "react-icons/fa";
-import { getQuantity } from '@/app/_utils/getQuantity';
+import getProductQuantityInCart from './utils/getProductQuantityInCart';
 
 type Props = {
   product: product,
     click:()=>void
 }
 
-function getProductQuantityInCart(productsFound: productChoosen[]){
-  if(productsFound.length > 0){
-    const productChoosen = productsFound[0];
-    return getQuantity(productChoosen)
-  } else {
-    return 0
-  }
-}
+
 
 
 export default function ButtonAddToCart({ product, click }: Props) {
   const { productFounds } = useSearchForTheProductInTheCart(product);
-  const productQuantityInCart = getProductQuantityInCart(productFounds)
+  const productQuantityInCart = getProductQuantityInCart(productFounds);
+
+  const title = productQuantityInCart > 0 ?
+                `Vous en avez ${productQuantityInCart} dans votre panier` :
+                "Ajouter à votre panier"
 
 
   return (
-    <button className='relative' title="ajouter à votre panier" onClick={click}>
+    <button className='relative' title={title} onClick={click}>
       {
         productQuantityInCart > 0 &&
         <BubbleCount

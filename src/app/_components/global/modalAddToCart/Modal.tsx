@@ -1,9 +1,10 @@
 'use client'
 
 import React from 'react'
-import useDataForForm from './hooks/useDataForForm'
+import useDataForFormAddToCart from './hooks/useDataForFormAddToCart'
 import Form from './components/Form'
 import { product } from '@/types/types'
+import ModalContainer from '../modalContainer/ModalContainer'
 
 type Props = {
     product: product,
@@ -11,19 +12,19 @@ type Props = {
 } 
 
 export default function Modal({product, visible}: Props) {
-    const { alreadyInCart, defaultQuantity, submitFunction } = useDataForForm(product);
+    const { alreadyInCart, defaultQuantity, submitFunction } = useDataForFormAddToCart(product);
     
   return (    
     visible && 
     <>
-        <div className='absolute top-0 z-10 w-full h-full flex justify-center items-center bg-black bg-opacity-70'>
+        <ModalContainer>
             <Form 
                 product={product}
                 defaultQuantity={ defaultQuantity }
                 alreadyInCart={ alreadyInCart }
                 submitFunction={ submitFunction }
             />
-        </div>
+        </ModalContainer>
     </>    
   )
 }

@@ -1,4 +1,6 @@
 import React from 'react'
+import Input from '../../buttons/Input';
+import ButtonCancel from '../../buttons/ButtonCancel';
 
 type Props = {
     alreadyInCart: boolean,
@@ -13,8 +15,8 @@ export default function Buttons({
     const value = alreadyInCart? "modifier" : "ajouter";
   return (
     <div className='flex items-center justify-around'>
-        <input type='submit' value={ value } className='text-green-500'/>
-        <button className='text-red-500' onClick={closeModal}>annuler</button>
+        <Input value={ value }/>
+        <ButtonCancel close={closeModal}/>
     </div>
   )
 }

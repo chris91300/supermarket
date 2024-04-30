@@ -1,8 +1,7 @@
 import { useAppDispatch } from "@/app/_hooks/hooks";
-import { product } from "@/types/types";
-import { toogleIsVisible } from "@/lib/features/formAddToCart/formAddToCartSlice";
+import { toogleIsVisible } from "@/lib/features/favorites/favoritesSlice";
 
-export default function useCloseModal() {
+export default function useCloseModalFavorites() {
     const dispatch = useAppDispatch();
     return function closeModal() {
         dispatch(toogleIsVisible());

@@ -19,7 +19,7 @@ export default function BannerTitle({ title, img, alt }: BannerTitleType) {
         fill={true}
         className='object-cover object-center'
       />
-      <h1 className='flex justify-center items-center w-full bg-black opacity-50 text-white text-4xl font-bold'>
+      <h1 className='flex justify-center items-center w-full bg-black bg-opacity-50 text-white text-opa text-4xl font-bold text-center z-10'>
           { title }
       </h1>
     </div>

@@ -111,3 +111,13 @@ export type bannerInformations = {
     bannerImg: string;
     bannerAlt: string;
 };
+
+export interface dataForFormAddToCart {
+    alreadyInCart: boolean;
+    defaultQuantity: number;
+    submitFunction: (newQuantity: number) => void;
+}
+
+export interface dataForFormFavorites extends dataForFormAddToCart {
+    product: product;
+}

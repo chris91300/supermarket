@@ -7,7 +7,7 @@ type Props = {
 export default function Price({ totalPrice }: Props) {
     const price = `${totalPrice}€`;
   return (
-    <p className='font-bold text-center'>{ price }</p>
+    <p className='font-bold text-center'>{ `Total : ${price}` }</p>
   )
 }
 

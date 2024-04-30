@@ -6,7 +6,7 @@ type Props = {
 
 export default function Title({children}: Props) {
   return (
-    <h2 className='text-center font-bold'>{ children }</h2>
+    <h2 className='text-center font-bold text-2xl'>{ children }</h2>
   )
 }
 

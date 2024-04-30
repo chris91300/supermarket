@@ -5,7 +5,8 @@ import "./globals.css";
 import Providers from "./Provider";
 import Header from './_components/global/header/Header'
 import { Toaster } from "sonner";
-import ModalHandler from "./_components/global/modalAddToCart/ModalHandler";
+import ModalAddToCartHandler from "./_components/global/modalAddToCart/ModalAddToCartHandler";
+import ModalFavoritesHandler from "./_components/global/modalFavorites/ModalFavoritesHandler";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +26,8 @@ export default function RootLayout({
         <Providers>
           <Header />
         {children}
-        <ModalHandler />
+        <ModalAddToCartHandler />
+        <ModalFavoritesHandler />
         <Toaster closeButton toastOptions={{
             classNames: {
               error: 'bg-red-400',

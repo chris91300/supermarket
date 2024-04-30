@@ -12,7 +12,10 @@ export default function LinkCart({ size }: {size: number}){
     const totalFavorites = favorites.length;    
 
     return(
-        <div className="relative group transition-all duration-500 text-white hover:text-violet">
+        <div
+            title="Voir votre panier"
+            className="relative group transition-all duration-500 text-white hover:text-violet"
+        >
             <Link href="/cart">
                 <BubbleCount
                     className="w-5 h-5 transition-all duration-500

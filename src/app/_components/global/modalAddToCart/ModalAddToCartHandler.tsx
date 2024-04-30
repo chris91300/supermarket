@@ -6,7 +6,7 @@ import { useFormAddToCart } from '@/app/_hooks/hooks';
 
 type Props = {}
 
-function ModalHandler({}: Props) {
+function ModalAddToCartHandler({}: Props) {
 
     const { product, visible } = useFormAddToCart();
 
@@ -15,4 +15,4 @@ function ModalHandler({}: Props) {
   )
 }
 
-export default ModalHandler
+export default ModalAddToCartHandler

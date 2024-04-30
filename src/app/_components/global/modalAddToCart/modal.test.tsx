@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { createStore } from "@/lib/store";
 import { Provider } from "react-redux";
-import ModalHandler from "./ModalHandler";
+import ModalHandler from "./ModalAddToCartHandler";
 
 const productMocked = {
     name: "fraises",
@@ -44,7 +44,7 @@ describe("TEST OF MODALHANDLER COMPONENT", () => {
         const productPackaging = screen.getByText(productMocked.packaging);
         expect(productPackaging).toBeInTheDocument();
 
-        const totalPrice = screen.getByText('0.00€');
+        const totalPrice = screen.getByText('Total : 0.00€');
         expect(totalPrice).toBeInTheDocument();
         
         const input = screen.getByRole("spinbutton");
@@ -74,7 +74,7 @@ describe("TEST OF MODALHANDLER COMPONENT", () => {
             );
         
         
-        const totalPrice = screen.getByText('0.00€');
+        const totalPrice = screen.getByText('Total : 0.00€');
         expect(totalPrice).toBeInTheDocument();
         
         const input = screen.getByRole("spinbutton");
@@ -83,20 +83,21 @@ describe("TEST OF MODALHANDLER COMPONENT", () => {
 
         await user.dblClick(input)
         await user.keyboard("1")
-        const newTotalPrice = screen.getByText(`${productMocked.price.toFixed(2)}€`)
+        const newTotalPrice = screen.getByText(`Total : ${productMocked.price.toFixed(2)}€`)
         expect(newTotalPrice).toBeInTheDocument();
 
         await user.dblClick(input)
         await user.keyboard("5")
-        const newTotalPriceMultiBy5 = screen.getByText(`${(productMocked.price * 5).toFixed(2)}€`)
+        const newTotalPriceMultiBy5 = screen.getByText(`Total : ${(productMocked.price * 5).toFixed(2)}€`)
         expect(newTotalPriceMultiBy5).toBeInTheDocument();
 
         await user.dblClick(input)
         await user.keyboard("3")
-        const newTotalPriceMultiBy3 = screen.getByText(`${(productMocked.price * 3).toFixed(2)}€`)
+        const newTotalPriceMultiBy3 = screen.getByText(`Total : ${(productMocked.price * 3).toFixed(2)}€`)
         expect(newTotalPriceMultiBy3).toBeInTheDocument();
     })
 
+    // I create a store above the 2 next tests because i use the same store
     const store = createStore();
 
     it("should add product in cart", async () =>{
@@ -115,7 +116,7 @@ describe("TEST OF MODALHANDLER COMPONENT", () => {
 
         expect(cart).toHaveLength(0)
         
-        const totalPrice = screen.getByText('0.00€');
+        const totalPrice = screen.getByText('Total : 0.00€');
         expect(totalPrice).toBeInTheDocument();
         
         const input = screen.getByRole("spinbutton");
@@ -126,7 +127,7 @@ describe("TEST OF MODALHANDLER COMPONENT", () => {
 
         await user.dblClick(input)
         await user.keyboard("5")
-        const newTotalPriceMultiBy5 = screen.getByText(`${(productMocked.price * 5).toFixed(2)}€`)
+        const newTotalPriceMultiBy5 = screen.getByText(`Total : ${(productMocked.price * 5).toFixed(2)}€`)
         expect(newTotalPriceMultiBy5).toBeInTheDocument();
 
         await user.click(validerButton);
@@ -152,7 +153,7 @@ describe("TEST OF MODALHANDLER COMPONENT", () => {
         </Provider>
         );
 
-        const totalPrice = screen.getByText(`${(productMocked.price * 5).toFixed(2)}€`);
+        const totalPrice = screen.getByText(`Total : ${(productMocked.price * 5).toFixed(2)}€`);
         expect(totalPrice).toBeInTheDocument();
         
         const input = screen.getByRole("spinbutton");

@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react"
-import store from "@/lib/store";
 import { Provider } from "react-redux";
 import CardProduct from "./CardProduct";
 import userEvent from "@testing-library/user-event";
+import { createStore } from "@/lib/store";
 
 const product = {
     "name" :"fraises",
@@ -15,6 +15,8 @@ const product = {
 describe("TEST OF CARDPRODUCT COMPONENT", () => {
     it("should display a CardProduct component", () => {
 
+        const store = createStore();
+
         render(<Provider store={store}>
                     <CardProduct product={product} />
                 </Provider>
@@ -24,8 +26,8 @@ describe("TEST OF CARDPRODUCT COMPONENT", () => {
         const packaging = screen.getByText(product.packaging);
         const price = screen.getByText(`${product.price}€`);
         const image = screen.getByAltText(`image du produit: ${product.name}`)
-        const heartIcon = screen.getByTitle("ajouter à vos favories")
-        const cartIcon = screen.getByTitle("ajouter à votre panier")
+        const heartIcon = screen.getByTitle("Ajouter à vos favories")
+        const cartIcon = screen.getByTitle("Ajouter à votre panier")
         const buttons = screen.getAllByRole("button");
 
 
@@ -40,17 +42,19 @@ describe("TEST OF CARDPRODUCT COMPONENT", () => {
 
     it("should add product to favorites when user click on heartIcon", async () => {
         const user = userEvent.setup();
+        const store = createStore();
+
         render(<Provider store={store}>
                     <CardProduct product={product} />
                 </Provider>
             );
         
-        const heartIcon = screen.getByTitle("ajouter à vos favories");
+        const heartIcon = screen.getByTitle("Ajouter à vos favories");
         expect(heartIcon).toBeInTheDocument();
 
         await user.click(heartIcon);
 
-        const fullHeartIcon = screen.getByTitle("retirer de vos favories");
+        const fullHeartIcon = screen.getByTitle("Retirer de vos favories");
         expect(fullHeartIcon).toBeInTheDocument();
     })
 })

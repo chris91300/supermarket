@@ -6,7 +6,7 @@ import getDefaultQuantity from "./getDefaultQuantity";
 import useGetSubmitFunction from "./usePrepareUseSubmitFunction";
 
 //  IL FAUT FACTORISER
-export default function useDataForForm(product: product) {
+export default function useDataForFormAddToCart(product: product) {
     const getData = pipe(
         useSearchForTheProductInTheCart,
         getAlreadyInCart,
