@@ -15,6 +15,8 @@ export const createStore = () => {
 
 const store = createStore();
 
+export type Store = ReturnType<typeof createStore>;
+
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;
 // Inferred type: {cart: CartState, favorites: favoritesState, formAddToCart: formAddToCartState}

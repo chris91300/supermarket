@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import ModalHandler from "./ModalFavoritesHandler";
 import { addProduct, toogleIsVisible } from "@/lib/features/favorites/favoritesSlice";
 import { add, multiply } from "ramda";
-import { renderWrappedByProvider } from "@/app/_utils/forTests/renderWrappedByProvider";
+import { getRenderWithStore, renderWrappedByProvider } from "@/app/_utils/forTests/renderWrappedByProvider";
 
 const product1Mocked = {
     name: "fraises",
@@ -40,10 +40,8 @@ describe("TEST OF MODAL FAVORITES", () => {
         const user = userEvent.setup();
         const store = createStore();
         store.dispatch(toogleIsVisible());
-        render( <Provider store={store}>
-                    <ModalHandler />
-                </Provider>
-            );
+        const renderWithStore = getRenderWithStore(store);
+        renderWithStore(<ModalHandler />)
         
         const emptyFavorites = screen.getByText("Vous n'avez aucun produit dans vos favories");
         expect(emptyFavorites).toBeInTheDocument();
@@ -63,10 +61,8 @@ describe("TEST OF MODAL FAVORITES", () => {
         store.dispatch(addProduct(product2Mocked))
         store.dispatch(toogleIsVisible());
 
-        render( <Provider store={store}>
-                    <ModalHandler />
-                </Provider>
-            );
+        const renderWithStore = getRenderWithStore(store);
+        renderWithStore(<ModalHandler />)
         
         const titleFavorites = screen.getByRole("heading", {level: 2, name: "FAVORIES"});
         expect(titleFavorites).toBeInTheDocument();
@@ -105,10 +101,8 @@ describe("TEST OF MODAL FAVORITES", () => {
         store.dispatch(addProduct(product2Mocked))
         store.dispatch(toogleIsVisible());
 
-        render( <Provider store={store}>
-                    <ModalHandler />
-                </Provider>
-            );
+        const renderWithStore = getRenderWithStore(store);
+        renderWithStore(<ModalHandler />)
         
 
         const inputs = screen.getAllByRole("spinbutton");
@@ -165,10 +159,8 @@ describe("TEST OF MODAL FAVORITES", () => {
         store.dispatch(addProduct(product2Mocked))
         store.dispatch(toogleIsVisible());
 
-        render( <Provider store={store}>
-                    <ModalHandler />
-                </Provider>
-            );
+        const renderWithStore = getRenderWithStore(store);
+        renderWithStore(<ModalHandler />)
         
 
         const inputs = screen.getAllByRole("spinbutton");
@@ -224,10 +216,8 @@ describe("TEST OF MODAL FAVORITES", () => {
 
         store.dispatch(toogleIsVisible());
 
-        render( <Provider store={store}>
-                    <ModalHandler />
-                </Provider>
-            );
+        const renderWithStore = getRenderWithStore(store);
+        renderWithStore(<ModalHandler />)
         
 
         const inputs = screen.getAllByRole("spinbutton");
@@ -244,10 +234,8 @@ describe("TEST OF MODAL FAVORITES", () => {
 
         const user = userEvent.setup();
 
-        render( <Provider store={store}>
-                    <ModalHandler />
-                </Provider>
-            );
+        const renderWithStore = getRenderWithStore(store);
+        renderWithStore(<ModalHandler />)
         
 
         const inputs = screen.getAllByRole("spinbutton");
@@ -275,10 +263,8 @@ describe("TEST OF MODAL FAVORITES", () => {
         const user = userEvent.setup();
         store.dispatch(toogleIsVisible());
 
-        render( <Provider store={store}>
-                    <ModalHandler />
-                </Provider>
-            );
+        const renderWithStore = getRenderWithStore(store);
+        renderWithStore(<ModalHandler />)
         
 
         const inputs = screen.getAllByRole("spinbutton");
@@ -306,10 +292,8 @@ describe("TEST OF MODAL FAVORITES", () => {
         const user = userEvent.setup();
         store.dispatch(toogleIsVisible());
 
-        render( <Provider store={store}>
-                    <ModalHandler />
-                </Provider>
-            );
+        const renderWithStore = getRenderWithStore(store);
+        renderWithStore(<ModalHandler />)
         
 
 

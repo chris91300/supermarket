@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { createStore } from "@/lib/store";
 import { Provider } from "react-redux";
 import ModalHandler from "./ModalAddToCartHandler";
+import { getRenderWithStore } from "@/app/_utils/forTests/renderWrappedByProvider";
 
 const productMocked = {
     name: "fraises",
@@ -17,9 +18,9 @@ describe("TEST OF MODALHANDLER COMPONENT", () => {
    
     it("should not display the modal component", () =>{
         const store = createStore();
-        render( <Provider store={store} >
-                    <ModalHandler />
-                </Provider>);
+        const renderWithStore = getRenderWithStore(store);
+        renderWithStore(<ModalHandler />)
+
         const title = screen.queryByRole("heading", {level: 2, name: "AJOUTER AU PANIER"});
         expect(title).not.toBeInTheDocument();
     })
@@ -29,11 +30,8 @@ describe("TEST OF MODALHANDLER COMPONENT", () => {
         store.dispatch({type: "formAddToCart/addProduct", payload: productMocked})
         store.dispatch({type: "formAddToCart/toogleIsVisible"})
        
-        render( <Provider store={store} >
-                    <ModalHandler />
-                </Provider>
-            );
-        
+        const renderWithStore = getRenderWithStore(store);
+        renderWithStore(<ModalHandler />)        
         
         const title = screen.getByRole("heading", {level: 2, name: "AJOUTER AU PANIER"});
         expect(title).toBeInTheDocument();
@@ -68,10 +66,8 @@ describe("TEST OF MODALHANDLER COMPONENT", () => {
         store.dispatch({type: "formAddToCart/addProduct", payload: productMocked})
         store.dispatch({type: "formAddToCart/toogleIsVisible"})
        
-        render( <Provider store={store} >
-                    <ModalHandler />
-                </Provider>
-            );
+        const renderWithStore = getRenderWithStore(store);
+        renderWithStore(<ModalHandler />)
         
         
         const totalPrice = screen.getByText('Total : 0.00€');
@@ -106,10 +102,8 @@ describe("TEST OF MODALHANDLER COMPONENT", () => {
         store.dispatch({type: "formAddToCart/addProduct", payload: productMocked})
         store.dispatch({type: "formAddToCart/toogleIsVisible"})
        
-        render( <Provider store={store} >
-                    <ModalHandler />
-                </Provider>
-            );
+        const renderWithStore = getRenderWithStore(store);
+        renderWithStore(<ModalHandler />)
         
         const state = store.getState();
         const { cart } = state;
@@ -148,10 +142,8 @@ describe("TEST OF MODALHANDLER COMPONENT", () => {
 
         store.dispatch({type: "formAddToCart/addProduct", payload: productMocked})
         store.dispatch({type: "formAddToCart/toogleIsVisible"})
-        render( <Provider store={store} >
-            <ModalHandler />
-        </Provider>
-        );
+        const renderWithStore = getRenderWithStore(store);
+        renderWithStore(<ModalHandler />)
 
         const totalPrice = screen.getByText(`Total : ${(productMocked.price * 5).toFixed(2)}€`);
         expect(totalPrice).toBeInTheDocument();
