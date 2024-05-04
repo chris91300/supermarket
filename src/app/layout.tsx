@@ -20,9 +20,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const bodyStyle = `${inter.className} relative`;
   return (
     <html lang="fr">
-      <body className={inter.className}>
+      <body className={bodyStyle}>
         <Providers>
           <Header />
         {children}

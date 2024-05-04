@@ -8,18 +8,19 @@ import { render, RenderOptions } from "@testing-library/react";
 function getProvider(store: Store){
 
   const myProvider = ({children}: {children: React.ReactNode}) => {
-      //const store = createStore();
       return (
       <Provider store={ store } >
           {children}
       </Provider>
       )
     }
+
   return myProvider;
 }
 
 
   const store = createStore();
+  
   const myProvider = getProvider(store);
   
   const renderWrappedByProvider = (ui: ReactElement , options?: Omit<RenderOptions, 'wrapper'>) =>

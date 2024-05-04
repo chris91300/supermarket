@@ -14,7 +14,7 @@ describe("TEST OF MENUASIDE COMPONENT", () => {
         render(<MenuAside />)
 
         map((category)=>{
-            const { menu, subMenu } = category;
+            const { menu } = category;
             const button = screen.getByRole("button", {name: menu})
             expect(button).toBeInTheDocument();
         }, menuList)

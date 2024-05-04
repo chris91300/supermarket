@@ -1,12 +1,12 @@
 import { categoryForBuildMenu } from '@/types/types';
-import { v4 as randomID } from 'uuid';
 import MenuContainer from "../MenuContainer"
 import SubMenuContainer from '../SubMenuContainer';
+import { nanoid } from '@reduxjs/toolkit';
 
 
 export default function getMenuContainerComponent({menu, subMenu}: categoryForBuildMenu){
     return (
-    <MenuContainer  primaryMenu={menu} key={randomID()} >
+    <MenuContainer  primaryMenu={menu} key={nanoid()} >
         <SubMenuContainer primaryMenu={menu} secondaryMenu={subMenu} />
     </MenuContainer>
     )

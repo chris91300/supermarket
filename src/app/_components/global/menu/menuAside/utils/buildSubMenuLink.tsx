@@ -1,12 +1,12 @@
 import { curry } from "ramda";
 import SubMenuLink from "../SubMenuLink";
-import { v4 as randomID } from 'uuid';
+import { nanoid } from "@reduxjs/toolkit";
 
 
 function buildSubMenuLink (primaryMenu: string, secondaryMenu: string){
 return (
     <SubMenuLink
-        key={randomID()}
+        key={nanoid()}
         primaryMenu={primaryMenu}
         secondaryMenu={secondaryMenu}
     /> 

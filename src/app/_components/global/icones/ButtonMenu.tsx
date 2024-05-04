@@ -1,9 +1,14 @@
 import React from 'react'
 import { TiThMenu } from "react-icons/ti";
 
-export default function ButtonMenu({ size }: {size: number}) {
+type Props = {
+  size: number,
+  onClick: ()=>void
+}
+
+export default function ButtonMenu({ size, onClick }: Props) {
   return (
-    <button className='text-violet md:hidden'>
+    <button className='text-violet md:hidden' onClick={onClick}>
     <TiThMenu size={size} />
     </button>
   )
