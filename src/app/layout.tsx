@@ -23,7 +23,7 @@ export default function RootLayout({
 
   const bodyStyle = `${inter.className} relative`;
   return (
-    <html lang="fr">
+    <html lang="fr" className="min-h-full">
       <body className={bodyStyle}>
         <Providers>
           <Header />
