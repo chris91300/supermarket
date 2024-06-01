@@ -31,6 +31,31 @@ const config: Config = {
                 "frais-title": "url('/img/banner/frais.jpg')",
                 frais: "url('/img/banner/frais.jpg')",
             },
+            keyframes: {
+                cartMove: {
+                    "100%": { left: "75%" },
+                },
+                cloudAndTreeMove: {
+                    "0%": { left: "100%" },
+                    "100%": { left: "-10%" },
+                },
+                firstTownMove: {
+                    "0%": { left: "60%" },
+                    "100%": { left: "10%" },
+                },
+                secondTownMove: {
+                    "0%": { left: "80%" },
+                    "100%": { left: "30%" },
+                },
+            },
+            animation: {
+                cartIsMoving: "cartMove 45s 0s linear infinite",
+                cloudIsMoving: "cloudAndTreeMove 45s 0s linear infinite",
+                firstTreeIsMoving: "cloudAndTreeMove 5s 0s linear infinite",
+                secondTreeIsMoving: "cloudAndTreeMove 5s 2s linear infinite",
+                firstTownIsMoving: "firstTownMove 360s 0s linear infinite",
+                secondTownIsMoving: "secondTownMove 360s 0s linear infinite",
+            },
         },
     },
     plugins: [],
