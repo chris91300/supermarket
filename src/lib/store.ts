@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "./features/cart/cartSlice";
 import favoritesReducer from "./features/favorites/favoritesSlice";
 import formAddToCartReducer from "./features/formAddToCart/formAddToCartSlice";
+import promoCodeReducer from "./features/promoCode/promoCodeSlice";
 
 export const createStore = () => {
     return configureStore({
@@ -9,6 +10,7 @@ export const createStore = () => {
             cart: cartReducer,
             favorites: favoritesReducer,
             formAddToCart: formAddToCartReducer,
+            promoCode: promoCodeReducer,
         },
     });
 };

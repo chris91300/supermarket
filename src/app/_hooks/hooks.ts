@@ -10,3 +10,4 @@ export const useCart = () => useAppSelector((state) => state.cart);
 export const useFavorites = () => useAppSelector((state) => state.favorites);
 export const useFormAddToCart = () =>
     useAppSelector((state) => state.formAddToCart);
+export const usePromoCode = () => useAppSelector((state) => state.promoCode);

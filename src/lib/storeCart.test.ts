@@ -1,9 +1,4 @@
-import {
-    cartTypes,
-    product,
-    productChoosen,
-    productModification,
-} from "../types/types";
+import { cartTypes, productChoosen, productModification } from "../types/types";
 import cartReducer, {
     addProduct,
     changeProductQuantity,
@@ -12,25 +7,31 @@ import cartReducer, {
 } from "./features/cart/cartSlice";
 import cartInitialState from "./features/cart/initialState";
 
+const mockProduc1 = {
+    id: "1",
+    name: "name 1",
+    img: "img name 1",
+    packaging: "packaging 1",
+    price: 10,
+};
+
+const mockProduct2 = {
+    id: "2",
+    name: "name 2",
+    img: "img name 2",
+    packaging: "packaging 2",
+    price: 20,
+};
+
 const mockState: cartTypes = [
     {
         id: "1",
-        product: {
-            id: "1",
-            img: "img name 1",
-            packaging: "packaging 1",
-            price: 10,
-        },
+        product: mockProduc1,
         quantity: 1,
     },
     {
         id: "2",
-        product: {
-            id: "2",
-            img: "img name 2",
-            packaging: "packaging 2",
-            price: 20,
-        },
+        product: mockProduct2,
         quantity: 2,
     },
 ];
@@ -42,16 +43,9 @@ describe("test of the cart in the store", () => {
     });
 
     it("should add a product into the cart", () => {
-        const product: product = {
-            id: "1",
-            img: "img name",
-            packaging: "packaging",
-            price: 10,
-        };
-
         const productChoosen: productChoosen = {
             id: "1",
-            product: product,
+            product: mockProduc1,
             quantity: 1,
         };
 
@@ -70,12 +64,7 @@ describe("test of the cart in the store", () => {
         const stateExpected: cartTypes = [
             {
                 id: "2",
-                product: {
-                    id: "2",
-                    img: "img name 2",
-                    packaging: "packaging 2",
-                    price: 20,
-                },
+                product: mockProduct2,
                 quantity: 2,
             },
         ];
@@ -101,22 +90,12 @@ describe("test of the cart in the store", () => {
         const expectedState: cartTypes = [
             {
                 id: "1",
-                product: {
-                    id: "1",
-                    img: "img name 1",
-                    packaging: "packaging 1",
-                    price: 10,
-                },
+                product: mockProduc1,
                 quantity: 1,
             },
             {
                 id: "2",
-                product: {
-                    id: "2",
-                    img: "img name 2",
-                    packaging: "packaging 2",
-                    price: 20,
-                },
+                product: mockProduct2,
                 quantity: 10,
             },
         ];
