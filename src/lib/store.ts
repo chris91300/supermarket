@@ -3,6 +3,7 @@ import cartReducer from "./features/cart/cartSlice";
 import favoritesReducer from "./features/favorites/favoritesSlice";
 import formAddToCartReducer from "./features/formAddToCart/formAddToCartSlice";
 import promoCodeReducer from "./features/promoCode/promoCodeSlice";
+import orderReducer from "./features/order/orderSlice";
 
 export const createStore = () => {
     return configureStore({
@@ -11,6 +12,7 @@ export const createStore = () => {
             favorites: favoritesReducer,
             formAddToCart: formAddToCartReducer,
             promoCode: promoCodeReducer,
+            order: orderReducer,
         },
     });
 };

@@ -12,7 +12,7 @@ describe("TEST OF PROMO CODE STORE", () => {
         expect(promoCode).toBeFalsy();
     });
 
-    it("should be truthy if promo code is valide", () => {
+    it("should be truthy if promo code is validated", () => {
         store.dispatch(promoCodeIsValide());
         const { promoCode } = store.getState();
         expect(promoCode).toBeTruthy();
