@@ -1,7 +1,6 @@
 import { nanoid } from "@reduxjs/toolkit"
 
 
-//  A TESTER
 export default function addBorderOnHover<T extends object>(WrappedComponent: React.ComponentType<T>){
 
     return function ComponentWithBorderOnHover(props: T){

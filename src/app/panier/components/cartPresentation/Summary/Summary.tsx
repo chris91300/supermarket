@@ -1,20 +1,21 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import TotalPrice from './totalPrice/TotalPrice'
 import ValidateCommande from './validateCommande/ValidateCommande'
 import PromoCodeForm from './handlePromoCode/promoCodeForm/PromoCodeForm'
 import PromoCodeSuccess from './handlePromoCode/promoCodeSuccess/PromoCodeSuccess'
+import { usePromoCode } from '@/app/_hooks/hooks'
 type Props = {}
 
 function Summary({}: Props) {
   
-  const [ codeIsValidated, setCodeIsValidated ] = useState(false);
+  const promoCodeIsValid = usePromoCode();
 
   return (
     <div className='flex flex-col gap-4 w-52 bg-white py-4'>
       <TotalPrice />
-      { codeIsValidated ? <PromoCodeSuccess /> : <PromoCodeForm setCodeIsValidated={setCodeIsValidated}/> }
-      <ValidateCommande codeIsValidated={ codeIsValidated }/>
+      { promoCodeIsValid ? <PromoCodeSuccess /> : <PromoCodeForm /> }
+      <ValidateCommande />
     </div>
   )
 }

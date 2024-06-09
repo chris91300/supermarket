@@ -1,16 +1,17 @@
 'use client'
 
+import { usePromoCodeIsValide } from '@/app/_hooks/hooks';
 import { test } from 'ramda';
 import React, { useState } from 'react'
 
 type Props = {
-  setCodeIsValidated: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-function PromoCodeForm({setCodeIsValidated}: Props) {
+function PromoCodeForm({}: Props) {
     const [ inputValue, setInputValue ] = useState("");
     const [loading, setLoading] = useState(false);
     const [ codeInvalidated, setCodeInvalidated ] = useState(false);
+    const promoCodeIsValide = usePromoCodeIsValide();
 
     const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
         const newValue = e.currentTarget.value;
@@ -29,7 +30,8 @@ function PromoCodeForm({setCodeIsValidated}: Props) {
       if(inputValue != ""){
         setLoading(true);
         if(inputValue === 'gratuit'){// UTILISER FETCH API
-          setCodeIsValidated(true)
+          promoCodeIsValide()
+
         }else{
           setCodeInvalidated(true)
         }
