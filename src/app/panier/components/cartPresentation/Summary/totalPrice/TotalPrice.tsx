@@ -1,7 +1,7 @@
 'use client'
 
 import getTotalPrice from '@/app/_components/global/modalFavorites/utils/getTotalPrice';
-import { useCart } from '@/app/_hooks/hooks';
+import { useCart, usePromoCode } from '@/app/_hooks/hooks';
 import getTotalQuantityOfProductInCart from '@/app/_utils/getTotalQuantityOfProductInCart';
 import React from 'react'
 
@@ -10,6 +10,7 @@ type Props = {}
 function TotalPrice({}: Props) {
 
     const cart = useCart();
+    const promoCodeIsValid = usePromoCode();
     const totalQuantityOfArticlesInCart = getTotalQuantityOfProductInCart(cart);
     const totalPrice = getTotalPrice(cart);
     const totalPriceFormatted = `${totalPrice.toFixed(2)}€`;
@@ -22,10 +23,16 @@ function TotalPrice({}: Props) {
             nombre d'article : 
             <span className='font-bold ml-2'>{ totalQuantityOfArticlesInCart }</span>        
         </p>
-        <p className='text-center'>
+        <p className={ `text-center ${promoCodeIsValid && 'line-through'}` }>
             TOTAL : 
-            <span className='font-bold ml-2'>{ totalPriceFormatted }</span>        
+            <span className="font-bold ml-2">{ totalPriceFormatted }</span>        
         </p>
+        { promoCodeIsValid && 
+          <p className="text-center">
+            TOTAL : 
+            <span className="font-bold ml-2">0.00€</span>        
+      </p>
+        }
     </div>
   )
 }
