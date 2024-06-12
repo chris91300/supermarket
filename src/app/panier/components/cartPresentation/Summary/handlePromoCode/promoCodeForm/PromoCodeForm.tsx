@@ -1,8 +1,10 @@
 'use client'
 
 import { usePromoCodeIsValide } from '@/app/_hooks/hooks';
-import { test } from 'ramda';
+import { equals, ifElse, test } from 'ramda';
 import React, { useState } from 'react'
+import checkThisPromoCode from './utils/checkThisPromoCode';
+
 
 type Props = {
 }
@@ -24,17 +26,13 @@ function PromoCodeForm({}: Props) {
       setCodeInvalidated(false);
     }
 
-    const validateCode = (e: React.SyntheticEvent) => {
+    const validateCode = async (e: React.SyntheticEvent) => {
       e.preventDefault();
       
       if(inputValue != ""){
         setLoading(true);
-        if(inputValue === 'gratuit'){// UTILISER FETCH API
-          promoCodeIsValide()
-
-        }else{
-          setCodeInvalidated(true)
-        }
+        const { codeIsValid } = await checkThisPromoCode(inputValue);
+        codeIsValid ? promoCodeIsValide() : setCodeInvalidated(true);
         setInputValue("")
         setLoading(false);
       }
