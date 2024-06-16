@@ -1,11 +1,12 @@
 import React from 'react'
+import NumberInput from './numberInput/NumberInput';
 
 export type LabelInputsTypesProps = {
     name: string,
     packaging: string,
     quantity: number,
     price: number,
-    handleChange: (e: React.FormEvent<HTMLInputElement>)=>void
+    handleChange: (value: number)=>void
 }
 
 export default function LabelAndInput({
@@ -18,15 +19,19 @@ export default function LabelAndInput({
   
   const priceFormatted = `${price}€`;
   return (
-    <div className='flex items-center'>
-        <div className='flex items-center justify-between grow pr-2'>
-          <label htmlFor="quantity" className='flex flex-col'>
-              <span className='font-bold'>{name}</span>
-              <span className='text-xs text-violet'>{packaging}</span>
-          </label>
-          <p>{priceFormatted} x</p>
-        </div>
-        <input className='w-12 border border-black rounded-lg pl-2' type="number" name='quantity' min="0" value={ quantity } onChange={handleChange}/>
+    <div className='flex flex-col items-center'>
+      <div className='flex items-center justify-between grow pr-2'>
+        <label htmlFor="quantity" className='flex flex-col text-center'>
+            <span className='font-bold'>{name}</span>
+            <span className='text-xs text-violet'>{packaging}</span>
+        </label>
+        
+      </div>
+    <div className='flex justify-center items-center gap-2 my-3'>
+      <p>{priceFormatted} x</p>
+      <NumberInput onChange={handleChange} defaultValue={quantity} />
+    </div>
+        
     </div>
   )
 }

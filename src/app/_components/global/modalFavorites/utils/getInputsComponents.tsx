@@ -14,11 +14,11 @@ function getInputsComponents(
         
     const { defaultQuantity, product } = datasProduct;
     const {name, packaging, price } = product;
-    const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
-        const newValue = Number(e.currentTarget.value);
+    const handleChange = (value: number) => {
+        //const newValue = Number(e.currentTarget.value);
         const newDatasProduct = {
             ...datasProduct,
-            defaultQuantity: newValue
+            defaultQuantity: value
         }
 
         const newState = update(index, newDatasProduct, favoritesList)

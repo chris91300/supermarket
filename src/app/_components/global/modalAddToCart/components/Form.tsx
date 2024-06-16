@@ -21,9 +21,9 @@ export default function Form({ product, defaultQuantity, alreadyInCart, submitFu
     const totalPrice = (quantity * price).toFixed(2);
 
 
-    const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
-        const newQuantity = e.currentTarget.value;
-        setQuantity(Number(newQuantity))
+    const handleChange = (value: number) => {//React.ChangeEvent???
+        //const newQuantity = e.currentTarget.value;
+        setQuantity(value)
     }
 
     const submit = (e: React.SyntheticEvent) => {

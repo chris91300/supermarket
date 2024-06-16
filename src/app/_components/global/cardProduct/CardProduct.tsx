@@ -28,7 +28,7 @@ export default function CardProduct({ product }: Props) {
 
   const toogleAddToFavorite = () => {
     const toastText = addOrRemoveFromFavorites(product);
-    toast.success(toastText);
+    toast.success(toastText);// l faut penser à ajouter cela pour chaque action au panier => voir direct dans les hooks dispatch
   }
   const displayAddToCartForm = ()=>{
     showAddToCartForm(product);
