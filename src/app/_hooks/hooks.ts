@@ -6,8 +6,23 @@ import {
     promoCodeIsValide,
     resetPromoCode,
 } from "@/lib/features/promoCode/promoCodeSlice";
-import { empty } from "@/lib/features/cart/cartSlice";
+import {
+    addProduct,
+    deleteProduct as deleteProductFromCart,
+    changeProductQuantity,
+    empty,
+} from "@/lib/features/cart/cartSlice";
 import { useRouter } from "next/navigation";
+import { product, productChoosen } from "@/types/types";
+import {
+    addProduct as addProductToFavorites,
+    deleteProduct,
+} from "@/lib/features/favorites/favoritesSlice";
+import { toast } from "sonner";
+import {
+    addProduct as addProductToCartForm,
+    toogleIsVisible,
+} from "@/lib/features/formAddToCart/formAddToCartSlice";
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
 type DispatchFunc = () => AppDispatch;
@@ -31,32 +46,111 @@ export const useOrderIsValid = () => and(useOrder(), usePromoCode());
 
 export const useOrderNeedTips = () => and(useOrder(), not(usePromoCode()));
 
-export const useEmptyTheCart = () => {
-    const dispatch = useDispatch();
-    return () => dispatch(empty());
-};
-
 export const useResetOrder = () => {
-    const dispatch = useDispatch();
-    return () => dispatch(resetOrder());
+    const dispatch = useAppDispatch();
+    return function resetTheOrder() {
+        dispatch(resetOrder());
+    };
 };
 
 export const useResetPromoCode = () => {
-    const dispatch = useDispatch();
-    return () => dispatch(resetPromoCode());
+    const dispatch = useAppDispatch();
+    return function resetThePromoCode() {
+        dispatch(resetPromoCode());
+    };
 };
 
 export const usePromoCodeIsValide = () => {
-    const dispatch = useDispatch();
-    return () => dispatch(promoCodeIsValide());
+    const dispatch = useAppDispatch();
+    return function validatePromoCode() {
+        dispatch(promoCodeIsValide());
+    };
 };
 
 export const useValidateTheOrder = () => {
-    const dispatch = useDispatch();
-    return () => dispatch(orderIsValide());
+    const dispatch = useAppDispatch();
+    return function validateOrder() {
+        dispatch(orderIsValide());
+    };
 };
 
 export const useNavigateTo = () => {
     const router = useRouter();
-    return (path: string) => router.push(path);
+    return function navigateTo(path: string) {
+        router.push(path);
+    };
+};
+
+//  HOOKS FOR FAVORITES
+export const useDeleteProductFromFavorites = (product: product) => {
+    const dispatch = useAppDispatch();
+    return function deleteProductFromFavorites() {
+        dispatch(deleteProduct(product.id));
+        toast.success(`${product.name} a bien été retiré de vos favories.`);
+    };
+};
+
+export const useAddProductToFavorites = (product: product) => {
+    const dispatch = useAppDispatch();
+    return function AddProductToFavorites() {
+        dispatch(addProductToFavorites(product));
+        toast.success(`${product.name} a bien été ajouté de vos favories.`);
+    };
+};
+
+//  HOOKS FOR CART FORM
+export const useAddProductToCartForm = (product: product) => {
+    const dispatch = useAppDispatch();
+    return function AddProductToCartForm() {
+        dispatch(addProductToCartForm(product));
+    };
+};
+
+export const useToogleCartFormIsVisible = () => {
+    const dispatch = useAppDispatch();
+    return function toogleCartFormIsVisible() {
+        dispatch(toogleIsVisible());
+    };
+};
+
+//  HOOKS FOR CART
+export const useAddProductToCart = () => {
+    const dispatch = useAppDispatch();
+    return function AddProductToCart(productChoosen: productChoosen) {
+        dispatch(addProduct(productChoosen));
+        toast.success(
+            `${productChoosen.product.name} a bien été ajouté à votre panier.`
+        );
+    };
+};
+// il faut modifier pour envoyer le produit et non l'ID
+export const useDeleteProductFromCart = (productChoosen: productChoosen) => {
+    const dispatch = useAppDispatch();
+    const { id } = productChoosen;
+    return function removeProductFromCart() {
+        dispatch(deleteProductFromCart(id));
+        toast.success(
+            `${productChoosen.product.name} a bien été retiré de votre panier`
+        );
+    };
+};
+
+export const useChangeQuantityOfProductChoosen = (
+    productChoosen: productChoosen
+) => {
+    const dispatch = useAppDispatch();
+    const { id } = productChoosen;
+    return function changeQuantityOfProductChosen(quantity: number) {
+        dispatch(changeProductQuantity({ id, quantity }));
+        toast.success(
+            `La quantité de ${productChoosen.product.name} a bien été modifié`
+        );
+    };
+};
+
+export const useEmptyTheCart = () => {
+    const dispatch = useAppDispatch();
+    return function emptyTheCart() {
+        dispatch(empty());
+    };
 };

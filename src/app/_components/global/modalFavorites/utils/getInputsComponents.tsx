@@ -15,7 +15,6 @@ function getInputsComponents(
     const { defaultQuantity, product } = datasProduct;
     const {name, packaging, price } = product;
     const handleChange = (value: number) => {
-        //const newValue = Number(e.currentTarget.value);
         const newDatasProduct = {
             ...datasProduct,
             defaultQuantity: value

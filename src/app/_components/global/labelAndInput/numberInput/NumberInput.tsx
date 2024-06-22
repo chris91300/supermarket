@@ -31,7 +31,7 @@ function NumberInput({defaultValue, onChange}: Props) {
         e.preventDefault();
         gt(value, 0) && pipe(dec, updateValue)(value);
     }
-// continuer de faire ce component
+
   return (
     <div className='flex justify-center border border-black rounded-lg pl-2'>
         <input type="text" onChange={ handleChange } value={value} name="quantité" className='w-12 pl-2 '/>

@@ -1,30 +1,28 @@
-import { getID } from "@/app/_utils/getID";
-import { setID } from "@/app/_utils/setID";
-import { setQuantity } from "@/app/_utils/setQuantity";
 import {
-    changeProductQuantity,
-    deleteProduct,
-} from "@/lib/features/cart/cartSlice";
+    useChangeQuantityOfProductChoosen,
+    useDeleteProductFromCart,
+} from "@/app/_hooks/hooks";
+//import { getID } from "@/app/_utils/getID";
+//import { setID } from "@/app/_utils/setID";
+//import { setQuantity } from "@/app/_utils/setQuantity";
 import { productChoosen } from "@/types/types";
-import { equals, pipe } from "ramda";
-import { useDispatch } from "react-redux";
+import { equals } from "ramda";
 
 export default function useChangeProductChoosenQuantity(
     productChoosen: productChoosen
 ) {
-    const dispatch = useDispatch();
-    const id = getID(productChoosen);
+    const deleteProductFromCart = useDeleteProductFromCart(productChoosen);
+    const changeQuantityOfProductChoosen =
+        useChangeQuantityOfProductChoosen(productChoosen);
+    const initialQuantity = productChoosen.quantity;
 
     return function changeProductChoosenQuantity(newQuantity: number) {
         if (equals(newQuantity, 0)) {
-            dispatch(deleteProduct(id));
+            deleteProductFromCart();
         } else {
-            const setIdAndQuantityOn = pipe(
-                setID(id),
-                setQuantity(newQuantity)
-            );
-            const newProductChoosen = setIdAndQuantityOn(productChoosen);
-            dispatch(changeProductQuantity(newProductChoosen));
+            if (initialQuantity != newQuantity) {
+                changeQuantityOfProductChoosen(newQuantity);
+            }
         }
     };
 }

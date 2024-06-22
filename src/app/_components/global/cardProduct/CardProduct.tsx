@@ -11,7 +11,7 @@ import ButtonAddToCart from './buttonAddToCart/ButtonAddToCart';
 import useIsInFavorites from './hooks/useIsInFavorites';
 import useAddOrRemoveFromFavorites from './hooks/useAddOrRemoveFromFavorites';
 import useToogleAddToCartForm from './hooks/useToogleAddToCartForm';
-import { toast } from 'sonner';
+//import { toast } from 'sonner';
 
 type Props = {
   product: article
@@ -20,18 +20,16 @@ type Props = {
 
 export default function CardProduct({ product }: Props) {
   
-  const isInFavorites = useIsInFavorites(product);
-  
-  const addOrRemoveFromFavorites = useAddOrRemoveFromFavorites();
-  const showAddToCartForm = useToogleAddToCartForm();
+  const isInFavorites = useIsInFavorites(product);  
+  const addOrRemoveFromFavorites = useAddOrRemoveFromFavorites(product);
+  const showAddToCartForm = useToogleAddToCartForm(product);
   const { name, img, packaging, price } = product;
 
   const toogleAddToFavorite = () => {
-    const toastText = addOrRemoveFromFavorites(product);
-    toast.success(toastText);// l faut penser à ajouter cela pour chaque action au panier => voir direct dans les hooks dispatch
+    addOrRemoveFromFavorites();
   }
   const displayAddToCartForm = ()=>{
-    showAddToCartForm(product);
+    showAddToCartForm();
   };
   
   return (

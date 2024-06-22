@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { product } from '@/types/types';
-import useCloseModal from '../hooks/useCloseModalAddToForm';
+import { useToogleCartFormIsVisible as useCloseModal } from '@/app/_hooks/hooks';
 import ButtonClose from '../../buttons/ButtonClose';
 import Title from '../../title/Title';
 import LabelAndInput from '../../labelAndInput/LabelAndInput';
@@ -21,8 +21,7 @@ export default function Form({ product, defaultQuantity, alreadyInCart, submitFu
     const totalPrice = (quantity * price).toFixed(2);
 
 
-    const handleChange = (value: number) => {//React.ChangeEvent???
-        //const newQuantity = e.currentTarget.value;
+    const handleChange = (value: number) => {
         setQuantity(value)
     }
 

@@ -1,24 +1,23 @@
-import { useAppDispatch, useFavorites } from "@/app/_hooks/hooks";
+import {
+    useAddProductToFavorites,
+    useDeleteProductFromFavorites,
+    useFavorites,
+} from "@/app/_hooks/hooks";
 import { product } from "@/types/types";
 import { includes } from "ramda";
-import {
-    addProduct,
-    deleteProduct,
-} from "@/lib/features/favorites/favoritesSlice";
 
-export default function useAddOrRemoveFromFavorites() {
-    const dispatch = useAppDispatch();
+export default function useAddOrRemoveFromFavorites(product: product) {
+    const deleteProductFromFavorites = useDeleteProductFromFavorites(product);
+    const AddProductToFavorites = useAddProductToFavorites(product);
     const favorites = useFavorites();
     const { products } = favorites;
 
-    return (product: product) => {
+    return () => {
         const isInFavorites = includes(product, products);
         if (isInFavorites) {
-            dispatch(deleteProduct(product.id));
-            return `${product.name} a bien été retirer de vos favories.`;
+            deleteProductFromFavorites();
         } else {
-            dispatch(addProduct(product));
-            return `${product.name} a bien été ajouter à vos favories.`;
+            AddProductToFavorites();
         }
     };
 }
