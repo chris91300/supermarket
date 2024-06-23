@@ -31,7 +31,8 @@ function ProductInCart({ productChoosen }: Props) {
         
     }
 
-    const update = () => {
+    const update = (e:React.FormEvent) => {
+        e.preventDefault();
         submitFunction(currentQuantity);
     }
 

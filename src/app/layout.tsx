@@ -21,9 +21,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const bodyStyle = `${inter.className} relative`;
+  const bodyStyle = `${inter.className} relative min-h-full`;
   return (
-    <html lang="fr" className="min-h-full">
+    <html lang="fr" className="min-h-full h-full">
       <body className={bodyStyle}>
         <Providers>
           <Header />
