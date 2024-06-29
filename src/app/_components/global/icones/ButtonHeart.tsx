@@ -2,13 +2,13 @@
 
 import { FaHeart } from "react-icons/fa";
 import BubbleCount from "../bubbleCount/BubbleCount";
-import { useFavorites } from "@/app/_hooks/hooks";
-import useToogleFavoritesIsVisible from "@/app/_hooks/useToogleFavoritesIsVisible";
+import useToogleFavoritesIsVisible from "@/app/_hooks/forFavorites/useToogleFavoritesIsVisible";
+import useFavorites from "@/app/_hooks/forFavorites/useFavorites";
 
 
 export default function ButtonHeart({ size }: {size: number}){
 
-    const favorites = useFavorites()
+    const favorites = useFavorites();
     const totalFavorites = favorites.products.length;
     const openModalfavorites = useToogleFavoritesIsVisible();
     

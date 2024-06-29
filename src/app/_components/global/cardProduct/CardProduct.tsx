@@ -8,10 +8,10 @@ import CardProductTitle from './cardProductTitle/CardProductTitle';
 import CardProductPackaging from './cardProductPackaging/CardProductPackaging';
 import CardProductPrice from './cardProductPrice/CardProductPrice';
 import ButtonAddToCart from './buttonAddToCart/ButtonAddToCart';
-import useIsInFavorites from './hooks/useIsInFavorites';
-import useAddOrRemoveFromFavorites from './hooks/useAddOrRemoveFromFavorites';
-import useToogleAddToCartForm from './hooks/useToogleAddToCartForm';
-//import { toast } from 'sonner';
+import useIsInFavorites from '../../../_hooks/global/useIsInFavorites';
+import useAddOrRemoveFromFavorites from '../../../_hooks/global/useAddOrRemoveFromFavorites';
+import useToogleAddToCartForm from '../../../_hooks/global/useToogleAddToCartForm';
+
 
 type Props = {
   product: article

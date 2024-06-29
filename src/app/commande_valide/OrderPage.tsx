@@ -1,27 +1,18 @@
 'use client'
 
+import React from 'react'
 import Link from 'next/link'
-import React, { useEffect } from 'react'
 import Animation from './animation/Animation'
-import { useEmptyTheCart, useResetOrder, useResetPromoCode } from '../_hooks/hooks'
+import useEmptyTheCartWhenComponentIsRender from '../_hooks/global/useEmptyTheCartWhenComponentIsRender'
+import useResetOrderAndPromoCodeWhenComponentIsUnmount from '../_hooks/global/useResetOrderAndPromoCodeWhenComponentIsUnmount'
 
 type Props = {}
 
 export default function OrderPage({}: Props) {
   
-  const resetOrder = useResetOrder();
-  const resetPromoCode = useResetPromoCode();
-  const emptyTheCart = useEmptyTheCart();
-
-  useEffect(() => {
-    emptyTheCart();
-
-    return () =>{
-      resetOrder()
-      resetPromoCode()
-
-    }
-  }, [])
+  useEmptyTheCartWhenComponentIsRender();
+  useResetOrderAndPromoCodeWhenComponentIsUnmount();
+  
 
   return (
     <main className="flex min-h-screen flex-col py-10 items-center">

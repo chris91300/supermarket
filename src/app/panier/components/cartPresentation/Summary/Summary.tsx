@@ -4,7 +4,10 @@ import TotalPrice from './totalPrice/TotalPrice'
 import ValidateCommande from './validateCommande/ValidateCommande'
 import PromoCodeForm from './handlePromoCode/promoCodeForm/PromoCodeForm'
 import PromoCodeSuccess from './handlePromoCode/promoCodeSuccess/PromoCodeSuccess'
-import { usePromoCode } from '@/app/_hooks/hooks'
+import usePromoCode from '@/app/_hooks/forPromoCode/usePromoCode'
+
+
+
 type Props = {}
 
 function Summary({}: Props) {

@@ -2,9 +2,9 @@
 
 import React, { useEffect, useState } from 'react'
 import Loading from '../loading/Loading';
-import { useNavigateTo } from '@/app/_hooks/hooks';
+import useNavigateTo from '@/app/_hooks/global/useNavigateTo';
 
-//TODO: voir pourquoi lors de la redirection le cart est vidé
+
 type RedirectIfNotAllowProps = {
   children: React.ReactNode,
   shouldBeTrueToBeSecure: ()=>boolean

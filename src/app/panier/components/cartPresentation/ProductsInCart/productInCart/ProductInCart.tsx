@@ -4,7 +4,7 @@ import { productChoosen } from '@/types/types'
 import Image from 'next/image'
 import React from 'react'
 import { gte, multiply } from 'ramda'
-import useSubmitFunction from '@/app/_components/global/modalAddToCart/hooks/useSubmitFunction'
+import useSubmitFunction from '@/app/_hooks/global/useSubmitFunction'
 
 type Props = {
     productChoosen: productChoosen

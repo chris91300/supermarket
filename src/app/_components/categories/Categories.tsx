@@ -1,6 +1,6 @@
-import getCategoriesInformations from '@/app/_bdd/utils/getCategoriesInformations'
+import getCategoriesInformations from '@/app/_utils/forDataBase/getCategoriesInformations'
 import React from 'react'
-import buildCategoriesCardsFrom from './utils/buildCategoriesCardsFrom';
+import buildCategoriesCardsFrom from '../../_utils/buildCategoriesCardsFrom';
 
 
 export default function Categories() {

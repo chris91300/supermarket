@@ -1,12 +1,13 @@
 import { cartTypes } from "@/types/types";
-import { gt, not } from "ramda";
+import { not } from "ramda";
 import arrayIsEmpty from "./arrayIsEmpty";
+import thereAreIdenticalProductsInTheCart from "./thereAreIdenticalProductsInTheCart";
+import error from "./error";
 
 export default function wasTheProductFoundInTheCart(productsInCart: cartTypes) {
     const { length } = productsInCart;
-    if (gt(length, 1)) {
-        throw new Error("plusieurs produits du même type ont été trouvés");
-    }
+    thereAreIdenticalProductsInTheCart(productsInCart) &&
+        error("plusieurs produits du même type ont été trouvés");
 
     return not(arrayIsEmpty(length));
 }

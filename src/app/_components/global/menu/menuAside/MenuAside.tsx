@@ -1,7 +1,8 @@
 import React from 'react'
 import data from '../../../../_bdd/data.json'
-import getDataForMenu from '../../../../_bdd/utils/getDataForMenu';
-import { buildMenu } from './utils/buildMenu';
+import getDataForMenu from '../../../../_utils/forDataBase/getDataForMenu';
+import { buildMenu } from '@/app/_utils/buildMenu';
+
 
 
 export default function MenuAside() {

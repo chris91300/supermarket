@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Modal from './Modal';
-import { useFavorites } from '@/app/_hooks/hooks';
+import useFavorites from '@/app/_hooks/forFavorites/useFavorites';
 
 type Props = {}
 

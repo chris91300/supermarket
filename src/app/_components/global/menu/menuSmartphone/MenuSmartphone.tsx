@@ -1,8 +1,8 @@
 import React from 'react'
 import data from '@/app/_bdd/data.json'
 import ButtonClose from '../../buttons/ButtonClose'
-import getDataForMenu from '@/app/_bdd/utils/getDataForMenu'
-import { buildMenu } from '../menuAside/utils/buildMenu'
+import getDataForMenu from '@/app/_utils/forDataBase/getDataForMenu'
+import { buildMenu } from '@/app/_utils/buildMenu'
 
 type Props = {
     toogleIsVisible: ()=>void

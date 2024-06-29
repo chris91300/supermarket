@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useRef } from 'react'
-import useScrollInElementWhenIsRender from './hooks/useScrollInElementWhenIsRender'
+import useScrollInElementWhenIsRender from '../../../_hooks/global/useScrollInElementWhenIsRender'
 
 
 type Props = {

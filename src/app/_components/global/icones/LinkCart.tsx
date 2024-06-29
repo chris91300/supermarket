@@ -2,9 +2,9 @@
 
 import { FaShoppingCart } from "react-icons/fa";
 import BubbleCount from "../bubbleCount/BubbleCount";
-import { useCart } from "@/app/_hooks/hooks";
 import Link from "next/link";
 import getTotalQuantityOfProductInCart from "@/app/_utils/getTotalQuantityOfProductInCart";
+import useCart from "@/app/_hooks/forCart/useCart";
 
 
 export default function LinkCart({ size }: {size: number}){

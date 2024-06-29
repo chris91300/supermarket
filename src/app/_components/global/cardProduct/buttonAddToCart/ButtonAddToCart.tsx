@@ -2,10 +2,10 @@
 
 import { product } from '@/types/types';
 import React from 'react'
-import useSearchForTheProductInTheCart from '../../modalAddToCart/hooks/useSearchForTheProductInTheCart';
+import useSearchForTheProductInTheCart from '../../../../_hooks/global/useSearchForTheProductInTheCart';
 import BubbleCount from '../../bubbleCount/BubbleCount';
 import { FaShoppingCart } from "react-icons/fa";
-import getProductQuantityInCart from './utils/getProductQuantityInCart';
+import getProductQuantityInCart from '../../../../_utils/getProductQuantityInCart';
 
 type Props = {
   product: product,

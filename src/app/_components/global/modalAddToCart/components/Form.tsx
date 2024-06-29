@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { product } from '@/types/types';
-import { useToogleCartFormIsVisible as useCloseModal } from '@/app/_hooks/hooks';
 import ButtonClose from '../../buttons/ButtonClose';
 import Title from '../../title/Title';
 import LabelAndInput from '../../labelAndInput/LabelAndInput';
 import Price from '../../price/Price';
 import Buttons from './Buttons';
+import useCloseModal from '@/app/_hooks/forFormAddToCart/useToogleCartFormIsVisible';
 
 type Props = {
     product: product,

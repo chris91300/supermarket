@@ -1,9 +1,9 @@
 'use client'
 
-import { usePromoCodeIsValide } from '@/app/_hooks/hooks';
-import { equals, ifElse, test } from 'ramda';
+import { test } from 'ramda';
 import React, { useState } from 'react'
-import checkThisPromoCode from './utils/checkThisPromoCode';
+import checkThisPromoCode from '../../../../../../_utils/checkThisPromoCode';
+import usePromoCodeIsValide from '@/app/_hooks/forPromoCode/usePromoCodeIsValide';
 
 
 type Props = {

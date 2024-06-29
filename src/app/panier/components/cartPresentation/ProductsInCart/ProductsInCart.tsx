@@ -1,11 +1,11 @@
 'use client'
 
-import { useCart } from '@/app/_hooks/hooks';
 import { productChoosen } from '@/types/types';
 import { map } from 'ramda';
 import React from 'react'
 import ProductInCart from './productInCart/ProductInCart';
 import { nanoid } from '@reduxjs/toolkit';
+import useCart from '@/app/_hooks/forCart/useCart';
 
 type Props = {}
 

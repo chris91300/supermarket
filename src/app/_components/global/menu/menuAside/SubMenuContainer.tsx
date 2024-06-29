@@ -1,5 +1,5 @@
 import React from 'react'
-import getSubMenuLinks from './utils/getSubMenuLinks';
+import getSubMenuLinks from '../../../../_utils/getSubMenuLinks';
 
 export default function SubMenuContainer({ primaryMenu, secondaryMenu }: { primaryMenu: string, secondaryMenu: string[] }) {
 

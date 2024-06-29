@@ -1,7 +1,9 @@
 'use client'
 
+import useValidateTheOrder from '@/app/_hooks/forOrder/useValidateTheOrder';
+import usePromoCode from '@/app/_hooks/forPromoCode/usePromoCode';
+import useNavigateTo from '@/app/_hooks/global/useNavigateTo';
 import React from 'react'
-import { useNavigateTo, usePromoCode, useValidateTheOrder } from '@/app/_hooks/hooks';
 
 type Props = {}
 

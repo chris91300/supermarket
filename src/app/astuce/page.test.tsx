@@ -1,15 +1,39 @@
 import { render, screen } from "@testing-library/react";
 import Astuce from "./page";
 import { map } from "ramda";
+import { createStore } from "@/lib/store";
+import { Provider } from "react-redux";
+import { orderIsValide } from "@/lib/features/order/orderSlice";
+import { promoCodeIsValide } from "@/lib/features/promoCode/promoCodeSlice";
 
-// letter A is upper because is in the h1 element
+/** New next/navigation mock */
+jest.mock('next/navigation', () => {
+    return {
+      __esModule: true,
+      useRouter: () => ({
+        push: jest.fn(),
+        replace: jest.fn(),
+        prefetch: jest.fn(),
+      }),
+    }
+  })
+
+
+// letter A is upper because is in the h1 element and h1 is uppecase
 const promoCode = "grAtuit";
 const code = promoCode.split("");
 
 describe("TEST OF PAGE ASTUCE", () => {
 
-    it("should display correctly", () => {
-        render(<Astuce />);
+    it("should display correctly when order is validate but not the promoCode", () => {
+        
+        const store = createStore();
+        store.dispatch(orderIsValide())
+
+        render(<Provider store={store}>
+                    <Astuce />
+                </Provider>
+            );
 
         const h1 = screen.getByRole("heading", {level: 1});
         expect(h1).toBeInTheDocument();
@@ -29,6 +53,32 @@ describe("TEST OF PAGE ASTUCE", () => {
 
         const link = screen.getByText(/retour au panier/);
         expect(link).toBeInTheDocument();
+    })
+
+    it("should not display correctly when order and the promoCode are validate", () => {
+        const store = createStore();
+        store.dispatch(orderIsValide());
+        store.dispatch(promoCodeIsValide());
+
+        render(<Provider store={store}>
+                    <Astuce />
+                </Provider>
+            );
+
+        const h1 = screen.queryByRole("heading", {level: 1});
+        expect(h1).not.toBeInTheDocument();
+    })
+
+    it("should not display correctly when order and the promoCode are not validate", () => {
+        const store = createStore();
+
+        render(<Provider store={store}>
+                    <Astuce />
+                </Provider>
+            );
+
+        const h1 = screen.queryByRole("heading", {level: 1});
+        expect(h1).not.toBeInTheDocument();
     })
     
 })

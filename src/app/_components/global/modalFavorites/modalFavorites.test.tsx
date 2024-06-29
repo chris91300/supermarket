@@ -1,11 +1,13 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { createStore } from "@/lib/store";
-import { Provider } from "react-redux";
 import ModalHandler from "./ModalFavoritesHandler";
 import { addProduct, toogleIsVisible } from "@/lib/features/favorites/favoritesSlice";
 import { add, multiply } from "ramda";
 import { getRenderWithStore, renderWrappedByProvider } from "@/app/_utils/forTests/renderWrappedByProvider";
+
+window.HTMLElement.prototype.scrollIntoView = jest.fn();
+
 
 const product1Mocked = {
     name: "fraises",
@@ -79,12 +81,18 @@ describe("TEST OF MODAL FAVORITES", () => {
         const product2Packaging = screen.getByText(product2Mocked.packaging);
         expect(product2Packaging).toBeInTheDocument();
 
-        const inputs = screen.getAllByRole("spinbutton");
+        const inputs = screen.getAllByRole("textbox");
         expect(inputs).toHaveLength(2);
 
         const [ inputProduct1, inputProduct2 ] = inputs;
-        expect(inputProduct1).toHaveValue(0);
-        expect(inputProduct2).toHaveValue(0);
+        expect(inputProduct1).toHaveValue("0");
+        expect(inputProduct2).toHaveValue("0");
+
+        const incrementBy1 = screen.getAllByLabelText("ajouter 1 à la quantité")
+        const decrementBy1 = screen.getAllByLabelText("retirer 1 à la quantité")
+
+        expect(incrementBy1).toHaveLength(2)
+        expect(decrementBy1).toHaveLength(2)
 
         const submitButton = screen.getByRole("button", {name: "ajouter"})
         expect(submitButton).toBeInTheDocument();
@@ -105,44 +113,47 @@ describe("TEST OF MODAL FAVORITES", () => {
         renderWithStore(<ModalHandler />)
         
 
-        const inputs = screen.getAllByRole("spinbutton");
-        expect(inputs).toHaveLength(2);
+        const inputs = screen.getAllByRole("textbox");
+        
 
         const [ inputProduct1, inputProduct2 ] = inputs;
-        expect(inputProduct1).toHaveValue(0);
-        expect(inputProduct2).toHaveValue(0);
+        expect(inputProduct1).toHaveValue("0");
+        expect(inputProduct2).toHaveValue("0");
+
+        const [ incProduct1 ] = screen.getAllByLabelText("ajouter 1 à la quantité");        
 
         const totalPrice = screen.getByText('Total : 0.00€')
         expect(totalPrice).toBeInTheDocument();
 
-        //  User increment by 2 the first product quantity
-        await user.dblClick(inputProduct1);
-        await user.keyboard("2");
+        //  User increment by 1 the first product quantity
+        await user.click(incProduct1);
        
-        const newInputs = screen.getAllByRole("spinbutton");
+        const newInputs = screen.getAllByRole("textbox");
         expect(newInputs).toHaveLength(2);
 
         const [ newInputProduct1, newInputProduct2 ] = newInputs;
-        expect(newInputProduct1).toHaveValue(2);
-        expect(newInputProduct2).toHaveValue(0);
+        expect(newInputProduct1).toHaveValue("1");
+        expect(newInputProduct2).toHaveValue("0");
 
-        const newPriceExpected = multiply(product1Mocked.price, 2)
+        const newPriceExpected = multiply(product1Mocked.price, 1)
 
         const newTotalPrice = screen.getByText(`Total : ${newPriceExpected.toFixed(2)}€`)
         expect(newTotalPrice).toBeInTheDocument();
 
-        //  User increment by 4 the second product quantity
-        await user.tripleClick(newInputProduct2);
-        await user.keyboard("4");
+        const [ newIncProduct1, newIncProduct2 ] = screen.getAllByLabelText("ajouter 1 à la quantité");  
 
-        const reNewInputs = screen.getAllByRole("spinbutton");
+
+        //  User increment by 1 the second product quantity
+        await user.click(newIncProduct2);
+
+        const reNewInputs = screen.getAllByRole("textbox");
         expect(reNewInputs).toHaveLength(2);
 
         const [ reNewInputProduct1, reNewInputProduct2 ] = reNewInputs;
-        expect(reNewInputProduct1).toHaveValue(2);
-        expect(reNewInputProduct2).toHaveValue(4);
+        expect(reNewInputProduct1).toHaveValue("1");
+        expect(reNewInputProduct2).toHaveValue("1");
 
-        const reNewPriceExpected = add(multiply(product1Mocked.price, 2), multiply(product2Mocked.price, 4))
+        const reNewPriceExpected = add(multiply(product1Mocked.price, 1), multiply(product2Mocked.price, 1))
 
         const reNewTotalPrice = screen.getByText(`Total : ${reNewPriceExpected.toFixed(2)}€`)
         expect(reNewTotalPrice).toBeInTheDocument();
@@ -163,34 +174,36 @@ describe("TEST OF MODAL FAVORITES", () => {
         renderWithStore(<ModalHandler />)
         
 
-        const inputs = screen.getAllByRole("spinbutton");
+        const inputs = screen.getAllByRole("textbox");
         expect(inputs).toHaveLength(2);
 
         const [ inputProduct1, inputProduct2 ] = inputs;
-        expect(inputProduct1).toHaveValue(0);
-        expect(inputProduct2).toHaveValue(0);
+        expect(inputProduct1).toHaveValue("0");
+        expect(inputProduct2).toHaveValue("0");
 
-        //  User increment by 2 the first product quantity
-        await user.dblClick(inputProduct1);
-        await user.keyboard("2");
+        const [ incProduct1 ] = screen.getAllByLabelText("ajouter 1 à la quantité");
+
+        //  User increment by 1 the first product quantity
+        await user.click(incProduct1);
        
-        const newInputs = screen.getAllByRole("spinbutton");
+        const newInputs = screen.getAllByRole("textbox");
         expect(newInputs).toHaveLength(2);
 
         const [ newInputProduct1, newInputProduct2 ] = newInputs;
-        expect(newInputProduct1).toHaveValue(2);
-        expect(newInputProduct2).toHaveValue(0);
+        expect(newInputProduct1).toHaveValue("1");
+        expect(newInputProduct2).toHaveValue("0");
 
-        //  User increment by 4 the second product quantity
-        await user.tripleClick(newInputProduct2);
-        await user.keyboard("4");
+        const [ newIncProduct1, newIncProduct2 ] = screen.getAllByLabelText("ajouter 1 à la quantité");
 
-        const reNewInputs = screen.getAllByRole("spinbutton");
+        //  User increment by 1 the second product quantity
+        await user.click(newIncProduct2)
+
+        const reNewInputs = screen.getAllByRole("textbox");
         expect(reNewInputs).toHaveLength(2);
 
         const [ reNewInputProduct1, reNewInputProduct2 ] = reNewInputs;
-        expect(reNewInputProduct1).toHaveValue(2);
-        expect(reNewInputProduct2).toHaveValue(4);
+        expect(reNewInputProduct1).toHaveValue("1");
+        expect(reNewInputProduct2).toHaveValue("1");
 
         const submitButton = screen.getByRole("button", {name: "ajouter"})
         expect(submitButton).toBeInTheDocument();
@@ -207,8 +220,8 @@ describe("TEST OF MODAL FAVORITES", () => {
 
         const [ productChoosen1, productChoosen2 ] = cart;
         
-        expect(productChoosen1.quantity).toEqual(2);
-        expect(productChoosen2.quantity).toEqual(4);
+        expect(productChoosen1.quantity).toEqual(1);
+        expect(productChoosen2.quantity).toEqual(1);
 
     })
 
@@ -220,17 +233,15 @@ describe("TEST OF MODAL FAVORITES", () => {
         renderWithStore(<ModalHandler />)
         
 
-        const inputs = screen.getAllByRole("spinbutton");
-        expect(inputs).toHaveLength(2);
-
-        const [ inputProduct1, inputProduct2 ] = inputs;
-        expect(inputProduct1).toHaveValue(2);
-        expect(inputProduct2).toHaveValue(4);
+        const [ inputProduct1, inputProduct2 ] = screen.getAllByRole("textbox");
+        
+        expect(inputProduct1).toHaveValue("1");
+        expect(inputProduct2).toHaveValue("1");
 
 
     })
 
-    it("should get the quantity of each product from the cart", async () => {
+    it("should get the quantity of each product from the cart when user modify directly the input text", async () => {
 
         const user = userEvent.setup();
 
@@ -238,7 +249,7 @@ describe("TEST OF MODAL FAVORITES", () => {
         renderWithStore(<ModalHandler />)
         
 
-        const inputs = screen.getAllByRole("spinbutton");
+        const inputs = screen.getAllByRole("textbox");
         expect(inputs).toHaveLength(2);
 
         const [ inputProduct1 ] = inputs;
@@ -266,14 +277,9 @@ describe("TEST OF MODAL FAVORITES", () => {
         const renderWithStore = getRenderWithStore(store);
         renderWithStore(<ModalHandler />)
         
+        const [ decProduct1, decProduct2 ] = screen.getAllByLabelText("retirer 1 à la quantité")
 
-        const inputs = screen.getAllByRole("spinbutton");
-        expect(inputs).toHaveLength(2);
-
-        const [ inputProduct1 ] = inputs;
-
-        await user.dblClick(inputProduct1);
-        await user.keyboard("0");
+        await user.click(decProduct2);
 
         const submitButton = screen.getByRole("button", {name: "ajouter"});
         await user.click(submitButton);
@@ -283,7 +289,7 @@ describe("TEST OF MODAL FAVORITES", () => {
 
         const [ productChoosen1 ] = cart;
         
-        expect(productChoosen1.quantity).toEqual(4);
+        expect(productChoosen1.quantity).toEqual(8);
 
     })
 

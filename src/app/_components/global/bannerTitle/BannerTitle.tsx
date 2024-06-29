@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { replace } from 'ramda'
 import React from 'react'
 
 export type BannerTitleType = {

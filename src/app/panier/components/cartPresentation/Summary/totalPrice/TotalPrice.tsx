@@ -1,7 +1,8 @@
 'use client'
 
-import getTotalPrice from '@/app/_components/global/modalFavorites/utils/getTotalPrice';
-import { useCart, usePromoCode } from '@/app/_hooks/hooks';
+import useCart from '@/app/_hooks/forCart/useCart';
+import usePromoCode from '@/app/_hooks/forPromoCode/usePromoCode';
+import getTotalPrice from '@/app/_utils/getTotalPrice';
 import getTotalQuantityOfProductInCart from '@/app/_utils/getTotalQuantityOfProductInCart';
 import React from 'react'
 

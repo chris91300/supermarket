@@ -2,7 +2,7 @@ import { render, screen, cleanup, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import MenuAside from "./MenuAside";
 import data from '../../../../_bdd/data.json';
-import getDataForMenu from "../../../../_bdd/utils/getDataForMenu";
+import getDataForMenu from "../../../../_utils/forDataBase/getDataForMenu";
 import { map } from "ramda";
 
 const menuList = getDataForMenu(data);

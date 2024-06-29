@@ -1,10 +1,10 @@
 'use client'
 
 import React from 'react'
-import useDataForFormAddToCart from './hooks/useDataForFormAddToCart'
 import Form from './components/Form'
 import { product } from '@/types/types'
 import ModalContainer from '../modalContainer/ModalContainer'
+import useDataForFormAddToCart from '@/app/_hooks/global/useDataForFormAddToCart'
 
 type Props = {
     product: product,

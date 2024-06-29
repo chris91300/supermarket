@@ -3,7 +3,7 @@ import Title from '../../title/Title';
 import ButtonClose from '../../buttons/ButtonClose';
 import Price from '../../price/Price';
 import { dataForFormFavorites } from '@/types/types';
-import useDataForFavoritesModal from '../hooks/useDataForFavoritesModal';
+import useDataForFavoritesModal from '../../../../_hooks/global/useDataForFavoritesModal';
 import ButtonCancel from '../../buttons/ButtonCancel';
 import Input from '../../buttons/Input';
 
