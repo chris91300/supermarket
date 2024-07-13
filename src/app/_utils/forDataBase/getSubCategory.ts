@@ -1,9 +1,8 @@
-import { mainCategory, subCategory } from "@/types/types";
+import { mainCategory } from "@/types/types";
 import { pipe, curry } from "ramda";
 import { getPropSubCategories } from "../getProps";
-import checkIfSubCategoryIsFound from "./chekIfSubCategoryIsFound";
-import removeTypeVoidIfIsFound from "./removeTypeVoidIfIsFound";
 import findSubCategory from "./findSubCategory";
+import checkIfSubCategoryExist from "./checkIfSubCategoryExist";
 
 const findSubCategoryCurried = curry(findSubCategory);
 
@@ -14,8 +13,7 @@ export default function getSubCategory(
     const getSubcatData = pipe(
         getPropSubCategories,
         findSubCategoryCurried(subCategory),
-        checkIfSubCategoryIsFound,
-        removeTypeVoidIfIsFound<subCategory>
+        checkIfSubCategoryExist
     )(category);
 
     return getSubcatData;
