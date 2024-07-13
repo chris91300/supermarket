@@ -1,10 +1,12 @@
-import { redirect } from 'next/navigation'
+
 import BannerTitle from "../../_components/global/bannerTitle/BannerTitle";
 import TemplateWithMenuAside from "../../_components/global/templateWithMenuAside/TemplateWithMenuAside";
-import { gt, toUpper } from 'ramda';
+import { toUpper } from 'ramda';
 import getDataForBannerCategory from '../../_utils/getDataForBannerCategory';
 import buildAppropriateCards from '../../_utils/buildAppropriateCards';
 import getCardsInformations from '@/app/_utils/getCardsInformations';
+
+
 
 type categoryProps = {
     params: {
@@ -15,11 +17,9 @@ type categoryProps = {
 export default function Category({ params }: categoryProps) {
 
   const { categories } = params;
-  gt(categories.length, 2) && redirect("/");
- 
-    
-  const { bannerTitle, bannerImg, bannerAlt } = getDataForBannerCategory(categories);  
-  const cardsInformations = getCardsInformations(categories);  
+  const { bannerTitle, bannerImg, bannerAlt } = getDataForBannerCategory(categories);
+  
+  const cardsInformations = getCardsInformations(categories); 
   const cardsComponent = buildAppropriateCards(categories, cardsInformations);
 
   

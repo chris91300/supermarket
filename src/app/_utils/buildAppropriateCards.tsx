@@ -5,7 +5,6 @@ import CardProduct from "@/app/_components/global/cardProduct/CardProduct";
 import isArticle from "@/app/_utils/isArticle";
 import { nanoid } from "@reduxjs/toolkit";
 
-type Data = subCategory | article
 
 function buildCardsProductWithData(data: article){
     return <CardProduct key={nanoid()} product={data} />
@@ -24,7 +23,7 @@ function buildCardCategoryWithData(category: string, data: subCategory){
 
 const buildCardCategoryWithCategory = curry(buildCardCategoryWithData);
 
-function buildCards(category: string, data: Data){
+function buildCards(category: string, data: subCategory | article){
     const buildCardCategory = buildCardCategoryWithCategory(category);
     const buildCardsBasedOnData = ifElse( isArticle, buildCardsProductWithData, buildCardCategory );
     return buildCardsBasedOnData(data)
@@ -38,7 +37,7 @@ export default function buildAppropriateCards(categories: string[], datas: subCa
     const [ category ] = categories;
     const buildCardsWithCategory = buildCardsCurried(category);
     
-    const cards = map<Data, JSX.Element>(buildCardsWithCategory, datas);
+    const cards = map<subCategory | article, JSX.Element>(buildCardsWithCategory, datas);
 
     return cards;   
 }

@@ -1,7 +1,7 @@
 import arrayIsNotEmpty from "@/app/_utils/arrayIsNotEmpty";
 import { getQuantity } from "@/app/_utils/getQuantity";
 import { productChoosen } from "@/types/types";
-import { gt, length } from "ramda";
+import { length } from "ramda";
 
 export default function getProductQuantityInCart(
     productsFound: productChoosen[]

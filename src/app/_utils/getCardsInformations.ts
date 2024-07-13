@@ -1,13 +1,13 @@
-import getCategoryContent from "./getCategoryContent";
-import getSubCategoryContent from "./getSubCategoryContent";
+import getSubCategories from "./forDataBase/getSubCategories";
+import getProducts from "./forDataBase/getProducts";
 
 export default function getCardsInformations(categories: string[]) {
     const [category, subCategory] = categories;
     const userWantSubCategory = Boolean(subCategory);
 
     if (userWantSubCategory) {
-        return getSubCategoryContent(category, subCategory);
+        return getProducts(category, subCategory);
     } else {
-        return getCategoryContent(category);
+        return getSubCategories(category);
     }
 }
