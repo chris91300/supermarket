@@ -1,3 +1,4 @@
+import clickEventApply from '@/app/_utils/clickEventApply'
 import React from 'react'
 
 type Props = {
@@ -6,10 +7,11 @@ type Props = {
 
 function ButtonCancel({ close }: Props) {
 
-    const closeComponent = (e: React.SyntheticEvent) => {
+    const closeComponent = clickEventApply(close);
+    /*const closeComponent = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault();
         close()
-      }
+      }*/
 
   return (
     <button

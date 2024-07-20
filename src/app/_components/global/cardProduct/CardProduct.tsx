@@ -24,18 +24,12 @@ export default function CardProduct({ product }: Props) {
   const addOrRemoveFromFavorites = useAddOrRemoveFromFavorites(product);
   const showAddToCartForm = useToogleAddToCartForm(product);
   const { name, img, packaging, price } = product;
-
-  const toogleAddToFavorite = () => {
-    addOrRemoveFromFavorites();
-  }
-  const displayAddToCartForm = ()=>{
-    showAddToCartForm();
-  };
+  
   
   return (
     <div className='flex flex-col border border-black rounded-lg w-40 h-60 p-1 bg-white'>
       <div className='flex items-center justify-end'>        
-        <ButtonAddToFavorite click={ toogleAddToFavorite } isFull={ isInFavorites }/>
+        <ButtonAddToFavorite click={ addOrRemoveFromFavorites } isFull={ isInFavorites }/>
       </div>
       <div>
         <CardProductTitle title={name} />
@@ -46,7 +40,7 @@ export default function CardProduct({ product }: Props) {
       </div>
       <div className='flex items-center justify-between'>
         <CardProductPrice price={price} />
-        <ButtonAddToCart product={product} click={ displayAddToCartForm }/>
+        <ButtonAddToCart product={product} click={ showAddToCartForm }/>
       </div>
     </div>
   )

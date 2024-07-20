@@ -1,6 +1,6 @@
 import { dataForFormFavorites, product } from "@/types/types";
 import curriedGetInputsComponents from "./getInputsComponents";
-import { uncurryN, map } from "ramda";
+import { uncurryN } from "ramda";
 
 
 export default function getInputsForFavoritesModal(

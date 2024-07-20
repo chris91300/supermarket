@@ -7,8 +7,8 @@ import React, { useState } from 'react'
 export default function MenuItem({ primaryMenu, onClick }: menuItemType) {
 
   const [arrowDirection, setArrowDirection] = useState("left");
-  const handleclick = () => {
-    const direction = arrowDirection === "left" ? "down" : "left";
+  const direction = arrowDirection === "left" ? "down" : "left";
+  const handleclick = () => {    
     setArrowDirection(direction);
     onClick()
   }

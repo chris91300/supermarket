@@ -12,9 +12,6 @@ type Props = {
     click:()=>void
 }
 
-
-
-
 export default function ButtonAddToCart({ product, click }: Props) {
   const { productFounds } = useSearchForTheProductInTheCart(product);
   const productQuantityInCart = getProductQuantityInCart(productFounds);

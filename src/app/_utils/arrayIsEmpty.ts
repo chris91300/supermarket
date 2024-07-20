@@ -1,5 +1,6 @@
-import { equals } from "ramda";
+/*import { equals } from "ramda";
+import { equalsZero } from "./equalsZero";
 
 export default function arrayIsEmpty(length: number) {
-    return equals(length, 0);
-}
+    return equalsZero(length);
+}*/

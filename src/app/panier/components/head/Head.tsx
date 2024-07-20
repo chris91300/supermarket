@@ -1,8 +1,7 @@
 import React from 'react'
 
-type Props = {}
 
-function Head({}: Props) {
+export default function Head() {
   return (
     <div className='flex items-center justify-between font-bold text-lg p-4' >
         <p>Article</p>
@@ -10,5 +9,3 @@ function Head({}: Props) {
     </div>
   )
 }
-
-export default Head

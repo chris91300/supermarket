@@ -116,7 +116,6 @@ describe("TEST OF MODALAddToCartHANDLER COMPONENT", () => {
         renderWithStore(<ModalAddToCartHandler />)
         
         const { cart } = store.getState();
-        //const { cart } = state;
 
         expect(cart).toHaveLength(0)
         
@@ -128,13 +127,15 @@ describe("TEST OF MODALAddToCartHANDLER COMPONENT", () => {
 
         const increment = screen.getByLabelText("ajouter 1 à la quantité")
 
-        const validerButton = screen.getByRole("button", {name: "ajouter"});
-        expect(validerButton).toBeInTheDocument();
+        
 
         await user.click(increment)
         
         const newTotalPriceMultiBy1 = screen.getByText(`Total : ${(productMocked.price).toFixed(2)}€`)
         expect(newTotalPriceMultiBy1).toBeInTheDocument();
+
+        const validerButton = screen.getByRole("button", {name: "ajouter"});
+        expect(validerButton).toBeInTheDocument();
 
         await user.click(validerButton);
 

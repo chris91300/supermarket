@@ -2,9 +2,8 @@ import Link from 'next/link'
 import React from 'react'
 import { FaShoppingCart } from 'react-icons/fa'
 
-type Props = {}
 
-function EmptyCart({}: Props) {
+function EmptyCart() {
   return (
     <div className='flex flex-col gap-4 items-center justify-center p-5'>        
         <p className='flex items-center'>

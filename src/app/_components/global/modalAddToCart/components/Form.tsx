@@ -6,6 +6,7 @@ import LabelAndInput from '../../labelAndInput/LabelAndInput';
 import Price from '../../price/Price';
 import Buttons from './Buttons';
 import useCloseModal from '@/app/_hooks/forFormAddToCart/useToogleCartFormIsVisible';
+import submitEventApply from '@/app/_utils/submitEventApply';
 
 type Props = {
     product: product,
@@ -18,20 +19,21 @@ type Props = {
 export default function Form({ product, defaultQuantity, alreadyInCart, submitFunction }: Props){
     const { name, packaging, price } = product;
     const [ quantity, setQuantity ] = useState(defaultQuantity);
+    const closeModal = useCloseModal()
     const totalPrice = (quantity * price).toFixed(2);
 
-
-    const handleChange = (value: number) => {
-        setQuantity(value)
-    }
-
-    const submit = (e: React.SyntheticEvent) => {
-        e.preventDefault();
-        submitFunction(quantity)
+    const submitFormAndClose = () => {
+        submitFunction(quantity);
         closeModal();
     }
+    /*const handleChange = (value: number) => {
+        setQuantity(value)
+    }*/
 
-    const closeModal = useCloseModal()
+        // créer une fontion qui apply submitFomr
+    const submit = submitEventApply(submitFormAndClose)
+
+    
 
 
   return (
@@ -43,7 +45,7 @@ export default function Form({ product, defaultQuantity, alreadyInCart, submitFu
             packaging={packaging}
             quantity={quantity}
             price={price}
-            handleChange={handleChange}
+            handleChange={setQuantity}// handleChange
         />
         <Price totalPrice={totalPrice} />
         <Buttons alreadyInCart={alreadyInCart} closeModal={closeModal}/>
