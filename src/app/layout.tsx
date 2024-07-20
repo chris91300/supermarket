@@ -7,6 +7,7 @@ import Header from './_components/global/header/Header'
 import { Toaster } from "sonner";
 import ModalAddToCartHandler from "./_components/global/modalAddToCart/ModalAddToCartHandler";
 import ModalFavoritesHandler from "./_components/global/modalFavorites/ModalFavoritesHandler";
+import Footer from "./_components/global/footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,9 +22,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const bodyStyle = `${inter.className} relative min-h-full`;
+  const bodyStyle = `relative min-h-full`;
   return (
-    <html lang="fr" className="min-h-full h-full">
+    <html lang="fr" className="min-h-full h-full bg-white">
       <body className={bodyStyle}>
         <Providers>
           <Header />
@@ -38,6 +39,7 @@ export default function RootLayout({
               info: 'bg-blue-400',
             }}}
         />
+        <Footer />
         </Providers>
       </body>
     </html>
