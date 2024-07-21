@@ -1,5 +1,5 @@
 import React from 'react'
-import Input from '../../buttons/Input';
+import SubmitButton from '../../buttons/SubmitButton';
 import ButtonCancel from '../../buttons/ButtonCancel';
 
 type Props = {
@@ -15,7 +15,7 @@ export default function Buttons({
     const value = alreadyInCart? "modifier" : "ajouter";
   return (
     <div className='flex items-center justify-around'>
-        <Input value={ value }/>
+        <SubmitButton text={ value }/>
         <ButtonCancel close={closeModal}/>
     </div>
   )

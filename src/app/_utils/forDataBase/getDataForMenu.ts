@@ -1,20 +1,19 @@
 import { categoryForBuildMenu, dataType } from "@/types/types";
 import { forEachObjIndexed } from "ramda";
-//import getSubCategoriesForMenu from "./getSubCategoriesForMenu";
 import { getPropTitleFR } from "@/app/_utils/getProps";
 import getTitlesOfEachSubCategory from "./getTitlesOfEachSubCategory";
 
 export default function getDataForMenu(data: dataType) {
-    const newData: categoryForBuildMenu[] = [];
+    const menuInformations: categoryForBuildMenu[] = [];
 
     forEachObjIndexed((cat) => {
-        const category = {
+        const menus = {
             menu: getPropTitleFR(cat),
             subMenu: getTitlesOfEachSubCategory(cat),
         };
 
-        newData.push(category);
+        menuInformations.push(menus);
     }, data);
 
-    return newData;
+    return menuInformations;
 }

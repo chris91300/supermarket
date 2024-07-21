@@ -12,7 +12,7 @@ type Props = {}
 function CartHandler({}: Props) {
 
     const cart = useCart();
-    const content = isEmpty(cart)? <EmptyCart /> : <Cart cart={ cart } />
+    const content = isEmpty(cart)? <EmptyCart /> : <Cart />
     
   return (
     <div>{ content }</div>

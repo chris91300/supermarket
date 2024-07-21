@@ -7,6 +7,8 @@ import useGetFormFavoritesComponent from '../../../_hooks/global/useGetFormFavor
 import ModalContainer from '../modalContainer/ModalContainer';
 import { equals, length } from 'ramda';
 import { equalsZero } from '@/app/_utils/equalsZero';
+import EmptyFavorites from './components/EmptyFavorites';
+import FormFavorites from './components/FormFavorites';
 
 
 type Props = {
@@ -15,9 +17,8 @@ type Props = {
 
 function Modal({ products }: Props) {  
   
-  const content = equalsZero(length(products)) ?
-                  getEmptyFavoritesComponent() :
-                  useGetFormFavoritesComponent(products); 
+  const content = equalsZero(length(products)) ? <EmptyFavorites /> : <FormFavorites products={products} />
+                 
   return (
         <ModalContainer>
           { content }

@@ -7,5 +7,5 @@ export default function useGetFormFavoritesComponent(products: product[]){
 
     const list: dataForFormFavorites[] = map(useDataForFormFavorites, products);
     
-    return <FormFavorites favorites={list}/>
+    return list;
 }

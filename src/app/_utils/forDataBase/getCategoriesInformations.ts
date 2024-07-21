@@ -1,24 +1,28 @@
-import data from "../../_bdd/data.json";
-import { forEachObjIndexed, prop } from "ramda";
+import { append, forEachObjIndexed } from "ramda";
 import { categoriesInformations } from "@/types/types";
 import {
     getPropID,
     getPropImgPresentation,
     getPropTitleFR,
 } from "@/app/_utils/getProps";
+import getDatabase from "./getDatabase";
 
 export default function getCategoriesInformations() {
-    let categories: categoriesInformations = [];
+    const data = getDatabase();
+    let categoriesInformations: categoriesInformations = [];
 
     forEachObjIndexed((cat) => {
-        const category = {
+        const categoryInformations = {
             id: getPropID(cat),
             category: getPropTitleFR(cat),
             img: getPropImgPresentation(cat),
         };
 
-        categories.push(category);
+        categoriesInformations = append(
+            categoryInformations,
+            categoriesInformations
+        );
     }, data);
 
-    return categories;
+    return categoriesInformations;
 }

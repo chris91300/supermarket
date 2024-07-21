@@ -11,11 +11,11 @@ type Props = {}
 
 function ProductsInCart({}: Props) {
   const cart = useCart();
+  const listOfproducts = map((productChoosen: productChoosen) => <ProductInCart key={nanoid()} productChoosen={productChoosen} />, cart);
+
   return (
     <div className='grow'>
-      {
-            map((productChoosen: productChoosen) => <ProductInCart key={nanoid()} productChoosen={productChoosen} />, cart)
-        }
+      { listOfproducts }
     </div>
   )
 }

@@ -11,5 +11,5 @@ export default function useResetOrderAndPromoCodeWhenComponentIsUnmount() {
             resetOrder();
             resetPromoCode();
         };
-    }, []);
+    }, [resetOrder, resetPromoCode]);
 }

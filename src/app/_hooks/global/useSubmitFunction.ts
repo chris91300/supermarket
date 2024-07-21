@@ -6,9 +6,15 @@ export default function useSubmitFunction(
     productChoosen: productChoosen,
     alreadyInCart: boolean
 ) {
-    if (alreadyInCart) {
-        return useChangeProductChoosenQuantity(productChoosen);
-    } else {
-        return useAddProductChoosenIntoCart(productChoosen);
-    }
+    const changeProductChoosenQuantity =
+        useChangeProductChoosenQuantity(productChoosen);
+
+    const addProductChoosenIntoCart =
+        useAddProductChoosenIntoCart(productChoosen);
+
+    const submitFunction = alreadyInCart
+        ? changeProductChoosenQuantity
+        : addProductChoosenIntoCart;
+
+    return submitFunction;
 }
