@@ -1,11 +1,12 @@
 "use client"
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import data from '@/app/_bdd/data.json'
 import ButtonClose from '../../buttons/ButtonClose'
 import getDataForMenu from '@/app/_utils/forDataBase/getDataForMenu'
 import { buildMenu } from '@/app/_utils/buildMenu'
 import { usePathname } from 'next/navigation'
+
 
 type Props = {
     toogleIsVisible: ()=>void
@@ -14,13 +15,19 @@ type Props = {
 function MenuSmartphone({toogleIsVisible}: Props) {
 
     const pathName = usePathname();
+    const [ defaultPathName ] = useState(pathName);
+    const pathNameHaveChanged = defaultPathName !== pathName
     const menu = getDataForMenu(data);
     const menuComponents = buildMenu(menu);
 
 
+
     useEffect(() => {
-        toogleIsVisible()
-    }, [pathName, toogleIsVisible]);
+        if(pathNameHaveChanged){
+            toogleIsVisible()
+        }
+        
+    }, [pathNameHaveChanged, toogleIsVisible]);
     
 
     return (
