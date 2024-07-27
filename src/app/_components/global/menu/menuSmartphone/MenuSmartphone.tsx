@@ -1,17 +1,26 @@
-import React from 'react'
+"use client"
+
+import React, { useEffect } from 'react'
 import data from '@/app/_bdd/data.json'
 import ButtonClose from '../../buttons/ButtonClose'
 import getDataForMenu from '@/app/_utils/forDataBase/getDataForMenu'
 import { buildMenu } from '@/app/_utils/buildMenu'
+import { usePathname } from 'next/navigation'
 
 type Props = {
     toogleIsVisible: ()=>void
 }
-//TODO: à modifier pour pouvoir fermer le menu lors du click sur un lien
+
 function MenuSmartphone({toogleIsVisible}: Props) {
 
+    const pathName = usePathname();
     const menu = getDataForMenu(data);
     const menuComponents = buildMenu(menu);
+
+
+    useEffect(() => {
+        toogleIsVisible()
+    }, [pathName]);
     
 
     return (
