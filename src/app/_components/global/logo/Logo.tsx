@@ -9,7 +9,7 @@ export default function Logo() {
       title="logo. lien vers la page d'accueil"
       className='relative w-20 h-20 rounded-lg overflow-hidden'
     >
-           <Image src={"/img/logo.jpg"} alt="le logo du site" fill={true} />
+           <Image src={"/img/logo.jpg"} alt="le logo du site" fill sizes='100%' />
     </Link>
   )
 }

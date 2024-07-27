@@ -23,7 +23,12 @@ export default function CardCategory({ title, img, category, subCategory }: Prop
 
   return (
     <div className='relative flex object-cover w-64 h-64 rounded-lg overflow-hidden hover:scale-105 transition-all duration-500'>
-      <Image  src={imgPath} fill={true} alt={imageAlt} />
+      <Image 
+        src={imgPath}
+        fill
+        alt={imageAlt}
+        className='object-cover object-center'
+      />
       <Link href={href} title={titleAttribute} className='w-full z-10 flex items-center'>        
       <h2 className='w-full text-center py-2 font-bold bg-black text-white bg-opacity-70'>{ title }</h2>
       </Link>

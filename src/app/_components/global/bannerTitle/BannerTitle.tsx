@@ -15,7 +15,7 @@ export default function BannerTitle({ title, img, alt }: BannerTitleType) {
       <Image
         src={imgPath}
         alt={alt}
-        fill={true}
+        fill
         className='object-cover object-center'
       />
       <h1 className='flex justify-center items-center w-full bg-black bg-opacity-50 text-white text-opa text-4xl font-bold text-center z-10'>

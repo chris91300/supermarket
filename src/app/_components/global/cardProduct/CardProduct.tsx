@@ -36,7 +36,7 @@ export default function CardProduct({ product }: Props) {
         <CardProductPackaging packaging={packaging} />
       </div>
       <div className='relative object-contain grow'>
-        <Image src={ `/img/produits/${img}` } alt={ `image du produit: ${name}` } fill={true}/>
+        <Image src={ `/img/produits/${img}` } alt={ `image du produit: ${name}` } fill sizes='100%'/>
       </div>
       <div className='flex items-center justify-between'>
         <CardProductPrice price={price} />
