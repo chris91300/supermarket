@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const bodyStyle = `relative min-h-full`;
+  const bodyStyle = `relative min-h-full flex flex-col`;
   return (
     <html lang="fr" className="min-h-full h-full bg-white">
       <body className={bodyStyle}>

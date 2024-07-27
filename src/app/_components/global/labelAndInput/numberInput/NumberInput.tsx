@@ -3,7 +3,7 @@
 import changeEventApply from '@/app/_utils/changeEventApply';
 import clickEventApplyWithValue from '@/app/_utils/clickEventApplyWithValue';
 import isNumber from '@/app/_utils/isNumber';
-import { dec, gt, inc, pipe, test } from 'ramda';
+import { dec, gt, inc, pipe } from 'ramda';
 import React, { useState } from 'react'
 import { FaRegSquarePlus, FaRegSquareMinus } from "react-icons/fa6";
 

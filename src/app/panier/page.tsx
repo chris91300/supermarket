@@ -6,7 +6,7 @@ type Props = {}
 export default function CartPage({}: Props){
 
     return(
-        <main>
+        <main className='py-10 flex-grow'>
             <BannerTitle title="VOTRE PANIER" img="cart_banner.jpg" alt="image représentant le panier de l'utilisateur"/>
             <CartHandler />
         </main>

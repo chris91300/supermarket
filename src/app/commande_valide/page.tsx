@@ -7,6 +7,7 @@ import { useOrderIsValid } from '../_hooks/global/useOrderIsValid'
 
 
 export default function CommandeValide() {
+  
   return (
     <RedirectIfNotAllow shouldBeTrueToBeSecure={useOrderIsValid}>
       <OrderPage />

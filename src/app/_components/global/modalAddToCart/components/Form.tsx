@@ -26,11 +26,7 @@ export default function Form({ product, defaultQuantity, alreadyInCart, submitFu
         submitFunction(quantity);
         closeModal();
     }
-    /*const handleChange = (value: number) => {
-        setQuantity(value)
-    }*/
-
-        // créer une fontion qui apply submitFomr
+    
     const submit = submitEventApply(submitFormAndClose)
 
     
@@ -45,7 +41,7 @@ export default function Form({ product, defaultQuantity, alreadyInCart, submitFu
             packaging={packaging}
             quantity={quantity}
             price={price}
-            handleChange={setQuantity}// handleChange
+            handleChange={setQuantity}
         />
         <Price totalPrice={totalPrice} />
         <Buttons alreadyInCart={alreadyInCart} closeModal={closeModal}/>

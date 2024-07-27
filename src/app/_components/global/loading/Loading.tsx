@@ -5,7 +5,7 @@ type Props = {}
 
 function Loading({}: Props) {
   return (
-    <div className="flex justify-center items-center mt-20">
+    <div className="flex justify-center items-center flex-grow">
         <CircularProgress />
     </div>
   )

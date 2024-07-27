@@ -29,7 +29,7 @@ export default function CardProduct({ product }: Props) {
   return (
     <div className='flex flex-col border border-black rounded-lg w-40 h-60 p-1 bg-white'>
       <div className='flex items-center justify-end'>        
-        <ButtonAddToFavorite click={ addOrRemoveFromFavorites } isFull={ isInFavorites }/>
+        <ButtonAddToFavorite click={ addOrRemoveFromFavorites } isInFavorites={ isInFavorites }/>
       </div>
       <div>
         <CardProductTitle title={name} />

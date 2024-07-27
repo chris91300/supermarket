@@ -24,7 +24,7 @@ export default function Category({ params }: categoryProps) {
 
   
     return (
-      <main className="flex min-h-screen flex-col py-10">        
+      <main className="flex flex-col py-10">        
         <BannerTitle
             title={ toUpper(bannerTitle) }
             img={ bannerImg }

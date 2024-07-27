@@ -8,10 +8,6 @@ type Props = {
 function ButtonCancel({ close }: Props) {
 
     const closeComponent = clickEventApply(close);
-    /*const closeComponent = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        e.preventDefault();
-        close()
-      }*/
 
   return (
     <button
