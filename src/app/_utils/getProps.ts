@@ -20,3 +20,7 @@ export const getPropTitleFR = prop("title_fr");
 export const getPropID = prop("id");
 
 export const getPropImgPresentation = prop("imgPresentation");
+
+export const getDefaultQuantity = prop("defaultQuantity");
+
+export const getQuantity = prop("quantity");

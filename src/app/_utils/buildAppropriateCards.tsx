@@ -25,8 +25,8 @@ const buildCardCategoryWithCategory = curry(buildCardCategoryWithData);
 
 function buildCards(category: string, data: subCategory | article){
     const buildCardCategory = buildCardCategoryWithCategory(category);
-    const buildCardsBasedOnData = ifElse( isArticle, buildCardsProductWithData, buildCardCategory );
-    return buildCardsBasedOnData(data)
+    //const buildCardsBasedOnData = ifElse( isArticle, buildCardsProductWithData, buildCardCategory );
+    return isArticle(data) ? buildCardsProductWithData(data as article) : buildCardCategory(data as subCategory)//buildCardsBasedOnData(data)
 }
 
 const buildCardsCurried = curry(buildCards);
