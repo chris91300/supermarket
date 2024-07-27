@@ -43,7 +43,7 @@ function PromoCodeForm() {
     >
         <label>Code promo</label>
         <input
-          className='w-3/4 border border-black rounded-lg pl-2'
+          className='md:w-3/4 border border-black rounded-lg pl-2'
           type="text"
           placeholder='votre code'
           value={inputValue}

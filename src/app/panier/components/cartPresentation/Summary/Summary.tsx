@@ -12,7 +12,7 @@ function Summary() {
   const promoCodeIsValid = usePromoCode();
 
   return (
-    <div className='flex flex-col gap-4 w-52 bg-white py-4'>
+    <div className='flex flex-col gap-4 md:w-52 bg-white py-4'>
       <TotalPrice />
       { promoCodeIsValid ? <PromoCodeSuccess /> : <PromoCodeForm /> }
       <ValidateCommande />

@@ -1,3 +1,4 @@
+import formatePrice from '@/app/_utils/formatePrice'
 import React from 'react'
 
 type Props = {
@@ -5,7 +6,8 @@ type Props = {
 }
 
 export default function CardProductPrice({ price }: Props) {
+  
   return (
-    <p className='font-bold'>{ price }€</p>
+    <p className='font-bold'>{ formatePrice(price) }€</p>
   )
 }

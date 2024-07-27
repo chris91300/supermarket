@@ -1,5 +1,6 @@
 import React from 'react'
 import NumberInput from './numberInput/NumberInput';
+import formatePrice from '@/app/_utils/formatePrice';
 
 export type LabelInputsTypesProps = {
     name: string,
@@ -17,7 +18,7 @@ export default function LabelAndInput({
     handleChange
 }: LabelInputsTypesProps) {
   
-  const priceFormatted = `${price}€`;
+  const priceFormatted = `${formatePrice(price)}€`;
   
   return (
     <div className='flex flex-col items-center'>

@@ -31,6 +31,7 @@ function ProductInCart({ productChoosen }: Props) {
         <ProductInCartImage
             img={img}
             name={name}
+            hidden="phone"
         />
         <ProductInCartForm
             product={product}

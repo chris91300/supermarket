@@ -13,10 +13,7 @@ function CartHandler() {
     const cart = useCart();
     const content = isEmpty(cart)? <EmptyCart /> : <Cart />
     
-  return (
-    <div>{ content }</div>
-    
-  )
+  return content
 }
 
 export default CartHandler

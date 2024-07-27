@@ -6,7 +6,7 @@ import CartPresentation from '../cartPresentation/CartPresentation'
 
 function Cart() {
   return (
-    <div>
+    <div className='px-2'>
         <Link href={"/"} className='text-violet'>
             Continuer mes courses
         </Link>
