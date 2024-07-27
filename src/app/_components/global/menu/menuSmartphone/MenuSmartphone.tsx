@@ -20,7 +20,7 @@ function MenuSmartphone({toogleIsVisible}: Props) {
 
     useEffect(() => {
         toogleIsVisible()
-    }, [pathName]);
+    }, [pathName, toogleIsVisible]);
     
 
     return (
