@@ -4,9 +4,8 @@ import React from 'react'
 import ButtonClose from '../../buttons/ButtonClose'
 import useToogleFavoritesIsVisible from '@/app/_hooks/forFavorites/useToogleFavoritesIsVisible';
 
-type Props = {}
 
-function EmptyFavorites({}: Props) {
+function EmptyFavorites() {
 
   const closeModal = useToogleFavoritesIsVisible();
  

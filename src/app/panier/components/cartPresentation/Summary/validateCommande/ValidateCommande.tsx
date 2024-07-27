@@ -5,9 +5,8 @@ import usePromoCode from '@/app/_hooks/forPromoCode/usePromoCode';
 import useNavigateTo from '@/app/_hooks/global/useNavigateTo';
 import React from 'react'
 
-type Props = {}
 
-function ValidateCommande({}: Props) {
+function ValidateCommande() {
 
   const validateTheOrder = useValidateTheOrder();
   const promoCodeIsValide = usePromoCode();

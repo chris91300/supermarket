@@ -1,9 +1,9 @@
 import React from 'react'
 import { CircularProgress } from '@mui/material';
 
-type Props = {}
 
-function Loading({}: Props) {
+
+function Loading() {
   return (
     <div className="flex justify-center items-center flex-grow">
         <CircularProgress />

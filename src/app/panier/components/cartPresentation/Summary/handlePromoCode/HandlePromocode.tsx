@@ -4,14 +4,13 @@ import React, { useState } from 'react'
 import PromoCodeForm from './promoCodeForm/PromoCodeForm';
 import PromoCodeSuccess from './promoCodeSuccess/PromoCodeSuccess';
 
-type Props = {}
 
-function HandlePromocode({}: Props) {
+function HandlePromocode() {
     
-    const [ codeIsValidated, setCodeIsValidated ] = useState(false);
+    const [ codeIsValidated ] = useState(false);
 
    
-  return codeIsValidated ? <PromoCodeSuccess /> : <PromoCodeForm setCodeIsValidated={setCodeIsValidated}/>;
+  return codeIsValidated ? <PromoCodeSuccess /> : <PromoCodeForm />;
 }
 
 export default HandlePromocode

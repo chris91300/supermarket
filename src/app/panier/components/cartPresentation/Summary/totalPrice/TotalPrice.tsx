@@ -6,9 +6,8 @@ import getTotalPrice from '@/app/_utils/getTotalPrice';
 import getTotalQuantityOfProductInCart from '@/app/_utils/getTotalQuantityOfProductInCart';
 import React from 'react'
 
-type Props = {}
 
-function TotalPrice({}: Props) {
+function TotalPrice() {
 
     const cart = useCart();
     const promoCodeIsValid = usePromoCode();

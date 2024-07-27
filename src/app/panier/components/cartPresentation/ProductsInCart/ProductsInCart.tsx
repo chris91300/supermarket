@@ -7,9 +7,8 @@ import ProductInCart from './productInCart/ProductInCart';
 import { nanoid } from '@reduxjs/toolkit';
 import useCart from '@/app/_hooks/forCart/useCart';
 
-type Props = {}
 
-function ProductsInCart({}: Props) {
+function ProductsInCart() {
   const cart = useCart();
   const listOfproducts = map((productChoosen: productChoosen) => <ProductInCart key={nanoid()} productChoosen={productChoosen} />, cart);
 

@@ -26,7 +26,7 @@ function RedirectIfNotAllow({ shouldBeTrueToBeSecure, children }: RedirectIfNotA
         }
       }
       
-    }, [beTrueToBeSecure, navigateTo])
+    }, [beTrueToBeSecure, navigateTo, isLoading])
     
 
   return (

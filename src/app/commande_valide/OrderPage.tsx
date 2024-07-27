@@ -6,9 +6,8 @@ import Animation from './animation/Animation'
 import useEmptyTheCartWhenComponentIsRender from '../_hooks/global/useEmptyTheCartWhenComponentIsRender'
 import useResetOrderAndPromoCodeWhenComponentIsUnmount from '../_hooks/global/useResetOrderAndPromoCodeWhenComponentIsUnmount'
 
-type Props = {}
 
-export default function OrderPage({}: Props) {
+export default function OrderPage() {
   useEmptyTheCartWhenComponentIsRender();
   useResetOrderAndPromoCodeWhenComponentIsUnmount();
   

@@ -6,10 +6,7 @@ import checkThisPromoCode from '../../../../../../_utils/checkThisPromoCode';
 import usePromoCodeIsValide from '@/app/_hooks/forPromoCode/usePromoCodeIsValide';
 
 
-type Props = {
-}
-
-function PromoCodeForm({}: Props) {
+function PromoCodeForm() {
     const [ inputValue, setInputValue ] = useState("");
     const [loading, setLoading] = useState(false);
     const [ codeInvalidated, setCodeInvalidated ] = useState(false);

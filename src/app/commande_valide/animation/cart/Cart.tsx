@@ -1,9 +1,8 @@
 import React from 'react'
 import { FaShoppingCart } from "react-icons/fa";
 
-type Props = {}
 
-function Cart({}: Props) {
+function Cart() {
   return (
     <FaShoppingCart
       className="absolute z-20 bottom-9 left-1/4 text-violet animate-cartIsMoving"

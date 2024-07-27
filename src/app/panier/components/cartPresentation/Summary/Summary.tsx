@@ -7,10 +7,7 @@ import PromoCodeSuccess from './handlePromoCode/promoCodeSuccess/PromoCodeSucces
 import usePromoCode from '@/app/_hooks/forPromoCode/usePromoCode'
 
 
-
-type Props = {}
-
-function Summary({}: Props) {
+function Summary() {
   
   const promoCodeIsValid = usePromoCode();
 

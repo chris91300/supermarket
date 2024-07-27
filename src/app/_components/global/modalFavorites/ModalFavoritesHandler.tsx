@@ -4,9 +4,9 @@ import React from 'react'
 import Modal from './Modal';
 import useFavorites from '@/app/_hooks/forFavorites/useFavorites';
 
-type Props = {}
 
-function ModalFavoritesHandler({}: Props) {
+
+function ModalFavoritesHandler() {
 
   const { products, visible } = useFavorites();
 
