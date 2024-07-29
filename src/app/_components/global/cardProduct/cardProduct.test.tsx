@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import CardProduct from "./CardProduct";
 import userEvent from "@testing-library/user-event";
 import { createStore } from "@/lib/store";
+import formatePrice from "@/app/_utils/formatePrice";
 
 const product = {
     "name" :"fraises",
@@ -24,7 +25,7 @@ describe("TEST OF CARDPRODUCT COMPONENT", () => {
 
         const title = screen.getByText(product.name);
         const packaging = screen.getByText(product.packaging);
-        const price = screen.getByText(`${product.price}€`);
+        const price = screen.getByText(`${formatePrice(product.price)}€`);
         const image = screen.getByAltText(`image du produit: ${product.name}`)
         const heartIcon = screen.getByTitle("Ajouter à vos favories")
         const cartIcon = screen.getByTitle("Ajouter à votre panier")
