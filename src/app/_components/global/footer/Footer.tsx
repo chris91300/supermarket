@@ -1,9 +1,9 @@
-import Link from 'next/link'
+
 import React from 'react'
-import LinkToGit from '../links/LinkToGit'
-import LinkToPortfolio from '../links/LinkToPortfolio'
-import Author from './Author'
-import Border from './Border'
+import LinkToGit from './components/LinkToGit'
+import LinkToPortfolio from './components/LinkToPortfolio'
+import Author from './components/Author'
+import Border from './components/Border'
 
 
 
