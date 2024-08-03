@@ -1,17 +1,20 @@
 import Link from 'next/link'
 import React from 'react'
+import LinkToGit from '../links/LinkToGit'
+import LinkToPortfolio from '../links/LinkToPortfolio'
+import Author from './Author'
+import Border from './Border'
 
 
 
 function Footer() {
   return (
-    <footer className='flex items-center justify-center gap-6 bg-black py-12'>
-        <p className=' text-white border-r-2 border-violet pr-6'>
-            MICHEL Christophe            
-        </p>
-        <Link href="https://github.com/chris91300/supermarket" title="aller sur la page github du repository" className='text-white'>
-            voir le code sur github
-        </Link>
+    <footer className='flex flex-col md:flex-row items-center justify-center gap-6 bg-black py-12'>
+        <Author />    
+        <Border />    
+        <LinkToGit />
+        <Border />  
+        <LinkToPortfolio />
     </footer>
   )
 }
