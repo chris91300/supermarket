@@ -1,5 +1,5 @@
 import { PayloadAction } from "@reduxjs/toolkit";
-import { favoritesTypes, product } from "../../../types/types";
+import { favoritesTypes, product } from "@/types/types";
 import {
     remove,
     findIndex,
@@ -8,7 +8,6 @@ import {
     not as inverse,
     propEq,
 } from "ramda";
-//import idEqual from "../utils/idEqual";
 
 const reducer = {
     addProduct: (state: favoritesTypes, action: PayloadAction<product>) => {

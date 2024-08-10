@@ -1,13 +1,11 @@
 import React from 'react'
-import data from '../../../../_bdd/data.json'
-import getDataForMenu from '../../../../_utils/forDataBase/toDelete/getDataForMenu';
 import { buildMenu } from '@/app/_utils/buildMenu';
 import Database from "@/app/_bdd/DbStrategy";
 
 
 export default function MenuAside() {
 
-  const menu = Database.getDataForMenu();//getDataForMenu(data);  
+  const menu = Database.getDataForMenu();  
   const menuComponents = buildMenu(menu);
   
   return (

@@ -34,4 +34,6 @@ class DbStrategy implements DatabaseInterface {
 
 const DbJson = new DBJson();
 
-export default new DbStrategy(DbJson);
+const DataBase = new DbStrategy(DbJson);
+
+export default DataBase;

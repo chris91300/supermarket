@@ -1,4 +1,4 @@
-import { favoritesTypes } from "../../../types/types";
+import { favoritesTypes } from "@/types/types";
 
 const favoritesInitialState: favoritesTypes = {
     products: [],

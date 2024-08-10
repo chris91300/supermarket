@@ -1,4 +1,4 @@
-import { cartTypes } from "../../../types/types";
+import { cartTypes } from "@/types/types";
 
 const cartInitialState: cartTypes = [];
 

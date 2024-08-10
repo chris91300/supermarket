@@ -4,7 +4,7 @@ import {
     actionChangeQuantityProduct,
     actionDeleteProduct,
     cartTypes,
-} from "../../../types/types";
+} from "@/types/types";
 import getProductToModify from "../utils/getProductToModify";
 import setNewQuantity from "../utils/setNewQuantity";
 import idEqual from "../utils/idEqual";
