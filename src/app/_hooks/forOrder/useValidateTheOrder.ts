@@ -1,4 +1,4 @@
-import { orderIsValide } from "@/lib/features/order/orderSlice";
+import { orderIsValide } from "@/lib/store/features/order/orderSlice";
 import { useAppDispatch } from "../forUsingStore/hooks";
 
 export default function useValidateTheOrder() {

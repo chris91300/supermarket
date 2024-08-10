@@ -1,4 +1,4 @@
-import { resetOrder } from "@/lib/features/order/orderSlice";
+import { resetOrder } from "@/lib/store/features/order/orderSlice";
 import { useAppDispatch } from "../forUsingStore/hooks";
 
 export default function useResetOrder() {

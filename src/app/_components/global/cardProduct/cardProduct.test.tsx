@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react"
 import { Provider } from "react-redux";
 import CardProduct from "./CardProduct";
 import userEvent from "@testing-library/user-event";
-import { createStore } from "@/lib/store";
+import { createStore } from "@/lib/store/store";
 import formatePrice from "@/app/_utils/formatePrice";
 
 const product = {

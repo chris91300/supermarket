@@ -1,4 +1,4 @@
-import { dataForFormFavorites, product } from "@/types/types";
+import { dataForFormFavorites } from "@/types/types";
 import curriedGetInputsComponents from "./getInputsComponents";
 import { uncurryN } from "ramda";
 

@@ -1,9 +1,9 @@
 import { subCategory } from "@/types/types";
 import { identity, ifElse, isNotNil } from "ramda";
-import throwError from "../throwError";
+import throwError from "../../../_utils/throwError";
 
 const throwNewError = () =>
-    throwError("La sous catégorie demandée n'est pas correcte.");
+    throwError("La sous catégorie demandée n'existe pas.");
 
 const checkIfSubCategoryIsFound = ifElse(
     isNotNil<subCategory | undefined>,

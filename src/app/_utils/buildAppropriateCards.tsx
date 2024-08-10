@@ -1,6 +1,6 @@
 import { subCategory, article } from "@/types/types";
 import CardCategory from "@/app/_components/global/cardCategory/CardCategory";
-import { curry, ifElse, map } from "ramda";
+import { curry, map } from "ramda";
 import CardProduct from "@/app/_components/global/cardProduct/CardProduct";
 import isArticle from "@/app/_utils/isArticle";
 import { nanoid } from "@reduxjs/toolkit";
@@ -25,8 +25,7 @@ const buildCardCategoryWithCategory = curry(buildCardCategoryWithData);
 
 function buildCards(category: string, data: subCategory | article){
     const buildCardCategory = buildCardCategoryWithCategory(category);
-    //const buildCardsBasedOnData = ifElse( isArticle, buildCardsProductWithData, buildCardCategory );
-    return isArticle(data) ? buildCardsProductWithData(data as article) : buildCardCategory(data as subCategory)//buildCardsBasedOnData(data)
+    return isArticle(data) ? buildCardsProductWithData(data as article) : buildCardCategory(data as subCategory)
 }
 
 const buildCardsCurried = curry(buildCards);

@@ -1,4 +1,3 @@
-import { replace } from "ramda";
 import encodeForUrl from "./encodeForUrl";
 
 describe("test of encodeForUrl function", () => {

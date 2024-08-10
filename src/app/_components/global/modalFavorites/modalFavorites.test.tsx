@@ -1,8 +1,8 @@
 import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { createStore } from "@/lib/store";
+import { createStore } from "@/lib/store/store";
 import ModalHandler from "./ModalFavoritesHandler";
-import { addProduct, toogleIsVisible } from "@/lib/features/favorites/favoritesSlice";
+import { addProduct, toogleIsVisible } from "@/lib/store/features/favorites/favoritesSlice";
 import { add, multiply } from "ramda";
 import { getRenderWithStore, renderWrappedByProvider } from "@/app/_utils/forTests/renderWrappedByProvider";
 

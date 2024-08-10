@@ -1,13 +1,12 @@
-import getSubCategories from "./forDataBase/getSubCategories";
-import getProducts from "./forDataBase/getProducts";
+import Database from "@/app/_bdd/DbStrategy";
 
 export default function getCardsInformations(categories: string[]) {
     const [category, subCategory] = categories;
     const userWantSubCategory = Boolean(subCategory);
 
     if (userWantSubCategory) {
-        return getProducts(category, subCategory);
+        return Database.getProducts(category, subCategory);
     } else {
-        return getSubCategories(category);
+        return Database.getSubCategories(category);
     }
 }

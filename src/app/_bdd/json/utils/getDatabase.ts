@@ -1,4 +1,4 @@
-import db from "../../_bdd/data.json";
+import db from "@/app/_bdd/json/data.json";
 import { dataType } from "@/types/types";
 
 const database: dataType = db;

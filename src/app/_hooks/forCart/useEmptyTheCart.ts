@@ -1,4 +1,4 @@
-import { empty } from "@/lib/features/cart/cartSlice";
+import { empty } from "@/lib/store/features/cart/cartSlice";
 import { useAppDispatch } from "../forUsingStore/hooks";
 
 export default function useEmptyTheCart() {

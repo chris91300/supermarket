@@ -1,5 +1,5 @@
 import { productChoosen } from "@/types/types";
-import { addProduct } from "@/lib/features/cart/cartSlice";
+import { addProduct } from "@/lib/store/features/cart/cartSlice";
 import { toast } from "sonner";
 import { useAppDispatch } from "../forUsingStore/hooks";
 

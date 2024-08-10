@@ -1,5 +1,5 @@
 import { product } from "@/types/types";
-import { deleteProduct } from "@/lib/features/favorites/favoritesSlice";
+import { deleteProduct } from "@/lib/store/features/favorites/favoritesSlice";
 import { toast } from "sonner";
 import { useAppDispatch } from "../forUsingStore/hooks";
 

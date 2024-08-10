@@ -1,4 +1,4 @@
-import { toogleIsVisible } from "@/lib/features/favorites/favoritesSlice";
+import { toogleIsVisible } from "@/lib/store/features/favorites/favoritesSlice";
 import { useAppDispatch } from "../forUsingStore/hooks";
 
 export default function useToogleFavoritesIsVisible() {

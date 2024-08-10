@@ -1,5 +1,5 @@
 import { product } from "@/types/types";
-import { addProduct } from "@/lib/features/formAddToCart/formAddToCartSlice";
+import { addProduct } from "@/lib/store/features/formAddToCart/formAddToCartSlice";
 import { useAppDispatch } from "../forUsingStore/hooks";
 
 export default function useAddProductToCartForm(product: product) {

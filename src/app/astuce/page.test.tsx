@@ -1,10 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import Astuce from "./page";
 import { map } from "ramda";
-import { createStore } from "@/lib/store";
+import { createStore } from "@/lib/store/store";
 import { Provider } from "react-redux";
-import { orderIsValide } from "@/lib/features/order/orderSlice";
-import { promoCodeIsValide } from "@/lib/features/promoCode/promoCodeSlice";
+import { orderIsValide } from "@/lib/store/features/order/orderSlice";
+import { promoCodeIsValide } from "@/lib/store/features/promoCode/promoCodeSlice";
 
 /** New next/navigation mock */
 jest.mock('next/navigation', () => {

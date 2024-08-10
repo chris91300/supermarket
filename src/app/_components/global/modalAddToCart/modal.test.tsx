@@ -1,11 +1,10 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { createStore } from "@/lib/store";
-import { Provider } from "react-redux";
+import { createStore } from "@/lib/store/store";
 import ModalAddToCartHandler from "./ModalAddToCartHandler";
 import { getRenderWithStore } from "@/app/_utils/forTests/renderWrappedByProvider";
-import { addProduct, toogleIsVisible } from "@/lib/features/formAddToCart/formAddToCartSlice";
-import exp from "constants";
+import { addProduct, toogleIsVisible } from "@/lib/store/features/formAddToCart/formAddToCartSlice";
+
 
 window.HTMLDivElement.prototype.scrollIntoView = jest.fn();
 

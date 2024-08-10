@@ -1,6 +1,6 @@
 import { pipe } from "ramda";
-import removeTypeVoidIfIsFound from "./removeTypeVoidIfIsFound";
 import checkIfSubCategoryIsFound from "./chekIfSubCategoryIsFound";
+import removeTypeVoidIfIsFound from "./removeTypeVoidIfIsFound";
 
 const checkIfSubCategoryExist = pipe(
     checkIfSubCategoryIsFound,
