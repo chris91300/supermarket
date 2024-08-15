@@ -1,6 +1,6 @@
 import React from 'react'
 import { buildMenu } from '@/app/_utils/buildMenu';
-import Database from "@/app/_bdd/DbStrategy";
+import Database from "@/app/_bdd/DbAdapter";
 
 
 export default function MenuAside() {

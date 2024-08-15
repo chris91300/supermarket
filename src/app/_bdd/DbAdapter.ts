@@ -2,7 +2,7 @@ import { mainCategory } from "@/types/types";
 import { DatabaseInterface } from "../../lib/interfaces/database/DatabaseInterface";
 import DBJson from "./json/DBJson";
 
-class DbStrategy implements DatabaseInterface {
+class DbAdapter implements DatabaseInterface {
     database: DatabaseInterface;
 
     constructor(database: DatabaseInterface) {
@@ -34,6 +34,6 @@ class DbStrategy implements DatabaseInterface {
 
 const DbJson = new DBJson();
 
-const DataBase = new DbStrategy(DbJson);
+const DataBase = new DbAdapter(DbJson);
 
 export default DataBase;

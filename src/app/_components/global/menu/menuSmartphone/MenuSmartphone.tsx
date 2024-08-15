@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import ButtonClose from '../../buttons/ButtonClose'
 import { buildMenu } from '@/app/_utils/buildMenu'
 import { usePathname } from 'next/navigation'
-import Database from '@/app/_bdd/DbStrategy'
+import Database from '@/app/_bdd/DbAdapter'
 
 
 type Props = {

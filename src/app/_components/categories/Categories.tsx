@@ -1,7 +1,7 @@
 
 import React from 'react'
 import buildCardsCategories from '../../_utils/buildCardsCategories';
-import Database from '@/app/_bdd/DbStrategy'
+import Database from '@/app/_bdd/DbAdapter'
 
 export default function Categories() {
   

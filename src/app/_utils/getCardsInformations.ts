@@ -1,4 +1,4 @@
-import Database from "@/app/_bdd/DbStrategy";
+import Database from "@/app/_bdd/DbAdapter";
 
 export default function getCardsInformations(categories: string[]) {
     const [category, subCategory] = categories;
