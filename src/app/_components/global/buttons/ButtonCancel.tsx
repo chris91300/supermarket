@@ -1,5 +1,6 @@
 import clickEventApply from '@/app/_utils/clickEventApply'
 import React from 'react'
+import Button from './Button'
 
 type Props = {
     close: ()=>void
@@ -7,17 +8,12 @@ type Props = {
 
 function ButtonCancel({ close }: Props) {
 
-    const closeComponent = clickEventApply(close);
-
-  return (
-    <button
-        type='button'
-        onClick={closeComponent} 
-        className='border-2 border-red-500 px-2 rounded-lg text-red-500 hover:bg-red-500 hover:text-white transition-all duration-300'
-    >
-        annuler
-    </button>
-  )
+  return <Button
+            className='border-2 border-red-500 px-2 rounded-lg text-red-500 hover:bg-red-500 hover:text-white transition-all duration-300'
+            eventFunction={close}
+          >
+            annuler
+          </Button>  
 }
 
 export default ButtonCancel
