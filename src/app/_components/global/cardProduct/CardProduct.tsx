@@ -10,7 +10,7 @@ import CardProductPrice from './cardProductPrice/CardProductPrice';
 import ButtonAddToCart from './buttonAddToCart/ButtonAddToCart';
 import useIsInFavorites from '../../../_hooks/global/useIsInFavorites';
 import useAddOrRemoveFromFavorites from '../../../_hooks/global/useAddOrRemoveFromFavorites';
-import useToogleAddToCartForm from '../../../_hooks/global/useToogleAddToCartForm';
+import useAddToCartForm from '../../../_hooks/global/useAddToCartForm';
 
 
 type Props = {
@@ -22,7 +22,7 @@ export default function CardProduct({ product }: Props) {
   
   const isInFavorites = useIsInFavorites(product);  
   const addOrRemoveFromFavorites = useAddOrRemoveFromFavorites(product);
-  const showAddToCartForm = useToogleAddToCartForm(product);
+  const showAddToCartForm = useAddToCartForm(product);
   const { name, img, packaging, price } = product;
   
   
