@@ -1,7 +1,7 @@
-import { product } from "@/types/types";
+import { Product } from "@/app/_bdd/types/databasetypes";
 
 const formAddToCartInitialState = {
-    product: {} as product,
+    product: {} as Product,
     visible: false,
 };
 

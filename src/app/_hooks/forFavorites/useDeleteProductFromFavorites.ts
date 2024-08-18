@@ -1,9 +1,9 @@
-import { product } from "@/types/types";
 import { deleteProduct } from "@/lib/store/features/favorites/favoritesSlice";
 import { toast } from "sonner";
 import { useAppDispatch } from "../forUsingStore/hooks";
+import { Product } from "@/app/_bdd/types/databasetypes";
 
-export default function useDeleteProductFromFavorites(product: product) {
+export default function useDeleteProductFromFavorites(product: Product) {
     const dispatch = useAppDispatch();
 
     return function deleteProductFromFavorites() {

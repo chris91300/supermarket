@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { product } from '@/types/types';
+
 import ButtonClose from '../../buttons/ButtonClose';
 import Title from '../../title/Title';
 import LabelAndInput from '../../labelAndInput/LabelAndInput';
@@ -7,9 +7,10 @@ import Price from '../../price/Price';
 import Buttons from './Buttons';
 import useCloseModal from '@/app/_hooks/forFormAddToCart/useToogleCartFormIsVisible';
 import submitEventApply from '@/app/_utils/submitEventApply';
+import { Product } from '@/app/_bdd/types/databasetypes';
 
 type Props = {
-    product: product,
+    product: Product,
     defaultQuantity: number,
     alreadyInCart: boolean,
     submitFunction: (quantity: number) => void

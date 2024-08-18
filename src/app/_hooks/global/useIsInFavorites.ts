@@ -1,10 +1,9 @@
+import { Product } from "@/app/_bdd/types/databasetypes";
 import useFavorites from "@/app/_hooks/forFavorites/useFavorites";
-import { product } from "@/types/types";
 import { includes } from "ramda";
 
-export default function useIsInFavorites(product: product) {
+export default function useIsInFavorites(product: Product) {
     const { products } = useFavorites();
-    //const { products } = favorites;
     const isInFavorites = includes(product, products);
 
     return isInFavorites;

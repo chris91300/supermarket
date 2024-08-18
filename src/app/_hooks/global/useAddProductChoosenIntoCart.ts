@@ -2,7 +2,7 @@ import useAddProductToCart from "@/app/_hooks/forCart/useAddProductToCart";
 import { equalsZero } from "@/app/_utils/equalsZero";
 import { setToQuantity } from "@/app/_utils/setToQuantity";
 import { productChoosen } from "@/types/types";
-import { equals, not } from "ramda";
+import { not } from "ramda";
 
 export default function useAddProductChoosenIntoCart(
     productChoosen: productChoosen

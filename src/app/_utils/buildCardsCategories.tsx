@@ -1,9 +1,10 @@
-import { categoriesInformations } from "@/types/types";
+
 import { map } from "ramda";
 import buildCardCategory from "./buildCardCategory";
+import { CategoriesInformations } from "../_bdd/types/databasetypes";
 
 
-export default function buildCardsCategories(categories: categoriesInformations){
+export default function buildCardsCategories(categories: CategoriesInformations){
 
     const categoriesComponent = map(buildCardCategory, categories)
 

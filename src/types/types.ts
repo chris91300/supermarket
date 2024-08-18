@@ -1,35 +1,30 @@
+import { Product } from "@/app/_bdd/json/types/jsonTypes";
 import { PayloadAction } from "@reduxjs/toolkit";
 
 export type stores = "cart" | "favorites" | "formAddToCart";
 
-export interface id {
+export type id = {
     id: string;
-}
-export interface product extends id {
-    name: string;
-    img: string;
-    packaging: string;
-    price: number;
-}
+};
 
-export interface productChoosen extends id {
-    product: product;
+export type productChoosen = id & {
+    product: Product;
     quantity: number;
-}
+};
 
-export interface productModification extends id {
+export type productModification = id & {
     quantity: number;
-}
+};
 
 export type cartTypes = productChoosen[];
 
 export type favoritesTypes = {
-    products: product[];
+    products: Product[];
     visible: boolean;
 };
 
 export type formAddToCartType = {
-    product: product;
+    product: Product;
     visible: boolean;
 };
 
@@ -58,54 +53,6 @@ export type subMenuItemType = {
     secondaryMenu: string;
 };
 
-export interface article {
-    id: string;
-    name: string;
-    img: string;
-    packaging: string;
-    price: number;
-}
-
-export interface subCategory {
-    id: string;
-    name: string;
-    urlName: string;
-    title_fr: string;
-    imgPresentation: string;
-    imgBanner: string;
-    content: article[];
-}
-
-export interface mainCategory {
-    id: string;
-    title_fr: string;
-    imgPresentation: string;
-    imgBanner: string;
-    content: subCategory[];
-}
-
-export type dataIndex =
-    | "fruits et legumes"
-    | "pains et viennoiseries"
-    | "viandes et poissons"
-    | "frais";
-
-export interface dataType {
-    [index: string]: mainCategory;
-}
-
-export type categoryForBuildMenu = {
-    menu: string;
-    subMenu: string[];
-};
-
-export interface categoryInformations extends id {
-    category: string;
-    img: string;
-}
-
-export type categoriesInformations = categoryInformations[];
-
 export type bannerInformations = {
     bannerTitle: string;
     bannerImg: string;
@@ -119,5 +66,5 @@ export interface dataForFormAddToCart {
 }
 
 export interface dataForFormFavorites extends dataForFormAddToCart {
-    product: product;
+    product: Product;
 }

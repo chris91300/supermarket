@@ -1,7 +1,7 @@
 import db from "@/app/_bdd/json/data.json";
-import { dataType } from "@/types/types";
+import { DataType } from "../types/jsonTypes";
 
-const database: dataType = db;
+const database: DataType = db;
 
 const getDatabase = () => database;
 export default getDatabase;

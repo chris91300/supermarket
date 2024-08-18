@@ -1,16 +1,12 @@
 import React from 'react'
-import { buildMenu } from '@/app/_utils/buildMenu';
-import Database from "@/app/_bdd/DbAdapter";
+import Menu from '../Menu';
 
 
 export default function MenuAside() {
-
-  const menu = Database.getDataForMenu();  
-  const menuComponents = buildMenu(menu);
   
   return (
     <aside className='hidden w-max h-min text-violet border-violet border-2 md:block'>
-      { menuComponents }
+      <Menu/>
     </aside>
   )
 }

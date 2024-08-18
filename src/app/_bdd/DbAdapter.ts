@@ -1,6 +1,6 @@
-import { mainCategory } from "@/types/types";
 import { DatabaseInterface } from "../../lib/interfaces/database/DatabaseInterface";
 import DBJson from "./json/DBJson";
+import { Category } from "./types/databasetypes";
 
 class DbAdapter implements DatabaseInterface {
     database: DatabaseInterface;
@@ -15,7 +15,7 @@ class DbAdapter implements DatabaseInterface {
 
     getSubCategories = (str: string) => this.database.getSubCategories(str);
 
-    getSubCategory = (subCategory: string, category: mainCategory) =>
+    getSubCategory = (subCategory: string, category: Category) =>
         this.database.getSubCategory(subCategory, category);
 
     getBannerCategoryInformations = (str: string) =>

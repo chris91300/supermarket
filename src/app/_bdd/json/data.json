@@ -4,7 +4,7 @@
         "title_fr" : "fruits et légumes",
         "imgPresentation" : "fruit_and_vegetable.jpg",
         "imgBanner" : "fruits_and_vegetables_banner.jpg",
-        "content" : [
+        "subcategories" : [
             {
                 "name": "fruits",
                 "urlName": "fruits",
@@ -12,7 +12,7 @@
                 "title_fr": "fruits",
                 "imgPresentation" : "fruit.jpg",
                 "imgBanner" : "fruits_banner.jpg",
-                "content" : [
+                "products" : [
                         {
                             "name" :"fraises",
                             "id" : "1",
@@ -65,7 +65,7 @@
                 "title_fr" : "légumes",
                 "imgPresentation" : "vegetable.jpg",
                 "imgBanner" : "vegetable_banner.jpg",
-                "content" : [
+                "products" : [
                         {
                             "name": "carottes",
                             "id" : "7",
@@ -120,7 +120,7 @@
         "title_fr" : "pains et viennoiseries",
         "imgPresentation" : "bread_and_pastry.jpg",
         "imgBanner" : "bread_and_pastry_banner.jpg",
-        "content" : [
+        "subcategories" : [
             {
                 "name": "bread",
                 "urlName": "pains",
@@ -128,7 +128,7 @@
                 "title_fr": "pains",
                 "imgPresentation" : "bread.jpg",
                 "imgBanner" : "bread_banner.jpg",
-                "content" : [
+                "products" : [
                     {
                         "name": "baguette",
                         "id" : "13",
@@ -181,7 +181,7 @@
                 "title_fr" : "pâtisseries",
                 "imgPresentation" : "pastry.jpg",
                 "imgBanner" : "pastry_banner.jpg",
-                "content" : [
+                "products" : [
                     {
                         "name": "forêt noire",
                         "id" : "19",
@@ -235,7 +235,7 @@
         "title_fr" : "viandes et poissons",
         "imgPresentation" : "meat_and_fish.jpg",
         "imgBanner" : "meat_and_fish_banner.jpg",
-        "content" : [
+        "subcategories" : [
             {
                 "name": "butcher",
                 "urlName": "boucherie",
@@ -243,7 +243,7 @@
                 "title_fr": "boucherie",
                 "imgPresentation" : "butcher.jpg",
                 "imgBanner" : "butcher_banner.jpg",
-                "content" : [
+                "products" : [
                     {
                         "name": "viande à brochette",
                         "id" : "25",
@@ -296,7 +296,7 @@
                 "title_fr" : "volaille",
                 "imgPresentation" : "poultry.jpg",
                 "imgBanner" : "poultry_banner.jpg",
-                "content" : [
+                "products" : [
                     {
                         "name": "escalopes de dinde LE GAULOIS",
                         "id" : "31",
@@ -349,7 +349,7 @@
                 "title_fr" : "poisson",
                 "imgPresentation" : "fish.jpg",
                 "imgBanner" : "fish_banner.jpg",
-                "content" : [
+                "products" : [
                     {
                         "name": "dos de cabillaud",
                         "id" : "37",
@@ -403,7 +403,7 @@
         "title_fr" : "frais",
         "imgPresentation" : "frais.jpg",
         "imgBanner" : "frais_banner.jpg",
-        "content" : [
+        "subcategories" : [
             {
                 "name": "creamery",
                 "urlName": "cremerie",
@@ -411,7 +411,7 @@
                 "title_fr": "crèmerie",
                 "imgPresentation" : "cremery.jpg",
                 "imgBanner" : "cremery_banner.jpg",
-                "content" : [
+                "products" : [
                     {
                         "name": "lait CANDIA",
                         "id" : "43",
@@ -464,7 +464,7 @@
                 "title_fr" : "yaourt",
                 "imgPresentation" : "yogurt.jpg",
                 "imgBanner" : "yogurt_banner.jpg",
-                "content" : [
+                "products" : [
                     {
                         "name": "mousse chocolat au lait LA LAITIÈRE",
                         "id" : "49",
@@ -517,7 +517,7 @@
                 "title_fr" : "fromage",
                 "imgPresentation" : "cheese.jpg",
                 "imgBanner" : "cheese_banner.jpg",
-                "content" : [
+                "products" : [
                     {
                         "name": "fromage Roquefort AOP SOCIÉTÉ",
                         "id" : "55",
@@ -570,7 +570,7 @@
                 "title_fr" : "charcuterie",
                 "imgPresentation" : "deli.jpg",
                 "imgBanner" : "deli_banner.jpg",
-                "content" : [
+                "products" : [
                     {
                         "name": "jambon blanc MADRANGE",
                         "id" : "61",

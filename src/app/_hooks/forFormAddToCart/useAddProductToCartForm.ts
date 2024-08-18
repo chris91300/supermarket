@@ -1,8 +1,8 @@
-import { product } from "@/types/types";
 import { addProduct } from "@/lib/store/features/formAddToCart/formAddToCartSlice";
 import { useAppDispatch } from "../forUsingStore/hooks";
+import { Product } from "@/app/_bdd/types/databasetypes";
 
-export default function useAddProductToCartForm(product: product) {
+export default function useAddProductToCartForm(product: Product) {
     const dispatch = useAppDispatch();
 
     return function AddProductToCartForm() {

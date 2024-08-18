@@ -1,7 +1,7 @@
-import { mainCategory, subCategory } from "@/types/types";
+import { Category, SubCategory } from "../types/jsonTypes";
 
 export default function buildInformationsForBannerCategory(
-    category: mainCategory | subCategory
+    category: Category | SubCategory
 ) {
     const { title_fr, imgBanner } = category;
     const bannerAlt = `image représentant la catégorie ${title_fr}`;

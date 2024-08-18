@@ -1,35 +1,35 @@
-import {
-    type categoriesInformations,
-    type categoryForBuildMenu,
-    type dataType,
-    type mainCategory,
-} from "@/types/types";
 import { DatabaseInterface } from "../../../lib/interfaces/database/DatabaseInterface";
 import getDatabase from "@/app/_bdd/json/utils/getDatabase";
 import { append, curry, flip, forEachObjIndexed, pipe, prop } from "ramda";
-import {
-    getPropID,
-    getPropImgPresentation,
-    getPropProducts,
-    getPropSubCategories,
-    getPropTitleFR,
-} from "@/app/_utils/getProps";
 import decodeFromURL from "@/app/_utils/decodeFromUrl";
 import checkIfCategoryExist from "@/app/_bdd/json/utils/checkIfCategoryExist";
 import findSubCategory from "@/app/_bdd/json/utils/findSubCategory";
 import checkIfSubCategoryExist from "./utils/checkIfSubCategoryExist";
 import buildInformationsForBannerCategory from "@/app/_bdd/json/utils/buildInformationsForBannerCategory";
 import getTitlesOfEachSubCategory from "@/app/_bdd/json/utils/getTitlesOfEachSubCategory";
+import {
+    type CategoriesInformations,
+    type Category,
+    type CategoryForBuildMenu,
+    type DataType,
+} from "./types/jsonTypes";
+import {
+    getPropID,
+    getPropImgPresentation,
+    getPropProducts,
+    getPropSubCategories,
+    getPropTitleFR,
+} from "./utils/getProps";
 
 export default class DBJson implements DatabaseInterface {
-    db: dataType;
+    db: DataType;
 
     constructor() {
         this.db = getDatabase();
     }
 
     getCategoriesInformations = () => {
-        let categoriesInformations: categoriesInformations = [];
+        let CategoriesInformations: CategoriesInformations = [];
 
         forEachObjIndexed((category) => {
             const categoryInformations = {
@@ -38,19 +38,19 @@ export default class DBJson implements DatabaseInterface {
                 img: getPropImgPresentation(category),
             };
 
-            categoriesInformations = append(
+            CategoriesInformations = append(
                 categoryInformations,
-                categoriesInformations
+                CategoriesInformations
             );
         }, this.db);
 
-        return categoriesInformations;
+        return CategoriesInformations;
     };
 
     getCategory = (str: string) => {
-        const getCategoryFromDatabase = flip<string, dataType, mainCategory>(
-            prop
-        )(this.db);
+        const getCategoryFromDatabase = flip<string, DataType, Category>(prop)(
+            this.db
+        );
 
         return pipe(
             decodeFromURL,
@@ -63,7 +63,7 @@ export default class DBJson implements DatabaseInterface {
         return pipe(this.getCategory, getPropSubCategories)(str);
     };
 
-    getSubCategory = (subCategory: string, category: mainCategory) => {
+    getSubCategory = (subCategory: string, category: Category) => {
         const findSubCategoryCurried = curry(findSubCategory);
         const getSubcatData = pipe(
             getPropSubCategories,
@@ -91,7 +91,7 @@ export default class DBJson implements DatabaseInterface {
     };
 
     getDataForMenu = () => {
-        const menuInformations: categoryForBuildMenu[] = [];
+        const menuInformations: CategoryForBuildMenu[] = [];
 
         forEachObjIndexed((cat) => {
             const menus = {

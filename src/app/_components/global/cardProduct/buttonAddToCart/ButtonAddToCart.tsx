@@ -1,14 +1,15 @@
 'use client'
 
-import { product } from '@/types/types';
+import { Product } from '@/app/_bdd/types/databasetypes';
 import React from 'react'
 import useSearchForTheProductInTheCart from '../../../../_hooks/global/useSearchForTheProductInTheCart';
 import BubbleCount from '../../bubbleCount/BubbleCount';
 import { FaShoppingCart } from "react-icons/fa";
 import getProductQuantityInCart from '../../../../_utils/getProductQuantityInCart';
 
+
 type Props = {
-  product: product,
+  product: Product,
     click:()=>void
 }
 

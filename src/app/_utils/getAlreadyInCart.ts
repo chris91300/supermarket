@@ -1,13 +1,14 @@
 import getProductChoosenFoundInCart from "@/app/_utils/getProductChoosenFoundInCart";
 import initNewProductChoosen from "@/app/_utils/initNewProductChoosen";
 import wasTheProductFoundInTheCart from "@/app/_utils/wasTheProductFoundInTheCart";
-import { cartTypes, product } from "@/types/types";
+import { cartTypes } from "@/types/types";
+import { Product } from "../_bdd/types/databasetypes";
 
 export default function getAlreadyInCart({
     product,
     productFounds,
 }: {
-    product: product;
+    product: Product;
     productFounds: cartTypes;
 }) {
     const alreadyInCart = wasTheProductFoundInTheCart(productFounds);

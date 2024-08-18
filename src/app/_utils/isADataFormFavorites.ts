@@ -1,4 +1,5 @@
 import { dataForFormFavorites, productChoosen } from "@/types/types";
+
 export default function isADataFormFavorites(
     data: dataForFormFavorites | productChoosen
 ) {

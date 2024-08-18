@@ -1,10 +1,10 @@
-import { subCategory } from "@/types/types";
 import { find, propEq } from "ramda";
+import { SubCategory } from "../types/jsonTypes";
 
 export default function findSubCategory(
     subCategory: string,
-    subCategories: subCategory[]
+    subCategories: SubCategory[]
 ) {
     const subCategoryChoosenByUser = propEq(subCategory, "urlName");
-    return find<subCategory>(subCategoryChoosenByUser)(subCategories);
+    return find<SubCategory>(subCategoryChoosenByUser)(subCategories);
 }

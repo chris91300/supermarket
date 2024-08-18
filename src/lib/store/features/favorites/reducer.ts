@@ -1,5 +1,5 @@
 import { PayloadAction } from "@reduxjs/toolkit";
-import { favoritesTypes, product } from "@/types/types";
+import { favoritesTypes } from "@/types/types";
 import {
     remove,
     findIndex,
@@ -8,9 +8,10 @@ import {
     not as inverse,
     propEq,
 } from "ramda";
+import { Product } from "@/app/_bdd/types/databasetypes";
 
 const reducer = {
-    addProduct: (state: favoritesTypes, action: PayloadAction<product>) => {
+    addProduct: (state: favoritesTypes, action: PayloadAction<Product>) => {
         const product = action.payload;
         if (includes(product, state.products)) {
             return state;

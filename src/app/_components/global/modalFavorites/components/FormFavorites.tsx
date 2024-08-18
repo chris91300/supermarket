@@ -6,10 +6,11 @@ import useDataForFavoritesModal from '../../../../_hooks/global/useDataForFavori
 import ButtonCancel from '../../buttons/ButtonCancel';
 import SubmitButton from '../../buttons/SubmitButton';
 import useGetFormFavoritesComponent from '@/app/_hooks/global/useGetFormFavoritesComponent';
-import { product } from '@/types/types';
+import { Product } from '@/app/_bdd/types/databasetypes';
+
 
 type Props = {
-    products: product[]
+    products: Product[]
 }
 
 

@@ -1,11 +1,12 @@
 import NumberInput from '@/app/_components/global/labelAndInput/numberInput/NumberInput';
-import { product } from '@/types/types'
+
 
 import React from 'react'
 import ProductInCartImage from '../productInCartImage/ProductInCartImage';
+import { Product } from '@/app/_bdd/types/databasetypes';
 
 type Props = {
-    product: product,
+    product: Product,
     quantity: number,
     handleChange: (value: number) => void,
     updateQuantity: (e: React.MouseEvent<unknown, MouseEvent>) => void,

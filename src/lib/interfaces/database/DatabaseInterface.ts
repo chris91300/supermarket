@@ -1,19 +1,19 @@
 import {
-    article,
-    categoriesInformations,
-    categoryForBuildMenu,
-    mainCategory,
-    subCategory,
-} from "@/types/types";
+    CategoriesInformations,
+    Category,
+    CategoryForBuildMenu,
+    Product,
+    SubCategory,
+} from "@/app/_bdd/types/databasetypes";
 
 export interface DatabaseInterface {
-    getCategoriesInformations: () => categoriesInformations;
+    getCategoriesInformations: () => CategoriesInformations;
 
-    getCategory: (str: string) => mainCategory;
+    getCategory: (str: string) => Category;
 
-    getSubCategories: (str: string) => subCategory[];
+    getSubCategories: (str: string) => SubCategory[];
 
-    getSubCategory(subCategory: string, category: mainCategory): subCategory;
+    getSubCategory(subCategory: string, category: Category): SubCategory;
 
     getBannerCategoryInformations: (str: string) => {
         bannerTitle: string;
@@ -30,7 +30,7 @@ export interface DatabaseInterface {
         bannerAlt: string;
     };
 
-    getDataForMenu(): categoryForBuildMenu[];
+    getDataForMenu(): CategoryForBuildMenu[];
 
-    getProducts(category: string, subCategory: string): article[];
+    getProducts(category: string, subCategory: string): Product[];
 }

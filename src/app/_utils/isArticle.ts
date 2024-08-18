@@ -1,6 +1,6 @@
-import { subCategory, article } from "@/types/types";
 import { has } from "ramda";
+import { Product, SubCategory } from "../_bdd/types/databasetypes";
 
-export default function isArticle(data: subCategory | article) {
+export default function isArticle(data: SubCategory | Product) {
     return has("price", data);
 }

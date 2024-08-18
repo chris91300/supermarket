@@ -1,8 +1,8 @@
-import { subCategory } from "@/types/types";
 import { map, pipe } from "ramda";
-import { getPropTitleFR, getPropSubCategories } from "../../../_utils/getProps";
+import { SubCategory } from "../types/jsonTypes";
+import { getPropSubCategories, getPropTitleFR } from "./getProps";
 
-const getTitleFrOfEachSubCategory = map<subCategory, string>(getPropTitleFR);
+const getTitleFrOfEachSubCategory = map<SubCategory, string>(getPropTitleFR);
 
 const getTitlesOfEachSubCategory = pipe(
     getPropSubCategories,

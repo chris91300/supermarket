@@ -1,6 +1,6 @@
 "use client"
 
-import { article } from '@/types/types';
+import { Product } from '@/app/_bdd/types/databasetypes';
 import Image from 'next/image';
 import React from 'react'
 import ButtonAddToFavorite from './buttonAddToFavorite/ButtonAddToFavorite';
@@ -13,8 +13,9 @@ import useAddOrRemoveFromFavorites from '../../../_hooks/global/useAddOrRemoveFr
 import useAddToCartForm from '../../../_hooks/global/useAddToCartForm';
 
 
+
 type Props = {
-  product: article
+  product: Product
 }
 
 

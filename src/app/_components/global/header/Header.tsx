@@ -4,6 +4,7 @@ import React, { useState } from "react"
 import Logo from "../logo/Logo"
 import Navigation from "../navigation/Navigation"
 import MenuSmartphone from "../menu/menuSmartphone/MenuSmartphone";
+import Menu from "../menu/Menu";
 
 
 
@@ -20,7 +21,9 @@ export default function Header(){
             <Logo />
             <Navigation onClick={ toogleMenuSmartphoneIsVisible }/>
             {menuSmartphoneIsVisible &&
-                <MenuSmartphone toogleIsVisible={ toogleMenuSmartphoneIsVisible } />
+                <MenuSmartphone toogleIsVisible={ toogleMenuSmartphoneIsVisible } >
+                    <Menu/>
+                </MenuSmartphone>
             }
         </header>
     )

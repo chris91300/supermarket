@@ -2,12 +2,12 @@
 
 import React from 'react'
 import Form from './components/Form'
-import { product } from '@/types/types'
 import ModalContainer from '../modalContainer/ModalContainer'
 import useDataForFormAddToCart from '@/app/_hooks/global/useDataForFormAddToCart'
+import { Product } from '@/app/_bdd/types/databasetypes'
 
 type Props = {
-    product: product,
+    product: Product,
     visible: boolean
 } 
 

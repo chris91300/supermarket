@@ -1,4 +1,4 @@
-import { equals, lensIndex } from "ramda";
+import { lensIndex } from "ramda";
 import { cartTypes, productChoosen } from "@/types/types";
 import findIndexOfProductChoosen from "./findIndexOfProductChoosen";
 import productChoosenIsNotFound from "./productChoosenIsNotFound";
