@@ -1,8 +1,8 @@
 "use client"
 
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import ButtonClose from '../../buttons/ButtonClose'
-import { usePathname } from 'next/navigation'
+import useCallBackWhenUrlChanged from '@/app/_hooks/global/useCallBackWhenUrlChanged'
 
 
 type Props = {
@@ -12,16 +12,7 @@ type Props = {
 
 function MenuSmartphone({ toogleIsVisible, children }: Props) {
 
-    const pathName = usePathname();
-    const [ defaultPathName ] = useState(pathName);
-    const pathNameHaveChanged = defaultPathName !== pathName;
-
-    useEffect(() => {
-        if(pathNameHaveChanged){
-            toogleIsVisible()
-        }
-        
-    }, [pathNameHaveChanged, toogleIsVisible]);
+    useCallBackWhenUrlChanged(toogleIsVisible);
     
 
     return (
