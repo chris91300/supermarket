@@ -1,3 +1,3 @@
 import { equals, flip } from "ramda";
 
-export const equalsZero = flip(equals)(0);
+export const equalsZero = flip(equals<number>)(0);

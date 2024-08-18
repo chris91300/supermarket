@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { productChoosen } from '@/types/types'
 import React from 'react'
-import useSubmitFunction from '@/app/_hooks/global/useSubmitFunction'
+import useSubmitFunction from '@/app/_hooks/global/useHandleQuantityOfProduct'
 import clickEventApplyWithValue from '@/app/_utils/clickEventApplyWithValue'
 import ProductInCartImage from './productInCartImage/ProductInCartImage'
 import ProductInCartForm from './productInCartForm.tsx/ProductInCartForm'

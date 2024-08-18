@@ -62,7 +62,7 @@ export type bannerInformations = {
 export interface dataForFormAddToCart {
     alreadyInCart: boolean;
     defaultQuantity: number;
-    submitFunction: (newQuantity: number) => void;
+    handleQuantityOfProduct: (newQuantity: number) => void;
 }
 
 export interface dataForFormFavorites extends dataForFormAddToCart {

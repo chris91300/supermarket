@@ -3,21 +3,26 @@ import { useState } from "react";
 import getInputsForFavoritesModal from "../../_utils/getInputsForFavoritesModal";
 import getTotalPrice from "../../_utils/getTotalPrice";
 import useToogleFavoritesIsVisible from "@/app/_hooks/forFavorites/useToogleFavoritesIsVisible";
-import callAllSubmitFunction from "@/app/_utils/callAllSubmitFunction";
+import handleQuantityOfProducts from "@/app/_utils/handleQuantityOfProducts";
 import submitEventApply from "@/app/_utils/submitEventApply";
+import formatePrice from "@/app/_utils/formatePrice";
+import { pipe } from "ramda";
 
 function useDataForFavoritesModal(favorites: dataForFormFavorites[]) {
     const [ favoritesList, setFavoritesList ] = useState(favorites);
-    const inputs = getInputsForFavoritesModal(favoritesList, setFavoritesList);
-    const totalPriceNumber = getTotalPrice(favoritesList);
-    const totalPrice = totalPriceNumber.toFixed(2);
     const closeModal = useToogleFavoritesIsVisible();
-    const callAllSubmitFunctionAndCloseModal = () => {
-        callAllSubmitFunction(favoritesList);
+    
+    const inputs = getInputsForFavoritesModal(favoritesList, setFavoritesList);
+    console.warn(favoritesList);
+    /*const totalPriceNumber = getTotalPrice(favoritesList);
+    const totalPrice = formatePrice(totalPriceNumber);*/
+    const totalPrice = pipe(getTotalPrice, formatePrice)(favoritesList);
+    const handleQuantityOfProductsAndCloseModal = () => {
+        handleQuantityOfProducts(favoritesList);
         closeModal();
     }
     
-    const submit = submitEventApply(callAllSubmitFunctionAndCloseModal);
+    const submit = submitEventApply(handleQuantityOfProductsAndCloseModal);
 
 
     return {

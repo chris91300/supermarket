@@ -2,7 +2,7 @@ import useSearchForTheProductInTheCart from "@/app/_hooks/global/useSearchForThe
 import getAlreadyInCart from "@/app/_utils/getAlreadyInCart";
 import getDefaultQuantity from "@/app/_utils/getDefaultQuantity";
 import { pipe } from "ramda";
-import useGetSubmitFunction from "./usePrepareUseSubmitFunction";
+import useGetHandleQuantityOfProductFunction from "./useGetHandleQuantityOfProductFunction";
 import { Product } from "@/app/_bdd/types/databasetypes";
 
 export default function useDataForFormAddToCart(product: Product) {
@@ -10,7 +10,7 @@ export default function useDataForFormAddToCart(product: Product) {
         useSearchForTheProductInTheCart,
         getAlreadyInCart,
         getDefaultQuantity,
-        useGetSubmitFunction
+        useGetHandleQuantityOfProductFunction
     );
 
     return getData(product);

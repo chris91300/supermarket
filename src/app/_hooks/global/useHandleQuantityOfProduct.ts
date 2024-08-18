@@ -2,7 +2,7 @@ import { productChoosen } from "@/types/types";
 import useChangeProductChoosenQuantity from "./useChangeProductChoosenQuantity";
 import useAddProductChoosenIntoCart from "./useAddProductChoosenIntoCart";
 
-export default function useSubmitFunction(
+export default function useHandleQuantityOfProduct(
     productChoosen: productChoosen,
     alreadyInCart: boolean
 ) {
@@ -12,9 +12,9 @@ export default function useSubmitFunction(
     const addProductChoosenIntoCart =
         useAddProductChoosenIntoCart(productChoosen);
 
-    const submitFunction = alreadyInCart
+    const handleQuantityOfProduct = alreadyInCart
         ? changeProductChoosenQuantity
         : addProductChoosenIntoCart;
 
-    return submitFunction;
+    return handleQuantityOfProduct;
 }

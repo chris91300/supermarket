@@ -12,7 +12,7 @@ type Props = {
 } 
 
 export default function Modal({product, visible}: Props) {
-    const { alreadyInCart, defaultQuantity, submitFunction } = useDataForFormAddToCart(product);
+    const { alreadyInCart, defaultQuantity, handleQuantityOfProduct } = useDataForFormAddToCart(product);
     
   return (    
     visible && 
@@ -22,7 +22,7 @@ export default function Modal({product, visible}: Props) {
                 product={product}
                 defaultQuantity={ defaultQuantity }
                 alreadyInCart={ alreadyInCart }
-                submitFunction={ submitFunction }
+                submitFunction={ handleQuantityOfProduct }
             />
         </ModalContainer>
     </>    
